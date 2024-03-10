@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            /* background-color: antiquewhite; */
+            margin: auto;
+            position: relative;
+            perspective: 5000px;
+        }
+        ul{
+            list-style: none;
+            /* background-color: aliceblue; */
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 0;top: 0;
+            right: 0;bottom: 0;
+            margin: auto;
+            transform-style: preserve-3d;
+            
+
+        }
+        li{
+           
+          
+            width: 680px;
+            height: 100%;
+            position: absolute;
+        }
+        li:nth-child(1){
+            background-color: aqua;
+            transform: rotateY(0deg) translateZ(580px) ;
+        }
+        li:nth-child(2){
+            background-color: skyblue;
+            transform: rotateY(40deg) translateZ(580px) ;
+        }
+        li:nth-child(3){
+            background-color: red;
+            transform: rotateY(80deg) translateZ(580px) ;
+        }
+        li:nth-child(4){
+            background-color: purple;
+            transform: rotateY(120deg) translateZ(580px) ;
+        }
+        li:nth-child(5){
+            background-color: palevioletred;
+            transform: rotateY(160deg) translateZ(580px) ;
+        }
+        li:nth-child(6){
+            background-color: green;
+            transform: rotateY(200deg) translateZ(580px) ;
+        }
+        li:nth-child(7){
+            background-color: gold;
+            transform: rotateY(240deg) translateZ(580px) ;
+        }
+        li:nth-child(8){
+            background-color: yellow;
+            transform: rotateY(280deg) translateZ(580px) ;
+        }
+        li:nth-child(9){
+            background-color: salmon;
+            transform: rotateY(320deg) translateZ(580px) ;
+        }
+        @keyframes xz{
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+        ul{
+            animation: xz 8s infinite;
+            transform-origin: 100px 100px 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

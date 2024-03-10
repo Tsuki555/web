@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            display: inline-block;
+        }
+        li{
+            float: left;
+            position: relative;
+            /*不使用 position: absolute; 是因为绝对定位会完全脱离文档流,
+            下层结构元素会挡住上层结构元素*/
+         
+        }
+        img{
+            vertical-align: middle;
+        }
+        .jia1,.jia2{
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+        }
+        .jia2{
+            display: none;
+        }
+        li:hover div{
+            width: 100%;
+            height: 220px;
+            background-color: rgba(0, 0, 0, .4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+        li:hover .jia1{
+            display: none;
+        }
+        li:hover .jia2{
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <img src="../images/dw/img01.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia1">
+            <img src="../images/dw/tu2.gif" alt="" class="jia2">
+            <div></div>
+        </li>
+        <li>
+            <img src="../images/dw/img01.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia1">
+            <img src="../images/dw/tu2.gif" alt="" class="jia2">
+            <div></div>
+        </li>
+    </ul>
+</body>
+</html>

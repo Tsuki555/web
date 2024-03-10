@@ -1,0 +1,48 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-02 21:25:52
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-02 21:28:29
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        /* 方法二 */
+        .left{
+            width: 100px;
+            height: 100%;
+            background-color: aquamarine;
+            float: left;
+        }
+        .center{
+            height: 100%;
+            background-color: brown;
+            overflow: hidden;
+        }
+        .right{
+            width: 100px;
+            height: 100%;
+            background-color: coral;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+     <!-- 实现左右宽度固定，中间宽度自适应的三栏布局
+    左侧100px 右侧100px  -->
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="center"></div>
+</body>
+</html>

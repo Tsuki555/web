@@ -1,0 +1,155 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+        .nav{
+            background-color: brown;
+            text-align: center;
+        }
+        ul{
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+        }
+        li{
+            width: 150px;
+            float: left;
+            list-style: none;
+            line-height: 40px;
+        }
+        li>div{
+            display: none;
+        }
+        li:hover div{
+            width: 100%;
+            height: 300px;
+            background-color: coral;
+            display: block;
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="">1黄花姜黄</a>
+                <div class="ab">就开始的路径</div>
+            </li>
+            <li>
+                <a href="">1黄花姜黄</a>
+                <div class="ab">就开始的路径</div>
+            </li>
+            <li>
+                <a href="">1黄花姜黄</a>
+                <div class="ab">就开始的路径5</div>
+            </li>
+            <li>
+                <a href="">1黄花姜黄</a>
+                <div class="ab">就开始的路径4</div>
+            </li>
+            <li>
+                <a href="">1黄花姜黄</a>
+                <div class="ab">就开始的路径3</div>
+            </li>
+            <li>
+                <a href="">1黄花姜黄</a>
+                <div class="ab">就开始的路径2</div>
+            </li>
+            <li>
+                <a href="">1黄花姜黄</a>
+                <div class="ab">就开始的路径1</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            width: 1000px;
+            margin: auto;
+            height: 50px;
+            line-height: 50px;
+            background-color: blueviolet;
+        }
+        li{
+            width: 250px;
+            background-color: chartreuse;
+            list-style: none;
+            float: left;
+        }
+        li>ol{
+            display: none;
+        }
+        li:hover ol{
+            display: block;
+        }
+        ol>li{
+            box-sizing: border-box;
+            padding: 0 35px;
+        }
+        /* 一对一不需要定位 */
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>环境
+            <ol>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+            </ol>
+        </li>
+        <li>环境
+          
+        </li>
+        <li>环境
+            <ol>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+            </ol>
+        </li>
+        <li>环境
+            <ol>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+                <li>kjjkk今年</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+
+</html>

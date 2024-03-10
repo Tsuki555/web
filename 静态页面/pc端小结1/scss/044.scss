@@ -1,0 +1,41 @@
+/**
+ * @Author: Your name
+ * @Date:   2023-10-20 21:46:03
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2023-10-20 22:05:36
+ */
+*{
+    margin: 0;
+    padding: 0;
+}
+// html,body{
+//     height: 100%;
+//     // 指的是第一屏的高
+// }
+body{
+    background-color: bisque;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    .box{
+        min-width: 1300px;
+        max-width: 1300px;
+        // 最小宽和最大宽可以一样，最小宽限制界面显示最小尺寸，最大宽限制界面显示最大尺寸
+        // background-color: rgb(135, 222, 168);
+        margin: auto;
+        ul{
+            width: 100%;
+            overflow: hidden;
+            li{
+                width: 300px;
+                height: 420px;
+                background-color: coral;
+                list-style: none;
+                float: left;
+                margin: 0 12.5px;
+                margin-bottom: 15px;
+                
+            }
+        }
+    }
+}

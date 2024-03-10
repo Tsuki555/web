@@ -1,0 +1,99 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-09-25 14:17:16
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-09-25 15:01:06
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+           text-align: center;
+            width: 80px;
+            font-size: 12px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .box{
+            background-color: brown;
+            height: 30px;
+            line-height: 30px;
+
+        }
+        .box>ul{
+            width: 1200px;
+            margin: auto;
+          
+        }
+        .box .left{
+            float: left;
+        }
+        .box .left li{
+            float: left;
+            
+        }
+        .box .right{
+            float: right;
+        }
+        .box .right li{
+            float: left;
+        }
+        .box .left li>.address{
+            width: 300px;
+            height: 400px;
+            background-color: aquamarine;
+            display: none;
+        }
+        .box .left li:hover>.address{
+            display: block;
+        }
+        .box .left li:hover{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <div class="left">
+                <li>
+                    <a href="">京东首页</a>
+                </li>
+                <li>
+                    <a href="">甘肃</a>
+                    <div class="address"></div>
+                </li>
+            </div>
+            <div class="right">
+                <li><a href="">你好，请登录</a></li>
+                <li><a href="">免费注册</a></li>
+                <li><a href="">我的订单</a></li>
+                <li><a href="">我都京东</a></li>
+                <li><a href="">京东会员</a></li>
+                <li><a href="">企业采购</a></li>
+                <li><a href="">客户服务</a></li>
+                <li><a href="">网页导航</a></li>
+                <li><a href="">手机京东</a></li>
+                <li><a href="">网站无障碍</a></li>
+            </div>
+
+
+        </ul>
+    </div>
+</body>
+
+</html>

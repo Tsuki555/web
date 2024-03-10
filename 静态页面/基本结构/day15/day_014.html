@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 800px;
+            background-color: black;
+            color: aliceblue;
+            text-align: center;
+            line-height: 1;
+            overflow: hidden;
+        }
+
+        .box>h3 {
+            font-size: 30px;
+            margin-top: 54px;
+            margin-bottom: 22px;
+        }
+
+        .box>p {
+            font-size: 20px;
+            margin-bottom: 100px;
+        }
+
+        .box>ul {
+            width: 1198px;
+            margin: auto;
+            display: inline-block;
+            /* background-color: brown; */
+        }
+
+        .box>ul>li {
+            width: 384px;
+            height: 330px;
+            background-color: azure;
+            list-style: none;
+            float: left;
+            margin: 0 6px;
+        }
+
+        .box>ul>li>span {
+            width: 130px;
+            height: 130px;
+            display: block;
+            /* background-color: aqua; */
+            margin: -65px auto 0;
+            background-image: url(../images/anli1/img05.jpg);
+        }
+
+        .box>ul>li>.x {
+            background-position: left center;
+        }
+
+        .box>ul>li>.y {
+            background-position: left bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>我们的优势</h3>
+        <p>创意独立刚开始的赶快来</p>
+        <ul>
+            <li>
+                <span></span>
+            </li>
+            <li>
+                <span class="x"></span>
+            </li>
+            <li>
+                <span class="y"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

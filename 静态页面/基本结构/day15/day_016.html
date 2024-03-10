@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content{
+            min-width: 1120px;
+            max-width: 1120px;
+            margin: auto;
+        }
+        header {
+            height: 80px;
+            background-color: aqua;
+        }
+
+        nav {
+            margin-top: 10px;
+            height: 40px;
+            line-height: 40px;
+            background-color: brown;
+            margin-bottom: 10px;
+        }
+        nav ul{
+            display: inline-block;
+            width: 100%;
+        }
+        nav ul li{
+            float: left;
+            width: 25%;
+            color: aliceblue;
+            list-style: none;
+            text-align: center;
+        }
+        main{
+            height: 600px;
+            background-color: pink;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        main article{
+            height: 100%;
+            flex: 1;
+        }
+        main section{
+            height: 50%;
+            width:100%;
+            background-color: burlywood;
+            border: 3px seagreen dashed;
+            box-sizing: border-box;
+        }
+        main aside{
+            height: 100%;
+            width: 280px;
+            background-color: blueviolet;
+        }
+        footer{
+            height: 60px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <header></header>
+        <nav>
+            <ul>
+                <li>导航1</li>
+                <li>导航1</li>
+                <li>导航1</li>
+                <li>导航1</li>
+                
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <section>内容区</section>
+                <section>内容区</section>
+            </article>
+            <aside>
+                侧边提示信息
+            </aside>
+        </main>
+
+        <footer>
+            这是footer信息
+            <!-- 进度条 -->
+            <meter value="20" min="0" max="100"></meter>
+            <meter value="0.2"></meter>
+            <progress value="30" max="100" min="0"></progress>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-08-11 18:03:14
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-08-11 18:42:57
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <div class="box">
+        <h2 style="text-align: center;margin-top: 50px;margin-bottom: 30px;">学员辅助系统</h2>
+        <li class="kuang">
+            <span class="tubiao"></span>
+            <input type="text" placeholder="学号/身份证号">
+        </li>
+        <li class="kuang">
+            <span class="tubiao"></span>
+            <input type="password" placeholder="******">
+        </li>
+        <li class="kuang">
+            <span class="tubiao"></span>
+            <input type="text" placeholder="验证码">
+            <span class="tp"></span>
+        </li>
+        <li class="kuang forget">
+            <span class="sbox1">记住用户名和密码</span>
+            <a href="#"><span class="sbox2">忘记密码？</span></a>
+        </li>
+        <li class="kuang  bg">
+            <input type="button" value="登录">
+        </li>
+        <li class="kuang end">
+            <a href="#" style="margin-right:50px">学习总结入口</a>
+        </li>
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 600px;
+            height: 600px;
+            border: 6px solid rgba(0, 0, 0, .3);
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .kuang {
+            height: 50px;
+            width: 486px;
+            border: 1px solid rgba(0, 0, 0, .3);
+            border-radius: 5px;
+            margin: 0 auto;
+            line-height: 50px;
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .tubiao {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: aqua;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        .tp{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            background-color: brown;
+            position: absolute;
+            right: 0;
+            border-radius: 5px;
+        }
+        div .forget{
+            border: none;
+            padding: 0;
+        }
+        .sbox1{
+            float: left;
+
+        }
+        .sbox2{
+            float: right;
+        }
+        .bg{
+            background-color: cornflowerblue;
+            text-align: center;
+            
+        }
+        .bg>input{
+            background-color: transparent;
+            color: aliceblue;
+            margin-right: 50px;
+        }
+        .end{
+            text-align: center;
+            border: none;
+        }
+    </style>
+</body>
+
+</html>

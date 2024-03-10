@@ -1,0 +1,58 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-14 12:32:56
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-14 13:18:55
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        select{
+            width: 200px;
+            height: 50px;
+            font-size: 30px;
+            color:pink;
+            appearance: none;
+            background-image: url(./img/img_001.jpeg);
+            background-position: right center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+       
+        .dx{
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-image: url(./img/img_001.jpeg);
+            border-radius: 50%;
+            background-position: center center;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .dx:checked{
+            background-image: url(./img/bgc.jpg);
+        }
+    </style>
+</head>
+<body>
+    <label for="man">男<input type="radio" name="sex" id="man" class="dx"></label>
+    <label for="woman">女<input type="radio" name="sex" id="woman" class="dx"></label>
+
+
+     <!-- <select name="city" id="">
+        <option value="北京">北京</option>
+        <option value="上海">上海</option>
+        <option value="广州">广州</option>
+    </select>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <input type="file" name="" id="" multiple> -->
+</body>
+</html>

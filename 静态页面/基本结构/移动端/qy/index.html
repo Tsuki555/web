@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-color: rgba(0, 0, 0, .1);
+
+        }
+
+        html {
+            font-size: 32vw;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        header {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0.188rem;
+            line-height: 0.188rem;
+            font-size: 0.1rem;
+            margin-top: 0.1rem;
+            width: 100%;
+        }
+
+        header img {
+            margin-left: 0.083rem;
+            margin-right: 0.083rem;
+        }
+
+        header a {
+            flex: 1;
+            height: 0.188rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .3);
+            border-top-left-radius: 0.096rem;
+            border-top-right-radius: 0.096rem;
+            border-bottom-left-radius: 0.096rem;
+            border-bottom-right-radius: 0.096rem;
+            margin-right: 0.125rem;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        section {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            padding-bottom: 0.083rem;
+            background-color: #fff;
+        }
+
+        section .module {
+            width: 25%;
+            font-size: 0.083rem;
+            height: 0.583rem;
+            text-align: center;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        section .module img {
+            width: 0.367rem;
+            height: 0.367rem;
+            margin-bottom: 0.042rem;
+            margin-top: 0.083rem;
+        }
+
+        table {
+            font-size: 0.083rem;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid gainsboro;
+            border-bottom: 1px solid gainsboro;
+            background-color: #fff;
+
+        }
+
+        table img {
+            width: 0.142rem;
+            height: 0.142rem;
+        }
+
+        table tr {
+            height: 0.25rem;
+        }
+
+        colgroup {
+            border-right: 1px solid gainsboro;
+        }
+
+        .box {
+            font-size: 0.125rem;
+            margin-top: 0.1rem;
+            background-color: #fff;
+            padding-top: 0.125rem;
+        }
+
+        .box>h4 {
+            text-align: center;
+        }
+
+        .box .main {
+            margin-top: 0.142rem;
+            margin-left: 0.063rem;
+            margin-right: 0.063rem;
+
+            display: flex;
+            flex-wrap: wrap;
+            
+        }
+
+        .box .main figure {
+            width: 50%;
+            padding-left: 0.063rem;
+            padding-right: 0.063rem;
+            box-sizing: border-box;
+           
+
+        }
+
+        .box .main figure img {
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        figcaption {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            margin-top: 0.063rem;
+            margin-bottom: 0.022rem;
+            font-size: 0.063rem;
+            
+        }
+        .box .main figure span{
+            font-size: 0.083rem;
+            color: chocolate;
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.125rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="list1.png" alt="">
+        <a href="">
+            搜索本地/摄口/关键字
+        </a>
+    </header>
+    <div class="banner">
+        <img src="./banner.jpg" alt="">
+    </div>
+    <section>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+        <div class="module">
+            <img src="./pic.png" alt="">
+            <p>机票</p>
+        </div>
+    </section>
+    <table rules="groups">
+        <colgroup span="1"></colgroup>
+        <colgroup span="1"></colgroup>
+        <colgroup span="1"></colgroup>
+        <thead>
+            <tr>
+                <td>
+                    <img src="./list1.png" alt="">
+                    <span>门票</span>
+                </td>
+                <td>
+                    <img src="./list1.png" alt="">
+                    <span>门票</span>
+                </td>
+                <td>
+                    <img src="./list1.png" alt="">
+                    <span>门票</span>
+                </td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="./list1.png" alt="">
+                    <span>门票</span>
+                </td>
+                <td>
+                    <img src="./list1.png" alt="">
+                    <span>门票</span>
+                </td>
+                <td>
+                    <img src="./list1.png" alt="">
+                    <span>门票</span>
+                </td>
+
+            </tr>
+        </tbody>
+        <nav></nav>
+    </table>
+    <div class="box">
+        <h4>精选项目</h4>
+        <div class="main">
+            <figure>
+                <img src="./pic1.jpg" alt="">
+                <figcaption>更深刻发达国家理发师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分卡</figcaption>
+                <span>300999元</span>
+            </figure>
+            <figure>
+                <img src="./pic1.jpg" alt="">
+                <figcaption>更深刻发达国家理发师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分卡</figcaption>
+                <span>300999元</span>
+            </figure>
+            <figure>
+                <img src="./pic1.jpg" alt="">
+                <figcaption>更深刻发达国家理发师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分卡</figcaption>
+                <span>300999元</span>
+            </figure>
+            <figure>
+                <img src="./pic1.jpg" alt="">
+                <figcaption>更深刻发达国家理发师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分卡</figcaption>
+                <span>300999元</span>
+            </figure>
+            <figure>
+                <img src="./pic1.jpg" alt="">
+                <figcaption>更深刻发达国家理发师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分卡</figcaption>
+                <span>300999元</span>
+            </figure>
+            <figure>
+                <img src="./pic1.jpg" alt="">
+                <figcaption>更深刻发达国家理发师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分师看来就尬是框架的更深刻打分卡</figcaption>
+                <span>300999元</span>
+            </figure>
+            <!-- <img src="https://gitee.com/xuedaiyuanZY/picture/raw/master/img/sz3.jpg"/> -->
+        </div>
+    </div>
+</body>
+
+</html>

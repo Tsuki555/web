@@ -1,0 +1,34 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-08-10 20:59:55
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-08-10 21:16:07
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 1000px;
+            height: 1000px;
+            border: 1px solid palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <!-- iframe主要和超链接配合使用 -->
+    <!-- name用于给浮动框架起一个名字，关联a标签
+    frameborder去掉框架本身的边框
+    src用于指定默认显示页面 -->
+
+    <a href="http://www.bilibili.com" target="ifm" >哔哩哔哩动画</a>
+    <a href="http://www.4399.com" target="ifm" >4399</a>
+    <div class="box">
+        <iframe src="./color.htm" frameborder="0px" name="ifm" width="100%" height="100%"></iframe>
+    </div>
+</body>
+</html>

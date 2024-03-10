@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .content{
+            min-width: 1120px;
+            max-width: 1120px;
+            margin: auto;
+           
+        }
+        .box{
+            height: 60px;
+            line-height: 60px;
+            background-color: brown;
+            text-align: center;
+        }
+        ul{
+            display: inline-block;
+        }
+        ul>li{
+            /* padding: 0 15px; */
+            width: 150px;
+
+            list-style: none;
+            background-color: chartreuse;
+            float: left;
+        }
+
+        ol{
+           display: none;
+        }
+        ul>li:hover>ol{
+            display: block;
+        }
+        ol>li{
+            width: 100%;
+           box-sizing: border-box;
+            list-style: none;         
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 二级菜单 -->
+    <div class="content">
+       <div class="box">
+        <ul>
+            <li>首页</li>
+            <li>
+                首页首页首页
+                <ol>
+                    <li>桂花说几句</li>
+                    <li>但是</li>
+                    <li>桂花说几句</li>
+                    <li>桂花说几句</li>
+                </ol>
+
+            </li>
+            <li>
+                首页首页
+                <ol>
+                    <li>桂花说几句</li>
+                    <li>sdf十大女</li>
+                    <li>桂花说几句</li>
+                    <li>桂花说几句</li>
+                </ol>
+            </li>
+            <li>
+                首页
+                <ol>
+                    <li>桂花说几句</li>
+                    <li>sdf十大女</li>
+                    <li>桂花说几句</li>
+                    <li>桂花说几句</li>
+                </ol>
+            </li>
+            <li>首页首页</li>
+            <li>首页</li>
+        </ul>
+       </div>
+    </div>
+</body>
+</html>

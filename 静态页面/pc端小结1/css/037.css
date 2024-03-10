@@ -1,0 +1,37 @@
+/**
+ * @Author: Your name
+ * @Date:   2023-10-20 16:55:11
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2023-10-20 17:09:59
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  min-width: 800px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: aquamarine;
+  height: 100%;
+}
+.content header {
+  height: 60px;
+  background-color: brown;
+}
+.content article {
+  height: 1500px;
+  background-color: burlywood;
+}/*# sourceMappingURL=037.css.map */

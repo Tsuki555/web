@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        span{
+            font-size: 36px;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px #000;
+            /* 文字阴影 */
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+            background-color: bisque;
+            box-shadow: 0 0 5px 1px gray;
+            overflow: hidden;
+        }
+        p{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 255, 255);
+            margin: 30px;
+            display: inline-block;
+            box-shadow: 0px 0px 0px 18px rgb(11, 206, 206) inset;
+        }
+    </style>
+</head>
+<body>
+    <span>王晓娜，我爱过你</span>
+    <div ></div>
+    <p></p>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+            background-image: linear-gradient(pink, brown, red, blue);
+            /* 默认从上到下 */
+        }
+
+        .box1 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+            background-image: linear-gradient(to right, pink, green, yellow, red);
+        }
+
+        .box3 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+            background-image: radial-gradient(at left center, green, yellow, red, orange);
+            /* 径向渐变设置中心散发点 */
+        }
+
+        .box4 {
+            width: 500px;
+            height: 500px;
+            border: 1px solid gray;
+            background-image: radial-gradient(green, yellow, red, orange);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 线性渐变 -->
+    <div class="box"></div>
+    <div class="box1"></div>
+    <!-- 径向渐变 -->
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+
+</html>

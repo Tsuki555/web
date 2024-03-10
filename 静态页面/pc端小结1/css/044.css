@@ -1,0 +1,35 @@
+/**
+ * @Author: Your name
+ * @Date:   2023-10-20 21:46:03
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2023-10-20 22:05:36
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: bisque;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+body .box {
+  min-width: 1300px;
+  max-width: 1300px;
+  margin: auto;
+}
+body .box ul {
+  width: 100%;
+  overflow: hidden;
+}
+body .box ul li {
+  width: 300px;
+  height: 420px;
+  background-color: coral;
+  list-style: none;
+  float: left;
+  margin: 0 12.5px;
+  margin-bottom: 15px;
+}/*# sourceMappingURL=044.css.map */

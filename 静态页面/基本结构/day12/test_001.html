@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            width: 900px;
+            height: 600px;
+            background-color: antiquewhite;
+            margin: auto;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(3,32%);
+            grid-template-rows: repeat(3,32%);
+            justify-content: center;
+            align-content: center;
+            grid-template-areas: 
+                "a1 a1 a3"
+                "b1 b1 b3"
+                "b1 b1 b3"
+            ;
+           grid-gap:2% 2%;
+          box-sizing: border-box;
+        
+        }
+        li{
+            box-sizing: border-box;
+          
+        }
+        li:nth-child(1){
+
+            background-color: brown;
+            grid-area: a1;
+        }
+        li:nth-child(2){
+            background-color: blueviolet;
+        }
+        li:nth-child(3){
+            background-color: rgb(61, 226, 43);
+            grid-area: b1;
+        }
+        li:nth-child(4){
+            background-color: chocolate;
+            grid-area: b3;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <!-- <li>b</li> -->
+        <li>c</li>
+        <li>1</li>
+        <!-- <li>2</li> -->
+        <li>3</li>
+        <!-- <li>f</li>
+        <li>u</li> -->
+        <!-- <li>c</li> -->
+    </ul>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            background-color: red;
+            list-style: none;
+            /* 解决方法1:给固定高度,可以,但是不适合自适应的页面 */
+            /* height: 60px; */
+            /* 解决方法2:给ul添加overflow:hidden; 但是不适合定位定位出去的案例(二级下拉或者其他出去的效果) 因为overflow:hidden;本意是溢出隐藏 */
+            /* overflow: hidden; */
+            /* overflow: auto; */
+        }
+        li{
+            float: left;
+            width: 200px;
+            line-height: 50px;
+            background-color: aqua;
+            margin-right: 2px;
+        }
+        /* 方法3:给所有浮动盒子的最后添加一个空的标签,
+        例如 div,且添加clear:both;因为清除浮动,可以让div下来,
+        div下来就可以撑开ul,缺点:在页面中多了很多空的标签,造成代码冗余 仅做了解
+        注意：如果是li浮动清浮动元素不可以使用li
+        */
+        div{
+            /* clear: both; */
+            clear: left;
+
+        }
+        /* span{
+            clear: both;
+            display: block;
+        } */
+
+        /* 方法4: 万能清除法,给塌陷的盒子(父盒子)添加after,这个after必须联合content
+        一起用,content添加进入的内容就是类似写一个一个span标签*/
+        /* ul::after{
+            content: "";
+            clear: both;
+            display: block;
+            必须加 display: block;
+            只是隐藏内容,但是空间还在
+
+        } */
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <div></div>
+        <!-- <span>我是li下面的span</span> -->
+    </ul>
+</body>
+</html>
+ 
+    <!-- 代码书写的时候可以:或者可以::的,就是伪对象(伪元素)选择器,权重是1
+    代码书写的时候只能:的,叫做伪类选择器,权重是10 -->

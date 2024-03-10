@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        .box {
+            background-color: brown;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        ul {
+
+            display: inline-block;
+            /* 转为行内块元素也能解决高度塌陷问题 */
+            line-height: 45px;
+            vertical-align: bottom;
+            position: relative;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 165px;
+            height: 45px;
+
+            font-size: 17px;
+        }
+
+        .box>ul>li>.cd {
+            width: 1000px;
+            height: 380px;
+            background-color: blueviolet;
+            text-align: left;
+            display: none;
+            position: absolute;
+            left: 0;
+        }
+
+        .box>ul>li:hover>.cd {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <a href="">账户服务</a>
+                <div class="cd">0二级菜单</div>
+
+            </li>
+            <li>
+                <a href="">存款与贷款</a>
+                <div class="cd">1二级菜单</div>
+            </li>
+            <li>
+                <a href="">信用卡</a>
+                <div class="cd">2二级菜单</div>
+            </li>
+            <li>
+                <a href="">投资理财</a>
+                <div class="cd">3二级菜单</div>
+            </li>
+            <li>
+                <a href="">私人银行</a>
+                <div class="cd">4二级菜单</div>
+            </li>
+            <li>
+                <a href="">金融市场</a>
+                <div class="cd">5二级菜单</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

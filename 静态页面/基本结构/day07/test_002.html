@@ -1,0 +1,76 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-09-13 14:08:58
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-09-13 14:45:21
+-->
+
+<!-- 后代选择器，子代选择器 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box>p{
+            background-color: blueviolet;
+        }
+      
+        .box .aa p{
+            background-color: blue;
+        }
+        .box div>p{
+            background-color: pink;
+        } */
+        /* .box>p+p+div>p+p{
+            background-color: chartreuse;
+        } */
+        /* .aa>div>p{
+            background-color: aquamarine;
+        } */
+        /* .aa>div p+p{
+            background-color: chartreuse;
+        } */
+        /* .box>p+p+div{
+            background-color: rgb(155, 5, 5);
+        } */
+        /* .box>p+p+div+div>p{
+            background-color: aquamarine;
+        } */
+        /* .box>p+p+div+div>p+p+p{
+            background-color: brown;
+        } */
+        /* .box>p+p{
+            background-color: blueviolet;
+        } */
+        /* .box>p+p{
+            background-color: blueviolet;
+        } */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>段落1</p>
+        <p>段落2</p>
+       
+        <div>
+            <p>段落3</p>
+            <p>段落4</p>
+          
+        </div>
+        <div class="aa">
+            <p>段落5</p>
+            <p>段落6</p>
+         
+            <p>段落7</p>
+            <div>
+                <p>段落8</p>
+                <p>段落9</p>
+            </div>
+        </div>
+        <div>测试</div>
+    </div>
+</body>
+</html>

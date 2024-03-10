@@ -1,0 +1,344 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-09-24 20:06:20
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-09-24 21:19:50
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            text-align: center;
+
+        }
+        ul{
+            overflow: hidden;
+            width: 1200px;
+            margin: auto;
+        }
+        li{
+            list-style: none;
+            float: left;
+            position: relative;
+            /*不使用 position: absolute; 是因为绝对定位会完全脱离文档流,
+            下层结构元素会挡住上层结构元素*/
+            margin:0px 10px;
+            margin-bottom: 10px;
+        }
+        img{
+            vertical-align: bottom;
+        }
+        li>.jia{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        li>.jia1{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: none;
+        }
+        li:hover>.jia{
+            display: none;
+        }
+        li:hover>.jia1{
+            display: block;
+            z-index: 3;
+        }
+        .box{
+            position: absolute;
+            background-color: rgba(0, 0, 0, .3);
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            display: none;
+        }
+        li:hover .box{
+            display: block;
+        }
+        ul>li>.text{
+            position: absolute;
+            top: 3px;
+            left:3px;
+           color: aliceblue;
+           display: none;
+        }
+        ul>li:hover>.text{
+            display: block;
+        }
+       
+    </style>
+</head>
+<body>
+    <ul>
+            <li >
+                <img src="../images/dw/img01.png" alt="">
+                <img src="../images/dw/tu.gif" alt="" class="jia">
+                <img src="../images/dw/tu2.gif" alt="" class="jia1">
+                <div class="box"></div>
+                <div class="text">
+                    <img src="../images/dw/logo.gif" alt="">文本内容
+                </div>
+            </li>
+        <li >
+            <img src="../images/dw/img02.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+       
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li >
+            <img src="../images/dw/img01.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        
+        <li >
+            <img src="../images/dw/img02.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+       
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        <li>
+            <img src="../images/dw/img03.png" alt="">
+            <img src="../images/dw/tu.gif" alt="" class="jia">
+            <img src="../images/dw/tu2.gif" alt="" class="jia1">
+            <div class="box"></div>
+            <div class="text">
+                <img src="../images/dw/logo.gif" alt="">文本内容
+            </div>
+        </li>
+        
+    </ul>
+   
+</body>
+</html>

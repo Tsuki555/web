@@ -1,0 +1,26 @@
+/**
+ * @Author: Your name
+ * @Date:   2023-08-14 16:47:18
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2023-08-14 16:55:47
+ */
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    width: 300px;
+    height: 90px;
+    border: 1px solid rgba(0, 0,0, .4);
+    text-align: center;
+    line-height: 90px;
+    margin-top: 20px;
+    margin-left: 15px;
+    list-style: none;
+    border-radius: 5px;
+}
+input{
+    border: 0;
+    outline: none;
+    
+}

@@ -1,0 +1,143 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-09-20 17:38:51
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-09-20 19:25:01
+-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            overflow: hidden;
+            padding-left: 5px;
+            margin-top: 41px;
+            
+        }
+        ul>li{
+           width: 80px; 
+           height: 20px;
+           background-color: #68687a;
+           margin-left: 1px;
+           float: left;
+           list-style: none;
+           line-height: 20px;
+           text-align: center;
+        }
+        ul>li:hover{
+            background-color: orangered;
+        }
+        ul>li:hover span{
+            display: none;
+        }
+        ul>li b{
+            display: none;
+        }
+        ul>li:hover b{
+            display: block;
+            font-weight: 400;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><span>home</span> <b>首页</b></li>
+        <li><span>home</span> <b>首页</b></li>
+        <li><span>home</span> <b>首页</b></li>
+        <li><span>home</span> <b>首页</b></li>
+        <li><span>home</span> <b>首页</b></li>
+        
+    </ul>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+            background-color: bisque;
+            padding-left: 15px;
+        }
+        li{
+            width: 80px;
+            height: 30px;
+            background-color: darkgray;
+            line-height: 30px;
+            text-align: center;
+            margin-left: 2px;
+            float: left;
+        }
+        
+        ul>li>a>span{
+            display: none;
+        }
+        ul>li>a>b{
+            font-size: 12px;
+            font-weight: 400;
+        }
+        ul>li:hover>a>b{
+            display: none;
+        }
+        ul>li:hover>a>span{
+            /* 行内元素类型的子盒子加display：block；会撑满块级父盒子宽度
+            （哪怕是浮动以后横向排列，有宽高的父盒子），
+            要撑满高度的话，得继承父盒子行高。 */
+            display: block;
+            font-size: 14px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="https://baidu.com">
+                <span>网站首页</span><b>first home</b>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span>网站首页</span><b>first home</b>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span>网站首页</span><b>first home</b>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span>网站首页</span><b>first home</b>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span>网站首页</span><b>first home</b>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

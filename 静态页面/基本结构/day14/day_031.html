@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            height: 100%;
+            min-width: 970px;
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 20px;
+            display: block;
+        }
+        .header{
+            line-height: 60px;
+            background-color: skyblue;
+        }
+        .header>ul{
+            display: inline-block;
+            width: 100%;
+            vertical-align: top;
+            padding-left: 150px;
+            box-sizing: border-box;
+        }
+        .header>ul>li{
+            float: left;
+            list-style: none;
+            width: 200px;
+            text-align: center;
+            position: relative;
+        }
+        .header>ul>li:hover::after{
+            content: "";
+            width: 60%;
+            height: 2px;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .content{
+            height: calc(100% - 60px);
+
+        }
+        .side{
+            width: 270px;
+            border-right: 1px solid gainsboro;
+            height: 100%;
+            float: left;
+        }
+        .side>ul{
+            line-height: 60px;
+            text-align: center;
+
+        }
+        .side>ul>li{
+            border-bottom: 1px solid gainsboro;
+        }
+        .side>ul>li>ol{
+            display: none;
+            width: 100%;
+            
+        }
+        .side>ul>li>ol>li{
+            line-height: 50px;
+            border-top: 1px solid gainsboro;
+            padding-left: 70px;
+            box-sizing: border-box;
+            width: 100%;
+
+        }
+        .side>ul>li:hover>ol{
+            display: block;
+        }
+       .table{
+        width: calc(100% - 271px);
+        height: 100%;
+        float: left;
+       }
+       table{
+        width: 98%;
+        border:1px solid rgb(1, 187, 243);
+        margin: 20px auto;
+        text-align: center;
+       }
+       tr{
+        line-height: 50px;
+       }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="">OA办公系统</a></li>
+            <li><a href="">OA办公系统</a></li>
+            <li><a href="">OA办公系统</a></li>
+            <li><a href="">OA办公系统</a></li>
+            
+        </ul>
+    </div>
+    <div class="content">
+        <div class="side">
+            <ul>
+                <li>
+                    教学系统
+                    <ol>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                        <li>二级菜单</li>
+                    </ol>
+                </li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+            </ul>
+        </div>
+        <div class="table">
+            <table rules="all">
+                <tbody>
+                    <tr>
+                        <td colspan="5">1</td>
+                        <!-- <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td> -->
+                    </tr>
+                    <tr>
+                        <td rowspan="2">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <!-- <td>1</td> -->
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-14 13:49:19
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-14 14:25:02
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            padding: 10px;
+        }
+        input {
+            vertical-align: middle;
+        }
+
+        .t1 {
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+            border: none;
+            outline: none;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .dxk{
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(5, 216, 29);
+            border-radius: 50%;
+        }
+        .dxk:checked{
+            background-color: brown;
+        }
+        fieldset{
+            padding: 0 10px;
+            margin-bottom: 10px;
+
+        }
+       
+    </style>
+</head>
+
+<body>
+    <form action="">
+       
+        <fieldset>
+            <legend>请填写以下信息</legend>
+            <label for="xm">姓名：<input type="text" name="name" id="xm" class="t1" placeholder="请输入姓名"></label>
+        <label for="mm">密码：<input type="password" name="password" id="mm" class="t1" placeholder="请输入密码"></label>
+        <div>
+            性别：
+            <label for="sex1" style="display: inline-block;">
+                男<input type="radio" name="sex" id="sex1" value="男" class="dxk">
+            </label>
+            <label for="sex2" style="display: inline-block;">
+                女<input type="radio" name="sex" id="sex2" value="女" class="dxk">
+            </label>
+        </div>
+        <div>
+            兴趣：
+            <label for="xq0" style="display: inline-block;">
+                拳击<input type="checkbox" name="xq" id="xq0" value="boxing">
+            </label>
+            <label for="xq1" style="display: inline-block;">
+                自由搏击<input type="checkbox" name="xq" id="xq1" value="自由搏击">
+            </label>
+            <label for="xq2" style="display: inline-block;">
+                泰拳<input type="checkbox" name="xq" id="xq2" value="泰拳">
+            </label>
+        </div>
+        <label for="">
+            文件传输：
+            <input type="file" name="" id="" multiple>
+        </label>
+        <label for="dz">
+            地址：
+            <select name="address" id="dz" style="width:80px;outline: none;">
+                <option value="北京">北京</option>
+                <option value="上海" selected>上海</option>
+                <option value="广州">广州</option>
+            </select>
+        </label>
+        <label for="wb">
+            个人简介：
+            <textarea name="" id="wb" cols="30" rows="10" placeholder="请输入" style="display: block;outline: none;"></textarea>
+        </label>
+        </fieldset>
+
+        <input type="reset" value="重写">
+        <button>提交按钮</button>
+    </form>
+</body>
+
+</html>

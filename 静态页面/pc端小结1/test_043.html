@@ -1,0 +1,63 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-20 21:40:41
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-20 21:42:27
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            /* width: 1102px; */
+            /* 把父盒子本身宽度做适当加大，本身版心是1102px，现在加大到1119px，每个
+            子盒子的外间距是17px */
+            width: 1119px;
+            background-color: brown;
+            margin: auto;
+            overflow: hidden;
+            padding-top: 5px;padding-bottom: 5px;
+        }
+        .box>ul>li{
+            width: 262px;
+            height: 290px;
+            background-color: aqua;
+            float: left;
+            margin-right: 8.5px;
+            margin-left: 8.5px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 适用于透明底色的大盒子，商场网站不断加载商品信息 -->
+    <div class="box">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+         
+        </ul>
+    </div>
+</body>
+</html>

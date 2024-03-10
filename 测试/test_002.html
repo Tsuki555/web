@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        var obj1={
+            a:1
+        }
+        var obj2={
+            a:9
+        }
+        console.log(obj1.a,obj2.a);// 1 9 
+    </script> -->
+
+    <!-- <script>
+        var obj={
+            name:"wxn",
+            fun:function () {
+                console.log(this.name);
+            }
+        }
+        obj.name="王晓娜"
+        obj.fun()//王晓娜
+    </script>
+    <script>
+        obj.name="于静楠"
+        obj.fun()
+    </script> -->
+
+
+    <script>
+        var obj1={
+            name:"西北师大",
+            fn:function(){
+                console.log(this.name);
+            }
+        }
+        var obj2={
+            name:"兰州大学",
+            fn:function(){
+                console.log(this.name);
+            }
+        }
+    </script>
+    <script>
+        obj1.name="西北师大物电学院"
+        obj1.fn()//西北师大物电学院
+        obj2.fn()//兰州大学
+    </script>
+</body>
+</html>

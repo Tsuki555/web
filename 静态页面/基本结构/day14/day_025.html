@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .clear::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .picbox div {
+            float: left;
+            background-color: aqua;
+            width: 20%;
+        }
+
+        .picbox div img {
+            width: 100%;
+            /* 等比例缩放，所以高度不用设置 */
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="picbox clear">
+        <div><img src="../images/anli1/img04.jpg" alt=""></div>
+        <div><img src="../images/anli1/img05.jpg" alt=""></div>
+        <div><img src="../images/anli1/img06.jpg" alt=""></div>
+        <div><img src="../images/anli1/img07.jpg" alt=""></div>
+        <div><img src="../images/anli1/img04.jpg" alt=""></div>
+        <div><img src="../images/anli1/img05.jpg" alt=""></div>
+        <div><img src="../images/anli1/img06.jpg" alt=""></div>
+        <div><img src="../images/anli1/img07.jpg" alt=""></div>
+        <div><img src="../images/anli1/img04.jpg" alt=""></div>
+        <div><img src="../images/anli1/img05.jpg" alt=""></div>
+
+    </div>
+</body>
+
+</html>

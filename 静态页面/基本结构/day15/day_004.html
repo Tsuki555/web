@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            background-color: chartreuse;
+            /* height: 60px; */
+            /* overflow: hidden; */
+            /* overflow: auto; */
+            /* float: left;
+            width: 100%; */
+            /* display: inline-block;
+            width: 100%; */
+            /* position: absolute;
+            top: 0;
+            width: 100%; */
+
+        }
+        .clear::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li{
+            float: left;
+            background-color: crimson;
+            line-height: 60px;
+            list-style: none;
+        }
+        span{
+            line-height: 80px;
+            background-color: chocolate;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 高度塌陷 -->
+    <ul class="clear">
+        <li>客户施工技术</li>
+        <li>客户施工技术</li>
+        <li>客户施工技术</li>
+        <li>客户施工技术</li>
+        <li>客户施工技术</li>
+    </ul>
+    <span>哈哈哈哈</span>
+</body>
+</html>

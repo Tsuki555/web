@@ -1,0 +1,93 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-09 16:27:52
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-09 16:34:01
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .box{
+            height: 800px;
+            background-color: black;
+            color: aliceblue;
+            text-align: center;
+            line-height: 1;
+            overflow: hidden;
+        }
+        .box>h3{
+            font-size: 30px;
+            margin-top: 54px;
+            margin-bottom: 22px;
+        }
+        .box>p{
+            font-size: 20px;
+            margin-bottom: 100px;
+        }
+        .box>ul{
+            width: 1198px;
+            margin: auto;
+            display: inline-block;
+            /* background-color: brown; */
+            /* overflow: hidden; */
+        }
+        .box>ul>li{
+            width: 384px;
+            height: 330px;
+            background-color: azure;
+            list-style: none;
+            float: left;
+            margin: 0 6px;
+            position: relative;
+        }
+        .box>ul>li>span{
+            width: 130px;
+            height: 130px;
+            display: block;
+            background-color: aqua;
+            /* margin: -65px auto 0; */
+            overflow: hidden;
+            position: absolute;
+            top: -65px;
+            left:calc(50% - 75px);
+        }
+        .box>ul>li>span>.x{
+            margin-top: -162px;
+        }
+        .box>ul>li>span>.y{
+            margin-top: -325px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3>我们的优势</h3>
+        <p>创意独立刚开始的赶快来</p>
+        <ul>
+            <li>
+                <span>
+                    <img src="./img01.png" alt="">
+                </span>
+            </li>
+            <li>
+                <span >
+                    <img src="./img01.png" alt="" class="x">
+                </span>
+            </li>
+            <li>
+                <span >
+                    <img src="./img01.png" alt="" class="y">
+                </span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

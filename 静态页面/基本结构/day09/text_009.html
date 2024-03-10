@@ -1,0 +1,77 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-09-24 21:22:37
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-09-24 21:33:51
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        img{
+            vertical-align: bottom;
+        }
+        li{
+            list-style: none;
+            float: left;
+            position: relative;
+        }
+        li>.jia{
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+        }
+        li>.jia1{
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            display: none;
+        }
+        li:hover>.jia1{
+            display: block;
+        }
+        li>.text{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            box-sizing: border-box;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .2);
+            display: none;
+        }
+        li:hover>.text{
+            display: block;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <a href="https://baidu.com">
+            <li>
+                <img src="../images/dw/img03.png" alt="">
+                <img src="../images/dw/tu.gif" alt="" class="jia">
+                <img src="../images/dw/tu2.gif" alt="" class="jia1">
+                <div class="text">
+                    <img src="../images/dw/logo.gif" alt="">文本内容
+                </div>
+            </li>
+        </a>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-13 18:47:30
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-13 19:28:15
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        form>div{
+            line-height: 50px;
+        }
+        input{
+            outline: none;
+            
+            margin-left: 15px;
+        }
+        .size{
+            width: 210px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 表单 -->
+    <form action="" methods="">
+        <div>文本框<input type="text" name="文本" id="" placeholder="请输入文本" class="size"></div>
+        <div> 密码框<input type="password" name="密码" id="" placeholder="请输入密码" class="size"></div>
+        <div>
+            性别
+            <label for="man">
+                <input type="radio" name="sex" id="man" value="男">男
+            </label>
+            <label for="woman">
+                <input type="radio" name="sex" id="woman" value="女">女
+            </label>
+        </div>
+        <div>
+            兴趣
+            <label for="boxing">
+                <input type="checkbox" name="sport" id="boxing" value="拳击">拳击
+                
+            </label>
+            <label for="bj">
+                <input type="checkbox" name="sport" id="bj" value="自由搏击">自由搏击
+                
+            </label>
+            <label for="mma">
+                <input type="checkbox" name="sport" id="mma" value="mma">mma
+                
+            </label>
+            <label for="tq">
+                <input type="checkbox" name="sport" id="tq" value="泰拳">泰拳
+            </label>
+        </div>
+
+
+
+
+        <div>重置框<input type="reset" value="清空" style="width: 50px;"></div>
+        <div>提交框<input type="submit" value="提交框" style="width: 50px;"></div>
+
+    </form>
+</body>
+</html>

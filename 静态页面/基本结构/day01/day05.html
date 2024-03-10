@@ -1,0 +1,91 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-08-10 22:14:20
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-08-11 17:38:37
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 10px solid rgba(0, 0, 0, 0.2);
+        }
+        li{
+            list-style: none;
+            
+            
+        }
+        .ty{
+            height: 80px;
+            margin-left: 50px;
+            position: relative;
+        }
+        .ty>.biaozhu{
+            position: absolute;
+            top: 5px;
+            left:-30px;
+        }
+        input{
+            border: none;
+            height: 30px;
+            outline: none;
+            background-color: transparent;
+            
+        }
+        .dl{
+            margin: 0 auto;
+            width: 350px;
+            height: 50px;
+            line-height: 50px;
+            background-color: blue;
+            text-align: center;
+        }
+        .dl>input{
+            background-color: blue;
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <!-- demo1 -->
+    <div class="box">
+
+        <form action="">
+               <ul>
+                   <li style="font-size: 30px;text-align:center;font-weight: 800;color: black;margin: 20px 0px 50px 0px;">千峰教育</li>
+                   <li class="ty">
+                       <div class="biaozhu" style="width: 20px;height: 20px;background-color: aqua;display: inline-block;"></div>
+                       <input type="text" placeholder="请输入用户名">
+                   </li>
+                   <li class="ty">
+                    <div class="biaozhu" style="width: 20px;height: 20px;background-color: aqua;display: inline-block;"></div>
+                    <input type="password" placeholder="请输入密码">
+                   </li>
+                   <li class="ty">
+                    <div class="biaozhu" style="width: 20px;height: 20px;background-color: aqua;display: inline-block;"></div>
+                    <input type="text" placeholder="请输入验证码">
+                   </li>
+                   <li class="ty">
+                    <div class="biaozhu" style="width: 20px;height: 20px;background-color: aqua;display: inline-block;"></div>
+                    <a href="https://www.baidu.com"><input type="button" value="忘记密码"></a>
+                   </li>
+                   <li class="ty">
+                       <div class="dl"  >
+                        <input type="submit" value="登录" >
+                       </div>
+                   </li>
+               </ul>
+        </form>
+    </div>
+</body>
+</html>

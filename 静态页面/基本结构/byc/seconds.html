@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .box{
+            width: 1120px;
+            height: 500px;
+            margin: auto;
+            border: 1px salmon solid;
+            overflow: hidden;
+          
+        }
+        .content{
+            height: 500%;
+            width: 100%;
+            animation-name: move;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: steps(5);
+        
+            
+        }
+        .box:hover>.content{
+                animation-play-state: paused;
+        }
+        a{
+            display: block;
+            width: 100%;
+            height: 20%;
+        }
+        @keyframes move{
+          to{
+            margin-top: -2500px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="content">
+            <a href="http://www.baidu.com" style="background-color: aqua;">百度1</a>
+            <a href="http://www.4399.com" style="background-color: brown;">4399</a>
+            <a href="http://www.4399.com" style="background-color: rgb(42, 165, 69);">4399aaa</a>
+            <a href="http://www.bilibili.com" style="background-color: coral;">b站</a>
+            <a href="http://www.baidu.com" style="background-color: rgb(255, 0, 217);">百度2</a>
+        </div>
+
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1120px;
+            height: 600px;
+            border: 1px solid pink;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .content {
+            width: 500%;
+            height: 100%;
+            background-color: blueviolet;
+            display: inline-block;
+            animation-name: move;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: steps(5);
+
+        }
+
+        a {
+            display: inline-block;
+            width: 20%;
+            height: 100%;
+            float: left;
+        }
+
+        @keyframes move {
+            to {
+                margin-left: -5600px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="content">
+            <a href="http://www.baidu.com" style="background-color: aqua;">百度1</a>
+            <a href="http://www.4399.com" style="background-color: brown;">4399</a>
+            <a href="http://www.4399.com" style="background-color: rgb(42, 165, 69);">4399aaa</a>
+            <a href="http://www.bilibili.com" style="background-color: coral;">b站</a>
+            <a href="http://www.baidu.com" style="background-color: rgb(255, 0, 217);">百度2</a>
+        </div>
+    </div>
+</body>
+
+</html>

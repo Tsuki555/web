@@ -1,0 +1,115 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-09-30 18:01:43
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-09-30 18:48:30
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    表格分组
+    <table>
+        行分组
+        <thead></thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+    </table>
+    列分组
+    <col span="书写分组的列数">
+    <colgroup span="书写分组的列数"></colgroup>
+    分割线（也就是边框） 添加分割线通过html的rules=''，只能给table
+    rules="none" 没有线(rules表示表格内部的线，单元格间默认没间距，线条显示粗细是因为显示缩放问题（100%显示就会消失了）)
+    rules="all" 所有线
+    rules="rows" 行线
+    rules="cols" 列线
+    rules="groups" 组分割线（想要这个效果必须先分组）分组以后表头表尾会高度偏低
+-->
+<style>
+    table{
+        border: 1px solid black;
+        width: 500px;
+        height: 500px;
+    }
+    /* thead{
+        background-color: brown;
+        height: 100px;
+        border-bottom: 6px solid rgb(5, 233, 81);
+        先有组分割线才能调 
+    } */
+    .col-1{
+        background-color: blueviolet;
+    }
+    .col-2{
+        background-color: palevioletred;
+    }
+    .col-3{
+        background-color: rgb(43, 226, 113);
+    }
+</style>
+<!-- <table rules="cols"> -->
+<!-- <table rules="rows"> -->
+<!-- <table rules="all"> -->
+<table rules="groups">
+    <caption style="background-color: aqua;">表格标题</caption>
+  <!-- 
+      /*行组*/
+      <thead>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+  </thead> -->
+  <!-- 列分割线 -->
+  <colgroup span="2" class="col-1"></colgroup>
+  <colgroup span="1" class="col-2"></colgroup>
+  <colgroup span="2" class="col-3"></colgroup>
+
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+</tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+</table>
+    
+</body>
+</html>

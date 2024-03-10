@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+    
+        ul p:first-child{
+            background-color: brown;
+            /* 因为第一个不是p所以不显示 */
+        }
+        ul li:first-child{
+            background-color: blue;
+        }
+        ul li:last-child{
+            background-color: chartreuse;
+             /* 因为最后一个不是li所以不显示 */
+        }
+        ul p:last-child{
+            background-color: pink;
+           
+        }
+        ul :nth-child(3){
+            background-color: chocolate;
+        }
+        ul :nth-child(2n){
+           font-size: 30px;
+        }
+        ul :nth-child(2n+1){
+           color: darkcyan;
+        }
+        ul p:nth-child(2n){
+           color: brown;
+           /* 在保证是偶数个的前提下是p元素 */
+        }
+        ul li:nth-child(2n+1){
+            font-weight: 800;
+            /* 在保证是奇数个的前提下是li元素 */
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <p>会计师发货的空间里很费劲</p>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <p>会计师发货的空间里很费劲</p>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <p>会计师发货的空间里很费劲</p>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <p>会计师发货的空间里很费劲</p>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <li>会计师发货的空间里很费劲</li>
+        <p>会计师发货的空间里很费劲</p>
+        <p>会计师发货的空间里很费劲</p>
+    </ul>
+</body>
+
+</html>

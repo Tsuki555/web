@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .box{
+            width: 640px;
+            height: 320px;
+            border: 1px solid black;
+            text-align: center;
+            box-sizing: border-box;
+            position: relative;
+           
+        }
+        img{
+            width: 320px;
+            height: 160px;
+            display: block;
+            margin: auto;
+            position: absolute;
+            top: 0;left: 0;
+            bottom: 0;right: 0;
+            transition: all 2s;
+
+        }
+        p{
+            text-align: center;
+            margin-top: 30px;
+            opacity: 1;
+            transition: all 2s;
+         
+        }
+        button{
+            transition: all 2s;
+            margin-top: 210px;
+            width: 100px;
+            background-color: brown;
+            height: 40px;line-height: 40px;
+            border: none;
+            opacity: 1;
+        }
+        .box:hover img{
+            transform: scale(2);
+        }
+        .box:hover p{
+            opacity: 0;
+        }
+        .box:hover button{
+            opacity: 0;
+          
+        }
+        /*  transition: all 3s;对于单词无效，对于数值有效，所以 display: none; 与 display: block;无效*/
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>即可浪费时间克拉斯</p>
+        <button>大厦股份加</button>
+        <img src="./img1.jpg" alt="">
+        
+    </div>
+</body>
+</html>

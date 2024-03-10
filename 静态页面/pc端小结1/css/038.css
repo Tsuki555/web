@@ -1,0 +1,33 @@
+/**
+ * @Author: Your name
+ * @Date:   2023-10-20 17:16:51
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2023-10-20 17:29:01
+ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+body header {
+  height: 60px;
+  background-color: skyblue;
+}
+body .content {
+  height: calc(100% - 60px);
+  background-color: chocolate;
+}
+body .content .left {
+  width: 150px;
+  background-color: brown;
+  float: left;
+  height: 100%;
+}
+body .content .right {
+  background-color: cadetblue;
+  height: 100%;
+}/*# sourceMappingURL=038.css.map */

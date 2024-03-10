@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            min-width: 1120px;
+        }
+        .header {
+            text-align: center;
+            line-height: 50px;
+            color: aliceblue;
+            background-color: antiquewhite;
+        }
+
+        ul {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+            width: 200px;
+            background-color: brown;
+            float: left;
+            position: relative;
+        }
+        li:hover::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(7, 202, 59);
+            position: absolute;
+            bottom: 0;
+            /* 鼠标移动上去有显示效果，添加选中样式有显示下划线 */
+        }
+       
+
+        .content {
+            width: 1120px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li>圣诞节</li>
+            <li>圣诞节</li>
+            <li>圣诞节</li>
+            <li>圣诞节</li>
+            <li>圣诞节</li>
+        </ul>
+    </div>
+    <div class="content">
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            width: 800px;
+            height: 800px;
+            display: flex;
+            background-color: antiquewhite;
+            justify-content: space-around;
+            float: left;
+        }
+        ul>li{
+            background-color: aqua;
+            list-style: none;
+            width: 200px;
+            height: 100px;
+            /* height: 1000px; */
+            /* width: 1800px; */
+            text-align: center;
+        }
+        ol{
+            width: 800px;
+            height: 800px;
+            background-color: brown;
+            float: left;
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        ol>li{
+            height: 100px;
+            width: 1000px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 主轴横向 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <!-- 主轴在纵向 -->
+    <ol>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ol>
+</body>
+</html>

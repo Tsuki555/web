@@ -1,0 +1,82 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-09-30 19:06:14
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-09-30 19:24:05
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+        .col-1{
+            background-color: pink;
+            border-right: 4px solid white;
+        }
+        .col-2{
+            background-color: rgb(40, 3, 253);
+           
+        }
+        .col-3{
+            background-color: pink;
+            border-left: 4px solid white;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table rules="groups" >
+        <caption style="background-color: skyblue;">通讯录</caption>
+    
+      <thead>
+        <tr>
+            <td>姓名</td>
+            <td>电话</td>
+            <td>邮箱</td>
+            <td>传真</td>
+        </tr>
+      </thead>
+      <col span="1" class="col-1">
+      <col span="2" class="col-2">
+      <col span="1" class="col-3">
+      <!-- <colgroup span="1" class="col-1"></colgroup>
+      <colgroup span="2" class="col-2"></colgroup>
+      <colgroup span="1" class="col-3"></colgroup> -->
+        <tr>
+            <td>JIM</td>
+            <td>17356659857</td>
+            <td>JIM</td>
+            <td>BEIJING</td>
+        </tr>
+        <tr>
+            <td>JIM</td>
+            <td>17356659857</td>
+            <td>JIM</td>
+            <td>BEIJING</td>
+        </tr>
+        <tr>
+            <td>JIM</td>
+            <td>17356659857</td>
+            <td>JIM</td>
+            <td>BEIJING</td>
+        </tr>
+        <tr>
+            <td>JIM</td>
+            <td>17356659857</td>
+            <td>JIM</td>
+            <td>BEIJING</td>
+        </tr>
+        
+    </table>
+</body>
+</html>

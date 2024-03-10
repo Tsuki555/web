@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .box{
+            width: 1120px;
+            height: 600px;
+            background-color: blueviolet;
+            margin: auto;
+        }
+        ul{
+            width: 100%;height: 100%;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            grid-template-rows: repeat(3,1fr);
+            grid-gap: 5px;
+            /* 使用fr这个单位均分，grid-gap设置间距会更好 ，不会溢出父盒子显示*/
+            justify-content: center;
+            align-content: center;
+            
+            grid-template-areas:
+                "a1 a1 a1 a1 a5 a5"
+                "a1 a1 a1 a1 b5 b5"
+                "c1 c1 c3 c4 b5 b5"
+            ;
+        }
+        li:nth-child(1){
+            background-color: aqua;
+            grid-area: a1;
+            /* background-image: url(../images/bg1.png); */
+
+        }
+        li:nth-child(2){
+            background-color: blue;
+            grid-area: a5;
+        }
+        li:nth-child(3){
+            background-color: yellow;
+            grid-area: c1;
+        }
+        li:nth-child(4){
+            background-color: violet;
+        }
+        li:nth-child(5){
+            background-color: ghostwhite;
+        }
+        li:nth-child(6){
+            background-color:orangered;
+            grid-area: b5;
+        }
+        /* li:nth-child(7){
+            background-color: coral;
+        }
+        li:nth-child(8){
+            background-color: grey;
+        }
+        li:nth-child(9){
+            background-color: greenyellow;
+        }
+        li:nth-child(10){
+            background-color: aqua;
+        }
+        li:nth-child(11){
+            background-color: darkgoldenrod;
+        }
+        li:nth-child(12){
+            background-color: pink;
+        }
+        li:nth-child(13){
+            background-color: peru;
+        }
+        li:nth-child(14){
+            background-color: palegreen;
+        }
+        li:nth-child(15){
+            background-color: brown;
+        }
+        li:nth-child(16){
+            background-color: green;
+        }
+        li:nth-child(17){
+            background-color: gold;
+        }
+        li:nth-child(18){
+            background-color: red;
+        } */
+        li p{
+            display: block;
+            opacity: 0;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+        }
+        li:hover p{
+            
+            opacity: .3;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>
+                <p></p>
+            </li>
+            <!-- <li></li>
+            <li></li>
+            <li></li> -->
+            <li><p></p></li>
+            <!-- <li></li> -->
+            <!-- <li></li>
+            <li></li>
+            <li></li>
+            <li></li> -->
+            <li><p></p></li>
+            <!-- <li></li> -->
+            <li><p></p></li>
+            <!-- <li></li> -->
+            <li><p></p></li>
+            <li><p></p></li>
+            <!-- <li></li>
+            <li></li> -->
+        </ul>
+    </div>
+</body>
+</html>

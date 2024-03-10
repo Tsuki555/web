@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var global = 100
+        function all() {
+            console.log(global);
+        }
+    </script>
+    <script>
+        console.log(global);
+        global=1
+        all()
+    </script>
+</body>
+
+</html>

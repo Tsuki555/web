@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            background-color: chartreuse;
+        }
+        li{
+            float: left;
+            list-style: none;
+        }
+        .clear::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <ul class="clear">
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <li>快结束了的桂花树</li>
+        <!-- 方法1 -->
+        <!-- <div style="clear: both;"></div> -->
+    </ul>
+</body>
+</html>

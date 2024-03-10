@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            border: 2px solid seagreen;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            margin: auto;
+            transition: all 2s;
+        }
+
+        .box1:hover p {
+            transform: rotate(50deg);
+            /* z轴顺时针旋转 */
+        }
+
+        .box2:hover p {
+            transform: rotate(-50deg);
+            /* z轴逆时针旋转 */
+        }
+        .box3 p{
+            transform-origin: left top;
+        }
+        .box3:hover p{
+            transform: rotate(30deg);
+        }
+        .box4:hover p{
+            transform:  perspective(60px) rotateX(50deg);
+        }
+        .box5:hover p{
+            transform:  perspective(60px) rotateX(-50deg);
+        }
+        .box6:hover p{
+            transform:  perspective(60px) rotateY(50deg);
+        }
+        .box7:hover p{
+            transform:  perspective(60px) rotateY(-50deg);
+        }
+        .box8:hover p{
+            transform:  perspective(60px) rotateX(10deg) rotateY(20deg) rotateZ(20deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <p>1</p>
+    </div>
+    <div class="box2">
+        <p>2</p>
+    </div>
+    <div class="box3">
+        <p>3</p>
+    </div>
+    <div class="box4">
+        <p>4</p>
+    </div>
+    <div class="box5">
+        <p>5</p>
+    </div>
+    <div class="box6">
+        <p>6</p>
+    </div>
+    <div class="box7">
+        <p>7</p>
+    </div>
+    <div class="box8">
+        <p>8</p>
+    </div>
+
+</body>
+
+</html>

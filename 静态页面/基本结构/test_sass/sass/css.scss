@@ -1,0 +1,15 @@
+/**
+ * @Author: Your name
+ * @Date:   2023-10-18 16:21:14
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2023-10-19 20:20:40
+ */
+
+$baseColor:red;
+$color:pink;
+p{
+    color:$baseColor;
+    font-size: 18px;
+    background-color: $color;
+    // font-weight: 500;
+}

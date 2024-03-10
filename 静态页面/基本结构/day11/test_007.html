@@ -1,0 +1,165 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-01 18:06:19
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-01 20:00:02
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 1000px;
+            margin: auto;
+        }
+
+        fieldset {
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-top: 1px solid rgb(97, 114, 0);
+            padding: 10px 20px;
+            /* 给fieldset加内间距或者给legend加外间距会让legend上的文字内缩，
+            但不会影响线条显示 */
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 8px;
+        }
+
+        input {
+            border: 1px solid skyblue;
+            outline: none;
+            width: 300px;
+            height: 35px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            border: 2px solid skyblue;
+        }
+
+        select {
+            appearance: none;
+            width: 80px;
+            height: 30px;
+            border: 1px solid skyblue;
+            box-sizing: border-box;
+            padding: 0px 6px;
+            background-image: url(../images/icon1.jpg);
+            background-repeat: no-repeat;
+            background-position: right center;
+            outline: none;
+            border-radius: 0px;
+        }
+
+        select:focus {
+            border: 2px solid skyblue;
+        }
+
+        .dx {
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .dx:checked {
+            background-color: skyblue;
+        }
+
+        .duox {
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            margin-right: 8px;
+        }
+
+        .duox:checked {
+            background-color: skyblue;
+        }
+        textarea{
+            resize: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form action="">
+            <fieldset>
+                <legend>个人信息</legend>
+                <!-- label是行内元素 -->
+                <p><label for="name">姓名 * <input type="text" id="name" name="xm"></label></p>
+                <p><label for="address">地址 * <input type="text" id="address" name="dizhi"></label></p>
+                <div style="margin-bottom: 8px;">
+                    出生 *
+                    <select name="day" id="">
+                        <!-- 使用背景图不影响点击效果 -->
+                        <!-- select默认也是怪异盒模型 -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <select name="month" id="">
+                        <option value="jan">jan</option>
+                        <option value="feb">feb</option>
+                    </select>
+                    <select name="year" id="">
+                        <option value="1979">1979</option>
+                        <option value="1980">1980</option>
+                        <option value="1981">1981</option>
+                    </select>
+                </div>
+                性别 * <select name="sex" id="">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>其他信息</legend>
+                <fieldset>
+                    <!-- 一个fieldset只能有一个亲儿子legend -->
+                    <!-- 单选框和复选框写value是给选中按钮提供对应值 -->
+                    <legend style="font-weight: 400;">你喜欢这个表单吗</legend>
+                    <input type="radio" name="bd" id="" class="dx" value="like">喜欢
+                    <input type="radio" name="bd" id="" class="dx" value="dislike">不喜欢
+    
+    
+                </fieldset>
+                <fieldset>
+                    <legend style="font-weight: 400;">你喜欢什么运动？</legend>
+                    <input type="checkbox" name="sport" id="" class="duox" value="football">足球
+                    <input type="checkbox" name="sport" id="" class="duox" value="basketball">篮球
+                    <input type="checkbox" name="sport" id="" class="duox" value="boxing">拳击
+                </fieldset>
+                <fieldset>
+                    <legend style="font-weight: 400;">请写下你的建议？</legend>
+                    <textarea name="text" id="" cols="30" rows="10"></textarea>
+                </fieldset>
+            </fieldset>
+            <button>提交个人信息</button>
+        </form>
+    </div>
+</body>
+
+</html>

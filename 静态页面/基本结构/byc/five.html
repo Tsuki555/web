@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 800px;
+            height: 800px;
+            background-color: cornsilk;
+            margin: auto;
+           
+
+
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+        }
+
+        .one {
+            background-color: aqua;
+            transform-origin: center left;
+            transform: translateX(200px) rotateY(-90deg);
+
+
+        }
+
+        .two {
+            background-color: brown;
+            transform-origin: right center;
+            transform: translateX(-200px) rotateY(90deg);
+
+
+        }
+
+        .three {
+            background-color: chartreuse;
+            transform-origin: center top;
+            transform: translateY(200px) rotateX(90deg);
+
+
+        }
+
+        .four {
+            background-color: cornflowerblue;
+            transform-origin: center bottom;
+            transform: translateY(-200px) rotateX(-90deg);
+
+
+        }
+
+        .five {
+            background-color: coral;
+            
+
+        }
+
+        .six {
+            background-color: darkkhaki;
+            transform: translateZ(200px);
+        }
+
+        .op {
+            opacity: .3;
+        }
+
+        @keyframes lft {
+            from {
+                transform: rotateY(0deg) rotateX(0deg);
+        
+            }
+
+            to {
+                transform: rotateY(360deg)  rotateX(360deg);
+              
+            }
+        }
+        .xz{
+            animation-name: lft;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            transform-style: preserve-3d;
+            /* 所有子元素放在3d空间呈现, transform-style给所有的变化元素的最上一层父元素*/
+            perspective: 20000px;
+            /* 添加视距 */
+            transform-origin: center center 0px;
+            
+        }
+        .box:hover .xz{
+            animation-play-state: paused;
+            background-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 定位加旋转实现 -->
+    <div class="box">
+        <div class="xz">
+            <div class="one op">1</div>
+            <div class="two op">2</div>
+            <div class="three op">3</div>
+            <div class="four op">4</div>
+            <div class="five op">5</div>
+            <div class="six op">6</div>
+        </div>
+    </div>
+</body>
+
+</html>

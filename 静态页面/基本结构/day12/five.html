@@ -1,0 +1,136 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-11 17:38:45
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-11 18:34:26
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 500px;
+            height: 300px;
+            border: 5px solid red;
+            margin: 20px;
+            /* flex-direction: column; */
+        }
+        li{
+            list-style: none;
+            border: 2px solid blue;
+            font-size: 30px;
+            width: 150px;
+            /* height: 80px; */
+        }
+        .a1{
+            display: flex;
+            align-content: stretch;
+            flex-wrap: wrap;
+        }
+        .a2{
+            display: flex;
+            align-content: flex-start;
+            flex-wrap: wrap;
+        }
+        .a3{
+            display: flex;
+            align-content: flex-end;
+            flex-wrap: wrap;
+        }
+        .a4{
+            display: flex;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        .a5{
+            display: flex;
+            align-content: space-between;
+            flex-wrap: wrap;
+        }
+        .a6{
+            display: flex;
+            align-content: space-around;
+            flex-wrap: wrap;
+        }
+        .a7{
+            display: flex;
+            align-content: space-evenly;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>当侧轴(交叉轴)是<mark>垂直</mark>的时候,<mark>align-content:stretch;</mark>的效果</h1>
+    <ul class="a1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <h1>当侧轴(交叉轴)是<mark>垂直</mark>的时候,<mark>align-content:flex-start;</mark>的效果</h1>
+    <ul class="a2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <h1>当侧轴(交叉轴)是<mark>垂直</mark>的时候,<mark>align-content:flex-end;</mark>的效果</h1>
+    <ul class="a3">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <h1>当侧轴(交叉轴)是<mark>垂直</mark>的时候,<mark>align-content:center;</mark>的效果</h1>
+    <ul class="a4">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>4</li>
+        <li>5</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <h1>当侧轴(交叉轴)是<mark>垂直</mark>的时候,<mark>align-content:space-between;</mark>的效果</h1>
+    <ul class="a5">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>4</li>
+        <li>5</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <h1>当侧轴(交叉轴)是<mark>垂直</mark>的时候,<mark>align-content:space-arond;</mark>的效果</h1>
+    <ul class="a6">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <h1>当侧轴(交叉轴)是<mark>垂直</mark>的时候,<mark>align-content:space-evenly;</mark>的效果</h1>
+    <ul class="a7">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

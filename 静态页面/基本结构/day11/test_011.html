@@ -1,0 +1,52 @@
+<!-- 
+  @Author: Your name
+  @Date:   2023-10-02 21:40:13
+  @Last Modified by:   Your name
+  @Last Modified time: 2023-10-02 21:52:56
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        .left{
+            width: 200px;
+            height: 100%;
+            background-color: brown;
+            position: absolute;
+            top: 0;left: 0;
+        }
+        .center{
+            background-color: darkorange;
+            height: 100%;
+            /* 不给定宽的块元素会被margin挤压缩小 */
+            margin-left: 200px;
+            margin-right: 200px;
+
+        }
+        .right{
+            width: 200px;
+            height: 100%;
+            background-color: cyan;
+            position: absolute;
+            top: 0;right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 纯定位实现三栏自适应布局 -->
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+</body>
+</html>

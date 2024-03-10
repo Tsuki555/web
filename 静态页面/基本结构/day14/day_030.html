@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            min-width: 880px;
+            /*max-width: 1500px;*/
+            /* 不设置 min-width，max-width就是半自适应页面，会因为页面大小改变而换行。
+    设置以后才能实现全面自适应*/
+            height: 100%;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .nav {
+            height: 50px;
+            line-height: 50px;
+            background-color: #418bca;
+
+        }
+
+        .nav>img {
+            margin-left: 26px;
+            float: left;
+            margin-right: 23px;
+            margin-top: 6px;
+        }
+
+        .nav>ul {
+            float: left;
+
+        }
+
+        .nav>ul>li {
+            float: left;
+            text-align: center;
+            padding: 0 20px;
+
+        }
+
+        .nav>ul>li a {
+            background-image: url(./images/icon1.jpg);
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 26px;
+            position: relative;
+        }
+
+        .nav>ul>li:hover {
+            background-color: #fff;
+
+        }
+
+        .nav>ul>li:hover a {
+            color: #418bca;
+            font-weight: 700;
+        }
+
+        .nav>ul>li a::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            bottom: -15px;
+            background-color: #418bca;
+
+        }
+
+        .nav>p {
+            float: right;
+            font-size: 18px;
+            color: #fff;
+
+            position: relative;
+            right: 30px;
+
+        }
+
+        .nav>p::after {
+            content: "";
+            border: 8px solid transparent;
+            border-top: 8px solid white;
+            width: 0;
+            height: 0;
+            line-height: 50px;
+            position: absolute;
+            top: calc(50% - 4px);
+
+        }
+
+        .content {
+            height: calc(100% - 50px);
+            /* background-color: brown; */
+            overflow: hidden;
+            /* 防止浮动造成的高度塌陷 */
+        }
+
+        .content>.left {
+            width: 189px;
+            height: 100%;
+            /* background-color: chocolate; */
+            float: left;
+        }
+
+        .content>.left>ul>li {
+            width: 100%;
+            height: 39px;
+            line-height: 39px;
+            /* 合并写法：多个背景图用逗号隔开 */
+            background: url(./images/icon3.jpg) no-repeat 15px center, url(./images/grayicon.jpg) no-repeat 164px center;
+            color: #585858;
+            box-sizing: border-box;
+            padding-left: 37px;
+            border-bottom: 1px solid #e5e5e5;
+
+        }
+
+        /* 二级菜单不可以用 */
+        .content>.left>ul>p {
+            width: 100%;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            font-size: 16px;
+            /* background-color: #6fb3e0; */
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .content>.left>ul>p:hover {
+            background-color: #6fb3e0;
+            color: #fff;
+        }
+
+        .content>.left>ul>li:hover {
+            background-color: #418bca;
+            color: aliceblue;
+        }
+
+        /* 
+二级菜单：包含结构可以移动上去显示 
+并列结构点击显示（适合左侧二级菜单）
+*/
+
+        .content>.right {
+            width: calc(100% - 189px);
+            height: 100%;
+            background-color: rgb(30, 210, 105);
+            float: left;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="nav">
+        <!-- 企业logo一般具有返回首页功能 -->
+        <img src="./images/logo.jpg" alt="">
+        <ul>
+            <li>
+                <a href="">OA办公系统</a>
+            </li>
+            <li>
+                <a href="">OA办公系统</a>
+            </li>
+            <li>
+                <a href="">OA办公系统</a>
+            </li>
+            <li>
+                <a href="">OA办公系统</a>
+            </li>
+        </ul>
+        <p>xyz&nbsp;</p>
+    </div>
+    <div class="content">
+        <div class="left">
+            <ul>
+                <li>
+                    教学系统
+                </li>
+                <p>二级菜单</p>
+                <p>二级菜单</p>
+                <p>二级菜单</p>
+                <p>二级菜单</p>
+                <p>二级菜单</p>
+                <li>教学系统</li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+                <li>教学系统</li>
+            </ul>
+            <img src="./images/pic_03.jpg" alt="" width="100%">
+        </div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

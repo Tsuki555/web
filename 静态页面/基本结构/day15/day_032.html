@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            height: 100%;
+            min-width: 1120px;
+            max-width: 1120px;
+            margin: auto;
+            position: relative;
+        }
+        .top{
+            height: 50px;
+            background-color: aquamarine;
+            position: absolute;
+            top: 0;left: 0;
+            width: 100%;
+        }
+        .center{
+            height:100%;
+            border-top: 1px solid transparent;
+            background-color: orange;
+            box-sizing: border-box;
+            /* margin-top传递问题 */
+        }
+        .center .box{
+            margin-top: 49px;
+            margin-bottom: 80px;
+
+        }
+        .bottom{
+            height: 80px;
+            background-color: chartreuse;
+            position: absolute;
+            bottom: 0;left: 0;
+            width: 100%;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="center">
+        <div class="box">
+            <p></p>
+        </div>
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>

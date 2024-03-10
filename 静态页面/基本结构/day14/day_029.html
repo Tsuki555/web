@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自适应页面</title>
+    <link rel="shortcut icon" href="../images/fdj.jpg" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            /* min-width: 800px; */
+        }
+        .header{
+            height: 60px;
+            background-color: aqua;
+        }
+        .content{
+            height: calc(100% - 60px);
+            background-color: blueviolet;
+        }
+        .content>.side{
+            width: 120px;
+            background-color: brown;
+            height: 100%;
+            float: left;
+        }
+        .content>.text{
+            background-color: chocolate;
+            height: 100%;
+            width: calc(100% - 120px);
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        头部
+    </div>
+    <div class="content">
+        <div class="side">
+            侧边栏
+        </div>
+        <div class="text"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol{
+            list-style: none;
+            background-color: aqua;
+            display: inline-block;
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+            display: block;
+        }
+        li{
+            line-height: 30px;
+            padding:  0 15px;
+            width: 60px;
+            background-color: brown;
+            float: left;
+            text-align: center;
+            margin-right: 3px;
+        }
+        a>span+span{
+            display: none;
+        }
+        li:hover>a>.first{
+            display: none;
+        }
+        li:hover>a>span+span{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>
+            <a href="">
+                <span class="first">首页</span>
+                <span>home</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="first">首页</span>
+                <span>home</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="first">首页</span>
+                <span>home</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="first">首页</span>
+                <span>home</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <span class="first">首页</span>
+                <span>home</span>
+            </a>
+        </li>
+    </ol>
+</body>
+
+</html>

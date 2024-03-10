@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        a{
+            color: #68687a;
+            text-decoration: none;
+        }
+        a>b{
+            font-weight: normal;
+        }
+        ul{
+            overflow: hidden;
+            margin-top: 41px;
+            margin-left: 5px;
+        }
+        ul>li{
+            list-style: none;
+            height: 20px;
+            width: 80px;
+            background-color: #dfdfdf;
+            float: left;
+            margin-right: 2px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        ul>li>a>b{
+            display: none;
+        }
+        ul>li:hover>a>span{
+            display: none;
+        }
+        ul>li:hover>a>b{
+            display: block;
+            /* display:block;会让子盒子a撑满父盒子的宽，又因为li行高的继承所以a撑
+            满了li，所以a加背景色生效 */
+            background-color: #da4d17;
+        }
+        div{
+            height: 8px;
+            width: 1004px;
+            background-color: #da4d17;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href=""><span>home</span><b>首页</b></a></li>
+        <li><a href=""><span>home</span><b>首页</b></a></li>
+        <li><a href=""><span>home</span><b>首页</b></a></li>
+        <li><a href=""><span>home</span><b>首页</b></a></li>
+        <li><a href=""><span>home</span><b>首页</b></a></li>
+        <li><a href=""><span>home</span><b>首页</b></a></li>
+    </ul>
+    <div></div>
+</body>
+</html>

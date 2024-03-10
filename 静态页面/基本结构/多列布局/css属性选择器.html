@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a[title]{
+            color: chartreuse;
+        }
+        a[href="https://www.baidu.com"]{
+            text-decoration: none;
+        }
+        img[src^="./"]{
+            border-radius: 10px;
+        }
+        img[src$="webp"]{
+            width: 100px;
+        }
+        input[title*="这"]{
+            border: 2px salmon solid;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">ggg</a>
+    <a href="https://www.baidu.com">百度一下</a>
+    <a href="" title="跳转">超链接</a>
+    <img src="./img/1.webp" alt="">
+    <img src="./img/2.webp" alt="">
+    <img src="./img/3.webp" alt="">
+    <img src="./img/4.webp" alt="">
+   <form action="">
+    <input type="text" title="这是姓名提示">
+    <input type="password" title="这是密码提示">
+    <input type="email" title="这是邮件提示">
+    <input type="submit" value="提交" >
+   </form>
+</body>
+</html>
