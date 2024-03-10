@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: absolute;
+            left: 0;top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // console.log(1&98);
+        // console.log(1&97);
+
+        // for (var i = 0; i <= 100; i++) {
+        //     if (1&i) {
+        //         console.log(i+"为奇数");
+        //     }else{
+        //         console.log(i+"为偶数");
+        //     }
+            
+        // }
+        
+        // 条件语句
+        // if(a=2,c=5,d=8,f=0,h=90){
+        //     console.log(55555);
+        // }
+
+        // console.log(Boolean(a=0,c=88));
+
+
+        // var a;
+        // if(a){
+
+        // }
+
+
+        // var a=undefined;
+        // if(a==null){
+        //     console.log(888);
+        // }
+
+
+        // var a="1"
+        // switch (a) {
+        //     case "1":
+        //         console.log("action1");
+                
+        //     case "2":
+        //         console.log("action2");
+        //         break;
+        //     case "3":
+        //         console.log("action3");
+        //         break;
+        
+        //     default:
+        //         console.log("stop");
+        //         break;
+        // }
+
+        var box=document.getElementById("box");
+        // console.log(box);
+        var x=0,y=0;
+        setInterval(() => {
+            if (x<300&&y<300) {
+                x++;
+                box.style.left=x+"px";
+                y++;
+                box.style.top=y+"px";
+            }
+            if (x==300&&y==300) {
+                x=0,y=0;
+            }
+        }, 36);
+    </script>
+</body>
+</html>

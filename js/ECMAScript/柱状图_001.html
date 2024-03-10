@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 800px;
+            height: 500px;
+            background-color: burlywood;
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box"></div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var myEcharts = echarts.init(document.getElementById("box"))
+        var option = {
+          
+            title: {
+                
+                text: "这是我对王晓娜的记忆",
+                textStyle: {
+                    color: 'white',
+                    fontSize: 16
+                }
+            },
+            
+            legend: {
+                data: ["喜欢的程度", "爱的程度"],
+                icon:"circle"
+                
+            },
+            tooltip: {
+                tigger: "item",
+                tiggerOn: "mousemove",
+                backgroundColor:"pink",
+                
+                formatter:
+                    `
+                    <div>
+                        <p>月份：+{b}</p>
+                        <p>说明：+{a}</p>
+                        <p>程度：+{c}</p>
+                    </div>
+                    `
+            },
+            toolbox: {
+                feature: {
+                    magicType: {
+                        type: ['line', 'bar', 'stack'],
+                        title: {
+                            line: "折线图",
+                            bar: "柱状图",
+                            stack: "堆叠图",
+                        }
+                    }
+                }
+            },
+            xAxis: {
+                type: "category",
+                data: ["一月", "二月", "三月", "四月", "五月"],
+                // boundaryGap:false
+            },
+            yAxis: {
+                type: "value",
+            },
+            series: [
+        
+                {
+                    type: "bar",
+                   
+                    barGap: 0,
+                    symbol:"circle",
+                    name: "喜欢的程度",
+                    data: [58, 89, 67, 75, 33],
+                    
+                    emphasis: {
+                        itemStyle: {
+                            color: "brown"
+                        },
+                    },
+                    // stack:"all"
+
+                },
+                {
+                    type: "bar",
+                    barGap: 0,
+                    symbol:"circle",
+                    name: "爱的程度",
+                    data: [53, 94, 36, 47, 23],
+                    // stack:"all"
+                },
+
+
+            ]
+
+        }
+        myEcharts.setOption(option)
+    </script>
+</body>
+
+</html>

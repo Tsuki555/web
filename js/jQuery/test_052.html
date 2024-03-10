@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jQuery.js"></script>
+    <script>
+
+
+          $.ajax({
+            type:"get",
+            url:"./test_052.json",
+            data:"",
+            async:true,//异步
+            dataType:"json",
+            //预期返回数据类型，如果是JSON数据格式，在接收到返回值时会自动封装json对象
+            success:function(data){//此处的data表示返回的数据，形参名
+                console.log(data);
+                console.log(typeof data);
+                /* 默认对于json数据响应返回的是对象，不需要转换 */
+            }
+        })
+
+    </script>
+</body>
+</html>

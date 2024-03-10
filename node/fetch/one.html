@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 手写promise对象
+        /* 定义promise对象 */
+
+        /* Promise是一个构造函数，new Promise(exexcutor)实例化一个promise对象 ,
+        exexcutor是一个执行器函数，生成值是一个promise对象*/
+        // console.log(Promise);
+        console.log(new Promise(() => { }));
+        /* 定义promise部分 */
+        var data = new Promise((resolve, reject) => {
+            // setTimeout(resolve, 1000)//异步
+            resolve([123,456,789])
+        })
+
+
+        /* 调用promise对象 */
+        /* 调用promise对象的方法then()和catch() */
+        /* 承诺兑现部分 */
+        data
+            .then((res) => {console.log(res);console.log(data);})
+            .catch(() => { console.log("失败") })
+        // resolve与.then一一对应
+        // reject与.catch一一对应
+    </script>
+</body>
+
+</html>

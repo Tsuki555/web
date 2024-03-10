@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // number string boolean object arry
+        // undefined null
+        // 简单数据类型 number string boolean
+        //    var a=Number("7")
+        //    console.log(typeof(a));
+
+        // var a=9,
+        // b="fff",
+        // c=true,
+        // d=undefined,
+        // e=null,
+        // f=["a","h",1],
+        // g={a:"hello",b:55};
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+        // console.log(d);
+        // console.log(e);
+        // console.log(f);
+        // console.log(g);
+
+        // console.log(typeof([]));
+
+
+        // 数据类型强制转换
+
+        // var str=true.toString()
+        // console.log(str);
+
+
+
+        // 数值转为字符串
+        // 强制转换
+        // var a = 127,
+        //     b = 3.1415926,
+        //     c = -55,
+        //     d = -0.124;
+        // var a1 = String(a),
+        //     b1 = String(b),
+        //     c1 = String(c),
+        //     d1 = String(d);
+        // var a2 = a.toString(2),
+        //     b2 = b.toString(2),//转为二进制字符串保存
+        //     c2 = c.toString(),
+        //     d2 = d.toString();
+        // console.log(a, b, c, d);
+        // console.log(a1, b1, c1, d1);
+        // console.log(a2, b2, c2, d2);
+
+
+        // var a=1584.54214;
+        // console.log(a);
+        // console.log(a.toFixed(2));//1584.54
+        // console.log(typeof a.toFixed(2));//string
+
+
+        // var a = true,
+        //     b = undefined,
+        //     c = null,
+        //     d = ["ggg", 68],
+        //     e = { a: 88, b: "hh" },
+        //     f=[1];
+        // var a1=String(a),
+        //     b1=String(b),
+        //     c1=String(c),
+        //     d1=String(d),
+        //     e1=String(e),
+        //     f1=String(f);
+        // var a2=a.toString(),
+        //     // b2=b.toString(),
+        //     // c2=c.toString(),
+        //     d2=d.toString(),
+        //     e2=e.toString(),
+        //     f2=f.toString();
+        // console.log(a,b,c,d,e,f);
+        // console.log(a1,b1,c1,d1,e1,f1);
+        // console.log(a2,/* b2,c2, */d2,e2,f2);
+
+
+        // 转为数值
+
+        // var a = "567",
+        //     b = "547.222222245hhh",
+        //     c = "d58",
+        //     d = `kk`;
+        // var a1 = Number(a),
+        //     b1 = Number(b),
+        //     c1 = Number(c),
+        //     d1 = Number(d);
+        // var a2 = parseInt(a),
+        //     b2 = parseFloat(b),
+        //     c2 = parseInt(c),
+        //     d2 = parseInt(d);
+        // console.log(a, b, c, d);
+        // console.log(a1, b1, c1, d1);
+        // console.log(a2, b2, c2, d2);
+
+        // var a = true,
+        //     b = undefined,
+        //     c = null,
+        //     d = [],
+        //     f = { a: 1 };
+        // var a1 = Number(a),
+        //     b1 = Number(b),
+        //     c1 = Number(c),
+        //     d1 = Number(d),
+        //     f1 = Number(f);
+        // console.log(a,b,c,d,f);
+        // console.log(a1,b1,c1,d1,f1);//1 NaN 0 0 NaN
+
+
+        // var a = false,
+        //     b = "",
+        //     c = null,
+        //     d = undefined,
+        //     e = "h258",
+        //     f = 0;
+        // var a1=Boolean(a),
+        //     b1=Boolean(b),
+        //     c1=Boolean(c),
+        //     d1=Boolean(d),
+        //     e1=Boolean(Number(e)),
+        //     f1=Boolean(f);
+        // console.log(a,b,c,d,e,f);
+        // console.log(a1,b1,c1,d1,e1,f1);//false false false false false false
+
+
+        // console.log(typeof(Object(5)));//object
+        // console.log(typeof 5);//number
+        // console.log(Object(5)==5);
+
+
+        // console.log(Object( "a"));
+
+        // console.log("a"+"ce");//ace
+        // console.log("55"+"0987");//550987
+        // console.log("a"+521);//a521
+        // console.log("1314"+521);//1314521
+
+
+        // console.log("55"-"7");//48
+        // console.log("56"*"8");
+
+        // console.log("8a"-6);
+
+        // console.log(true+true);
+        // console.log(true+5);
+
+        // var a=5
+        // a*=2
+        // console.log(a);
+
+        // var a="1";
+        // console.log(a++);//1
+        // console.log(++a);//3
+        // console.log(--a);//2
+        // console.log(a--);//2
+
+
+        // console.log(""++);
+
+
+        // console.log(5>4);
+        // console.log("6">"4");
+        // console.log("5d">4);
+
+
+    //    console.log(""==0);//true
+    //    console.log(""===0);//false
+    //    console.log(false==0);//true
+    //    console.log(false===0);//false
+    //    console.log(""==false);//true
+    //    console.log(""===false);//false
+
+
+    // console.log(null==0);//false
+    // console.log(undefined==0);//false
+    // console.log(null=="");//false
+    // console.log(undefined=="");//false
+    // console.log(null==false);//false
+    // console.log(undefined==false);//false
+
+    // var a=[]
+    // var b=[]
+    // console.log(a==b);//false
+
+    // var c={a:1,b:55}
+    // var d={a:1,b:55}
+    // console.log(c==d);//false
+
+
+    // var a=[1.12,"jj"]
+    // var b=a
+    // console.log(a==b);//true
+
+
+    // console.log([]==[]);
+    // console.log([]=={});
+    // console.log([]=="");
+    // console.log([]==0);
+    // console.log([]==false);
+
+    // 逻辑运算符
+    // 与运算符
+
+    // var a=(1>0)&&(5>'0')&&("a">"b")
+    // console.log(a);
+
+
+    // var b= (5<"0")||0||false||"0"
+    // console.log(b);
+    </script>
+</body>
+
+</html>

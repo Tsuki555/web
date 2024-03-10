@@ -1,0 +1,79 @@
+<!-- /*  * @Author: lidong   
+        * @Date: 2023-11-27 15:38:30   
+        * @Last Modified by:   lidong   
+        * @Last Modified time: 2023-11-27 15:38:30   
+    */ 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var div1 = document.getElementById("box")
+        const LEFT = "left",
+            RIGHT = "right",
+            TOP = "top",
+            BOTTOM = "bottom";
+        var x = 0,
+            y = 0,
+            state = RIGHT;
+        setInterval(function () {
+            switch (state) {
+                case LEFT:
+                    x--;
+                    if (x <= 0) {
+                        state = TOP;
+                    }
+                    break;
+                case RIGHT:
+                    x++;
+                    if (x >= 300) {
+                        state = BOTTOM
+                    }
+                    break;
+                case TOP:
+                    y--;
+                    if (y <= 0) {
+                        state = RIGHT
+                    }
+                    break;
+                case BOTTOM:
+                    y++;
+                    if (y >= 300) {
+                        state = LEFT
+                    }
+                    break;
+
+            }
+
+            div1.style.left = x + "px";
+            div1.style.top = y + "px";
+        }, 16)
+
+
+    </script>
+</body>
+
+</html>

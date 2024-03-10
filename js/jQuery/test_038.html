@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var global=100
+        function all() {
+            console.log(global);
+        }
+    </script><!-- 这种写法和外部引入基本一致,都是定义全局变量以及函数 -->
+    <script>
+        console.log(global);//100
+        global=1
+        all()//1
+        /* 全局变量可被修改，会造成污染 */
+    </script>
+</body>
+</html>

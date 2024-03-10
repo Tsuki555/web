@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="test_001" width="500" height="500" style="width: 500px;height: 500px;"></canvas>
+    <script>
+        var c1=document.getElementById("test_001")
+        var c1_pen=c1.getContext("2d")
+        c1_pen.beginPath()
+        c1_pen.moveTo(30,30)//设置起始笔触位置
+        c1_pen.lineTo(80,36)
+        c1_pen.lineTo(100,136)
+        // c1_pen.fill()
+        c1_pen.stroke()
+        c1_pen.closePath()
+        /* 
+        
+    moveTo(x, y)
+    将笔触移动到指定的坐标 x 以及 y 上。
+    当 canvas 初始化或者beginPath()调用后，通常会使用moveTo()函数设置起点。
+    我们也能够使用moveTo()绘制一些不连续的路径。
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="img" ></canvas>
+    <script>
+        var img=document.getElementById("img")
+        var ctx=img.getContext("2d")
+        ctx.beginPath()
+        var img=new Image()
+        img.src="./1.jpg"
+        img.onload=function(){
+            ctx.drawImage(img,0,0,300,150)
+            // drawImage的参数（图片变量，水平位置，垂直位置，图片宽度，图片高度）
+        }
+        ctx.closePath()
+    </script>
+</body>
+</html>

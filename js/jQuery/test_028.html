@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 800px;
+            height: 500px;
+            /* background-color: antiquewhite; */
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #list {
+            display: inline-block;
+            width: 4000px;
+            position: absolute;
+            z-index: 1;
+            left: 0
+        }
+
+        #list img {
+            float: left;
+        }
+
+        img {
+            width: 800px;
+            height: 500px;
+            vertical-align: top;
+        }
+
+        #pointsDiv {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 2;
+            text-align: center;
+
+        }
+
+        #pointsDiv span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: azure;
+            border-radius: 50%;
+        }
+
+        #prev {
+            position: absolute;
+            top: calc(50% - 20px);
+            left: 0;
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 30px;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            z-index: 2;
+        }
+
+        #next {
+            position: absolute;
+            top: calc(50% - 20px);
+            right: 0;
+            text-decoration: none;
+            color: aliceblue;
+            font-size: 30px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 40px;
+            z-index: 2;
+        }
+
+        #pointsDiv .on {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="list">
+
+
+            <img src="./1.jpg" alt="">
+            <img src="./2.jpg" alt="">
+            <img src="./3.jpg" alt="">
+            <img src="./4.jpg" alt="">
+            <img src="./5.jpg" alt="">
+
+
+        </div>
+        <div id="pointsDiv">
+            <span index="1" class="on"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>
+        <a href="javascript:; " id="prev" class="arrow">
+            < </a>
+                <a href="javascript:; " id="next" class="arrow"> > </a>
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function () {
+            /* 点击向左或者向右的按钮实现图片平滑移动 */
+            // $("#container")
+            // $("#list")
+            // $("#pointsDiv span")
+            var page_width = 800
+            var time = 400
+            var time_item = 20
+            var imgCount = $("#pointsDiv span").length
+            var index = 0
+
+            $("#prev").click(function () {
+                nextPage(true)
+            })
+            $("#next").click(function () {
+                nextPage(false)
+            })
+            /* 瞬间翻页 */
+                //  function nextPage(next) {
+                //     var currLeft=$("#list").position().left//当前left值
+                //     console.log(currLeft);
+                //     var offset=next?(-page_width):(page_width)
+                //     $("#list").css("left",(currLeft+offset))
+                    
+                // } 
+            /* 平滑翻页 */
+         function nextPage(next) {
+
+
+                var offset = next ? (-page_width) : (page_width)//总距离
+                var itemOffset = offset / (time / time_item)//单位距离
+                var currLeft = $("#list").position().left//初始位置
+                var targetLeft = currLeft + offset//目标位置
+                var intervalId = setInterval(function () {
+
+                    currLeft += itemOffset
+
+                    if (currLeft === targetLeft) {
+                        clearInterval(intervalId)
+
+                        /* 无限循环切换，第一页与最后一页关联 */
+
+                        if ((currLeft === -(imgCount) * page_width)) {
+                            currLeft = 0
+
+                        } else if (currLeft === 800) {
+                            currLeft = -(imgCount - 1) * page_width
+
+                        }
+
+                    }
+                    $("#list").css("left", (currLeft))
+
+                }, time_item)
+
+
+                updatePoints(next)
+            }         
+            /* 每隔3s定时自动播放 */
+            var intervalId = setInterval(function (params) {
+                nextPage(true)
+            }, 2000)
+            /* 鼠标移入移出效果 */
+            $("#container").hover(function (params) {
+                clearInterval(intervalId)
+            }, function (params) {
+                intervalId = setInterval(function (params) {
+                    nextPage(true)
+                }, 2000)
+            })
+            /* 切换图片下方圆点同步更新 */
+
+
+            function updatePoints(next) {
+                // 移除当前index的<span>的class
+                // 计算出目标圆点的targetindex的,并添加class
+                var targetIndex = 0
+                if (next) {
+                    targetIndex = index + 1
+                    if (targetIndex === 5) {
+                        targetIndex = 0
+                    }
+                }
+                else{
+                    targetIndex=index-1
+                    if (targetIndex===-1) {
+                        targetIndex=4
+                    }
+            }
+            $("#pointsDiv span").eq(index).removeClass("on")
+            $("#pointsDiv span").eq(targetIndex).addClass("on")
+            index = targetIndex
+        }
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

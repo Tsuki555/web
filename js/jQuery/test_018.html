@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>AAAAAAA</li>
+        <li title="hello" class="box2">BBBBBBB</li>
+        <li class="box">
+            CCCCCCC
+        </li>
+        <li title="hello">DDDDDDDDD</li>
+        <li title="two" class="bigbox">
+            <span>BBBBBBBBB</span>
+            <i>00000000000</i>
+        </li>
+    </ul>
+
+    <li>eeeeeeeeeeee</li>
+    <li>EEEEEEEEEEEEE</li>
+    <script src="./jQuery.js"></script>
+    <script>
+        $("ul>li").first().css("color","red")//jQuery对象调用
+        $("ul>li")[0].style.fontSize=30+"px"//DOM元素调用
+        $("ul>li").last().css("color","skyblue")
+        $("ul>li").eq(1).css("color","pink")
+        $("ul>li").filter("[title=hello]").css("background","green")//根据标签属性过滤,筛选出与指定表达式匹配的元素集合
+        $("ul>li").filter(".box2").css("fontWeight","bold")//根据标签属性过滤,筛选出与指定表达式匹配的元素集合
+        $("ul>li").has("span").css("fontSize",55)//保留包含特定后代的元素，去掉那些不含有指定后代的元素。
+        var boolean=$("li[title=two]").hasClass("bigbox")//检查当前的元素是否含有某个特定的类，如果有，则返回true。
+        console.log(boolean);//true
+   </script>
+</body>
+</html>

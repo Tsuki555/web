@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 800px;
+            height: 600px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        /* 
+        1.echarts最基本的结构
+        2.定义各个维度最大值
+        3.准备数据
+        type为radar
+        */
+       var Echarts=echarts.init(document.getElementById("box"))
+       var data=[
+        {
+            name:"易用性",
+            max:100
+        },
+        {
+            name:"功能",
+            max:100
+        },
+        {
+            name:"拍照",
+            max:100
+        },
+        {
+            name:"跑分",
+            max:100
+        },
+        {
+            name:"续航",
+            max:100
+        },
+       ]
+       var option={
+        radar:{
+            indicator:data,//配置图表维度个数以及各个维度最大值
+            shape:"circle",//配置雷达图最外层形状
+            splitNumber: 3, // 雷达图圈数设置
+            axisLine: {  // 设置雷达图中间射线的颜色
+                  lineStyle: {
+                      color: 'gray',
+                  },
+              },
+              splitArea : {  //设置图表颜色，show的值为true
+                  show : true,
+                  areaStyle : {
+                  	  color:"brown", //一般设置方式
+                  
+                  }
+              },
+              splitLine : { //网格颜色设置
+                  show : true,
+                  lineStyle : {
+                      width : 1,
+                      color : '#1e83e4',
+                  },
+              },
+
+        },
+        label:{
+            show:true,//显示数值
+            color:"white"
+        },
+        series:[
+            {
+                type:"radar",
+                itemStyle:{
+                    color:"green"
+                },
+                data:[
+
+                    {
+                        name:"苹果",
+                        value:[98,99,97,94,91]
+                    }
+                ]
+            },
+            {
+                type:"radar",
+                itemStyle:{
+                    color:"red",
+                    
+                },
+                lineStyle:{
+                    color:"black"
+                },
+                data:[
+                    {
+                        name:"华为",
+                        value:[88,92,94,98,95]
+
+                    },
+                 
+                ]
+            }
+        ],
+        //series是一个数组，内部可以放多个对象，一个对象表示一个图表，
+        //一个图表中的data下有多个对象表示该图表有多组数据
+        
+       }
+       Echarts.setOption(option)
+    </script>
+</body>
+</html>

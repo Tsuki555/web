@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 800px;
+            height: 600px;
+            background-color: paleturquoise;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var myEcharts = echarts.init(document.getElementById("box"))
+        var option = {
+            // title: {//标题设置
+            //     show: true,
+            //     text: "一个简单的折线图",
+            //     textStyle: {
+            //         color: "red",
+            //         fontSize: 20,
+
+            //     },
+            //     right: "center",//标题居中
+
+            // },
+            tooltip: {//提示框组件
+                show: true,
+                tigger: "axis",//触发提示框方式
+                tiggerOn: "click",//触发时机
+                // formatter: "{b}的{a}是{c}",//字符串模板格式
+                //提示框浮层内容格式器，支持字符串模板和回调函数两种形式。
+                //formatter支持字符串模板，也支持回调函数
+                formatter: function (arg) {//第一个参数 params 是 formatter 需要的数据集
+                    console.log(arg);
+                    return arg.name + "的" + arg.seriesName + "是" + arg.data
+
+                }
+            },
+            toolbox: {//工具栏。内置有导出图片，数据视图，动态类型切换，数据区域缩放，重置五个工具。
+                show: true,
+                itemGap: 8,//工具栏 icon 每项之间的间隔。
+                itemSize: 15,//工具栏 icon 的大小。
+                feature: { //各工具配置项。
+                    saveAsImage: {
+                        type: "jpeg",//保存为图片为jpeg格式
+                        title: "保存为图片",//提示信息
+                        // icon:"image://https://img2.baidu.com/it/u=673003775,1191479950&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
+                    },
+                    dataView: {
+                        title: "数据视图",//提示信息
+                        show: true,
+                        icon: "image://https://img2.baidu.com/it/u=673003775,1191479950&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
+                        // icon可以通过 'image://url' 设置为图片，其中 URL 为图片的链接，或者 dataURI。
+                        lang: ['数据视图', '关闭', '刷新']//数据视图上有三个话术，默认是['数据视图', '关闭', '刷新']。
+                    },
+                    restore: {//配置项还原
+                        show: true,
+                        title: "还原",
+                        // icon:"",    
+                    },
+                    // magicType: {
+                    //         type: ['line', 'bar' ],
+                    //         title:{line:"折线图",bar:"柱状图"}
+                    //         //启用的动态类型，包括'line'（切换为折线图）, 'bar'（切换为柱状图）。
+                    //     }
+                    // magicType动态类型切换
+
+                }
+            },
+            legend: {//图例组件，图例组件展现了不同系列的标记(symbol)，颜色和名字。
+                type: "scroll",
+                show: true,
+                itemGap: 20,//图例每项之间的间隔。横向布局时为水平间隔，纵向布局时为纵向间隔。
+                data: [//要么不写data，要写了data，data下的name必须与series下的name一致
+                    {
+                        name: "英语成绩",
+                        icon: "circle",
+                        textStyle: {
+                            color:"black"
+                        }
+                    },
+                    {
+                        name: "数学成绩",
+                        icon: "circle",
+                        textStyle:  {//文字颜色
+                            color:"black"
+                        }
+                    },
+                    
+                ],
+                left:0
+            },
+
+
+
+
+            xAxis: {
+                type: "category",
+                data: ["张三", "李四", "王五", "闰土", "小米", "茅台", "大强", "二妞"]
+            },
+            yAxis: {
+                type: "value"
+            },
+            series: [
+                {
+                    type: "bar",
+                    name: "英语成绩",
+                    data: [88, 92, 63, 77, 96, 80, 72, 86],
+                    markPoint: {
+                        symbol: "circle",
+                        data: [
+                            {
+                                name: "最大值",
+                                type: "max", symbolOffset: [0, -30]
+                            }
+                        ],
+                    }
+                },
+                {
+                    type: "bar",
+                    name: "数学成绩",
+                    data: [78, 62, 83, 97, 76, 60, 92, 66],
+                    markPoint: {
+                        symbol: "circle",
+                        data: [
+                            {
+                                name: "最大值",
+                                type: "max",
+                                symbolOffset: [0, -30]
+                            }
+                        ],
+                    }
+                },
+
+            ]
+
+        }
+        myEcharts.setOption(option)
+    </script>
+</body>
+
+</html>

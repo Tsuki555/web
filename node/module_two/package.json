@@ -1,0 +1,10 @@
+{
+  "name": "module_two",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "lidong",
+  "license": "MIT",
+  "dependencies": {
+    "uniq": "^1.0.1"
+  }
+}

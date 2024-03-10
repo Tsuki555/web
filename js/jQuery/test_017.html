@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            padding: 15px;
+            border:5px solid pink;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="./jQuery.js"></script>
+    <script>
+        // 内容尺寸：仅仅表示宽高
+        console.log($("div").width());//100
+        console.log($("div").height());//100
+        //内部尺寸：宽高+内边距
+        console.log($("div").innerWidth());//130
+        console.log($("div").innerHeight());//130
+        //外部尺寸：默认是宽高+内边距+边框，默认是false
+        console.log($("div").outerWidth());//140
+        console.log($("div").outerHeight());//140
+        //设置为true，则是宽高+内边距+边框+外边距
+        console.log($("div").outerWidth(true));//160
+        console.log($("div").outerHeight(true));//160
+    </script>
+</body>
+</html>

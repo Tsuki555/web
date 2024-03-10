@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #app_id_items{
+            display: none;
+        }
+        [name="show_hide"]{
+            background-color: chocolate;
+            width: 100px;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+        }
+        [name="show_hide"] ul{
+            background-color: aqua;
+            position: absolute;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li name="show_hide" id="app_id" class="app_id">
+            我的
+           <ul id="app_id_items">
+            <li>手机</li>
+            <li>电脑</li>
+            <li>个人信息</li>
+           </ul>
+           <!-- id之间的关系 -->
+        </li>
+    </ul>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function(){
+            showhide()/* 显示隐藏效果 */
+            function showhide() {
+                $("li[name='show_hide']").hover(
+                    function(){
+                        $("#"+this.id+"_items").show(2000)
+                    },function(){
+                        $("#"+this.id+"_items").hide(2000)
+                    }
+                )
+            }
+        })//一套代码适用于很多地方
+
+        /* 
+        显示隐藏效果:
+            1.对那些元素绑定监听
+            2.绑定什么监听
+            3.对那些进行DOM修改
+        
+        */
+    </script>
+</body>
+</html>

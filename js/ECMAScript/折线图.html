@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 1600px;
+            height: 800px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div"></div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var myEcharts = echarts.init(document.getElementById("div"));
+        var option = {
+            title: {
+                text: "成绩表",
+                textStyle: {
+                    color: "black",
+                    fontSize: 30,
+                },
+                padding: [15, 5]
+            },
+            legend: {
+                right: "center",
+                itemGap: 20,
+                padding: [10, 30],
+                textStyle: {
+                    color: "black",
+                    fontSize: 16
+                },
+
+            },
+            tooltip: {
+                tigger: "item",
+                tiggerOn: "mousemove",
+                show: true,//是否显示提示框浮层，默认显示。
+                backgroundColor: "pink", //设置背景颜色
+                borderColor:"white",
+                formatter: `<span style='background:pink;'>{b}</span><div>{a}是{c}</div>`,
+
+
+                confine: true,
+            },
+            toolbox: {
+                itemSize: 20,
+                itemGap: 12,
+                feature: {
+                    saveAsImage: {
+                        type: "png",
+                        title: "保存为图片",
+                        backgroundColor: "brown",//保存为图片时背景
+                        iconStyle: {
+                            color: "white",
+
+                        },
+
+
+                    },
+                    magicType: {
+                        show: true,
+                        type: ["line", "bar"],
+                        title: {
+                            line: "折线图",
+                            bar: "柱状图"
+                        },
+                        iconStyle: {
+                            color: "white",
+
+                        },
+
+                    }
+                },
+                left: "right"
+            },
+            xAxis: {
+                show: true,
+                type: "category",
+                boundaryGap:false,
+                data: ["张三", "李四", "王五", "闰土", "小米", "茅台", "大强", "二妞"],
+                // data: [
+                //     {
+                //         value: "张三",
+                //         textStyle: {
+                //             color: "black",fontSize:20
+                //         }
+                //     },
+                //     {
+                //         value: "李四",
+                //         textStyle: {
+                //             color: "black",fontSize:20
+                //         }
+                //     },
+                //     {
+                //         value: "王五",
+                //         textStyle: {
+                //             color: "black",fontSize:20
+                //         }
+                //     },
+                //     {
+                //         value: "赵敏",
+                //         textStyle: {
+                //             color: "black",fontSize:20
+                //         }
+                //     },
+                //     {
+                //         value: "张无忌",
+                //         textStyle: {
+                //             color: "black",fontSize:20
+                //         }
+                //     },
+                //     {
+                //         value: "张三疯",
+                //         textStyle: {
+                //             color: "black",fontSize:20
+                //         }
+                //     },
+                //     {
+                //         value: "李太白",
+                //         textStyle: {
+                //             color: "black",fontSize:20
+                //         }
+                //     },
+                //     {
+                //         value: "杜甫",
+                //         textStyle: {
+                //             color: "black",
+                //             fontSize:20
+                //         }
+                //     },
+                // ],
+                axisLine: {//坐标轴轴线相关设置。
+                    show: true,
+                    lineStyle: {
+                        color: "black",
+                        width: 2,
+
+                    }
+                },
+                axisLabel: {//坐标轴文字相关的设置
+                    show: true,
+                    fontSize: 20
+                }
+            },
+            yAxis: {
+                show: true,
+                type: "value",
+                axisLine: {//坐标轴轴线相关设置。
+                    show: true,
+                    lineStyle: {
+                        color: "black",
+                        width: 2,
+
+                    }
+                },
+                axisLabel: {//坐标轴文字相关的设置
+                    show: true,
+                    fontSize: 20
+                }
+
+            },
+            series: [
+                {//系列1
+                    name: "语文成绩",
+                    type: "line",
+                    smooth: true,
+                    data: [88, 92, 63, 77, 96, 80, 72, 86],
+                    label: {
+                        show: true,
+                        textStyle: {
+                            color: "black",
+                            fontSize: 20
+                        }
+                    },
+                    lineStyle: {//折线样式
+                        color: "yellow"
+                    },
+                    // 方式1
+                    // //折线图的默认状态
+                    //     symbol: "circle",//echarts折线图拐点形状设置，默认是空心圆
+                    //     symbolSize: 6,
+                    //     itemStyle: {
+                    //         color: 'white', //拐点的颜色
+                    //     },                  
+                    // //折线图的高亮状态
+                    // emphasis: {
+                    //     // 鼠标移上去的时候，拐点的颜色和样式
+                    //     itemStyle: {
+                    //         color: 'black', //颜色
+                    //         shadowBlur: 5, // 图形的阴影大小
+                    //         shadowColor: '#F70938' // 图形的阴影颜色
+                    //     }
+                    // },
+                    //方式2
+                    symbol: "circle",
+                    symbolSize: 6,
+                    itemStyle: {
+                        normal: {
+                            color: 'white',
+
+                        },
+                        emphasis: {
+                            color: 'black',
+
+                        }
+                    },
+
+                    markPoint: {
+
+                        symbol: 'circle',
+                        itemStyle: {
+                            color: 'pink', //拐点的颜色
+                        },
+                        symbolSize: 20,
+                        symbolOffset: [0, 15],
+                        data: [
+                            {
+                                type: "max",
+                                name: "最大值",
+
+                            },
+                        ],
+
+                    }
+
+
+
+                },
+                {//系列2
+                    name: "数学成绩",
+                    type: "line",
+                    data: [81, 42, 73, 47, 56, 80, 62, 76],
+                    label: {
+                        show: true,
+                        textStyle: {
+                            color: "white",
+                            fontSize: 20
+                        }
+                    },
+                    symbol: "circle",
+                    symbolSize: 6,
+                    lineStyle: {//折线样式
+                        color: "white"
+                    }
+                },
+                {//系列3
+                    name: "英语成绩",
+                    type: "line",
+                    data: [50, 62, 78, 47, 66, 50, 62, 46],
+                    symbol: "circle",
+                    symbolSize: 6,
+
+                    label: {
+                        show: true,
+                        textStyle: {
+                            color: "green",
+                            fontSize: 20
+                        }
+                    },
+                    lineStyle: {//折线样式
+                        color: "green", type: "dashed"
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: "black"
+                        },
+                        emphasis: {
+                            color: 'white'
+                        }
+                    }
+                },
+            ]
+
+        };
+        myEcharts.setOption(option)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 800px;
+            height: 800px;
+            /* background-color: antiquewhite; */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="./jQuery.js"></script>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var myecharts=echarts.init($("#box")[0])
+        myecharts.showLoading()//获取数据成功前
+       $.get("./china.json",function(arg){
+        myecharts.hideLoading()//获取数据成功后
+        echarts.registerMap("china", arg)
+        var option={
+            geo:{
+                type:"map",
+                map:"china"
+            }
+        }
+        myecharts.setOption(option)
+       })
+       
+    </script>
+</body>
+</html>

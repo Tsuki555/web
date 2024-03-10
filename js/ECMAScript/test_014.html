@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 1000px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 10*10表格 -->
+    <table id="tb1" rules="all"></table>
+    <script>
+        var table = document.getElementById("tb1");
+        var str = "",
+            i = 0,
+            j = 0;//全局变量是会累加的
+        while (i<10) {
+            str+="<tr>"
+                while (j<10) {
+                    str+="<td> </td>"
+                    j++;
+                }
+            str+="</tr>"  
+            i++;
+            j=0;
+        }
+        console.log(str);
+        table.innerHTML=str;
+       
+        console.log(table);
+    </script>
+</body>
+
+</html>

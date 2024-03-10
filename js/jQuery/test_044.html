@@ -1,0 +1,106 @@
+日历1
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layDate-v5.3.1/layDate-v5.3.1/laydate/theme/default/laydate.css">
+    <style>
+        .data_box {
+            width: 600px;
+            height: 600px;
+            background-color: chocolate;
+        }
+
+        /* 实现自适应 */
+        #test1 {
+            width: 100%;
+        }
+
+        #layui-laydate1 {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-main {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-header {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-content {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-content table {
+            width: 100%;
+        }
+
+        #test {
+            position: absolute;
+            background-color: aqua;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="data_box">
+        <div id="testView">2018年6月8日</div>
+        <div id="test1"></div>
+        <div id="test"></div>
+    </div>
+
+
+    <script src="./layDate-v5.3.1/layDate-v5.3.1/laydate/laydate.js"></script>
+
+    <script>
+
+
+        //执行一个laydate实例
+        var calender = laydate.render({
+            elem: '#test1', //指定元素
+            format: "yyyy年MM月dd日",
+            position: 'static',
+            showBottom: false,
+            theme: '#393D49',//主题
+            change: function (value, date) { //监听日期被切换
+                lay('#testView').html(value);
+                // console.log(value);//日期
+                // console.log(date);//日期对象
+            },
+            calendar: true,
+
+
+
+        });
+        console.log(calender);
+
+
+        (function (calender) {
+
+            lay('.layui-laydate-content td').on('mouseenter', function (event) {
+
+                console.log(event);
+                console.log(calender);//jquery内部可用calender
+
+                // 外部事件调用
+                document.getElementById("test").innerHTML = "<div style=`background-color: aqua;`>" + '中华人民共和国' + "</div>"
+                document.getElementById("test").style.left = event.clientX + "px"
+                document.getElementById("test").style.top = event.clientY + "px"
+            });
+
+        })(calender)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

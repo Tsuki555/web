@@ -1,0 +1,22 @@
+// //传参
+// @function bgc($bgc){
+//     @return $bgc;
+// }
+
+// body{
+//     background-color: bgc(pink);
+// }
+
+
+
+// $theme:"light";
+// .box{
+//     color:if($theme=="light",red,green)
+// }
+
+
+@use "./module.scss" as color_data;
+
+body{
+    color: color_data.$data;
+}

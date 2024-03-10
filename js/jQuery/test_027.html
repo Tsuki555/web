@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>AAAAAAAAAA</li>
+        <li>BBBBBBBBBB</li>
+        <li>CCCCCCCCCC</li>
+    </ul>
+    <button id="btn">按钮</button>
+    <script src="./jQuery.js"></script>
+    <script>
+        // $("ul li").click(function(){
+        //     this.style.backgroundColor="red"
+        // })
+        $("#btn").click(function(){
+            $("ul").append("<li>新增......</li>")
+        })
+        $("ul").delegate("li",'click',function(){//事件委托
+            this.style.backgroundColor="red"//this指的是点击事件的li
+        })
+    </script>
+</body>
+</html>

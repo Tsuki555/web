@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bar{
+            width: 800px;
+            height: 600px;
+            background-color: antiquewhite;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bar">
+        
+    </div>
+    <button id="update">修改</button>
+    
+    <script src="./jQuery.js"></script>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var m_echart=echarts.init($("#bar")[0])//中的echarts是echarts全局对象;m_echart是echartsInstance对象
+        var option={
+            animation:true,//默认动画效果是打开的
+            animationDuration:3000,//动画的时长，它是以毫秒为单位
+            animationEasing:"bounceOut",//动画的效果，bounceOut表示有回弹效果
+            color:["pink"],
+            title:{
+                text:"成绩表",
+                right:"center",
+                
+                textStyle:{
+                    fontSize:30,
+                    
+                }
+            },
+            legend:{
+                right:"right"
+            },
+            xAxis:{
+                type:"category",
+                data:["张三",'李四',"王五","赵一"]
+            },
+            yAxis:{
+                type:"value"
+            },
+            grid:{
+                left:"5%",
+                right:"5%",
+                top:"15%",
+                bottom:"10%",
+            },
+            series:[
+                {
+                    type:"bar",
+                    data:[60,75,88,67],
+                    name:"语文成绩",
+                    barWidth:"50%"
+                }
+            ]
+        }
+        m_echart.setOption(option)
+        var newdata=[99,61,100,98]
+        $("#update").click(function(){
+            // console.log(newdata);
+            // console.log(option.series[0].data);
+            option.series[0].data=newdata
+            m_echart.setOption(option)
+        })
+    </script>
+</body>
+</html>

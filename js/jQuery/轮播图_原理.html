@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            width: 800px;
+            height: 500px;
+            overflow: hidden;
+            margin: auto;
+            position: relative;
+        }
+
+        .list {
+            width: 4000px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+        }
+
+        img {
+            width: 800px;
+            height: 100%;
+            vertical-align: top;
+            float: left;
+        }
+
+        .pre {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            text-decoration: none;
+            font-size: 30px;
+            color: black;
+        }
+
+        .next {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            text-decoration: none;
+            font-size: 30px;
+            color: black;
+        }
+
+        .show {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+        }
+
+        .show span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: aliceblue;
+        }
+
+        .show .on {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="list">
+            <img src="./1.jpg" alt="">
+            <img src="./2.jpg" alt="">
+            <img src="./3.jpg" alt="">
+            <img src="./4.jpg" alt="">
+            <img src="./5.jpg" alt="">
+        </div>
+        <div class="show">
+            <span class="on"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="javascript:;" class="pre">
+            < </a>
+                <a href="javascript:;" class="next"> > </a>
+
+
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+        /* 快速切换 */
+        var page_width = 800
+        var index = 0
+        $(function () {
+            /* 点击切换图片 */
+            $(".pre").click(function () {
+                nextPage(true)
+            })
+            $(".next").click(function () {
+                nextPage(false)
+            })
+            function nextPage(next) {
+                var currLeft = $(".list").position().left;
+                var distance = next ? -(page_width) : page_width
+                var len = currLeft + distance
+                if (len == 800) {//实现首尾图片连接
+                    len = (-3200)
+                } else if (len == (-4000)) {
+                    len = (0)
+                }
+                $(".list").css("left", len)
+                update(next)
+            }
+            /* 自动切换图片 */
+            var intervalId = setInterval(function () {
+                nextPage(true)
+            }, 3000)
+            /* 鼠标悬停轮播图停止，鼠标移开轮播图显示 */
+            $(".list").hover(function () {
+                clearInterval(intervalId)
+            }, function () {
+                intervalId = setInterval(function () {
+                    nextPage(true)
+                }, 3000)
+            })
+            /* 小圆点同步切换 */
+            function update(next) {
+                var targetIndex = 0;
+                if (next) {
+                    targetIndex = index + 1
+                    if (targetIndex > 4) {
+                        targetIndex = 0
+                    }
+                } else {
+                    targetIndex = index - 1
+                    if (targetIndex < 0) {
+                        targetIndex = 4
+                    }
+                }
+                $(".show span").eq(index).removeClass("on")
+                $(".show span").eq(targetIndex).addClass("on")
+                index = targetIndex
+            }
+        })
+    </script>
+</body>
+
+</html>

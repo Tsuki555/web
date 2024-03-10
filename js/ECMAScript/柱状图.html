@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #zzt {
+            width: 800px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="zzt"></div>
+    <script src="./echarts.min1.js"></script>
+    <script src="./customed.js"></script>
+    <script>
+        var db = document.getElementById("zzt");
+        var myEcharts = echarts.init(db,"customed");
+        var option = {
+            // 实现横向柱状图需要x轴和y轴互换一下即可
+            xAxis: {
+                type:"value"
+                // type: "category",
+                // data: ["张三", "李四", "王五", "闰土", "小米", "茅台", "大强", "二妞"]
+            },
+            yAxis: {
+                // type: "value"
+                type: "category",
+                data: ["张三", "李四", "王五", "闰土", "小米", "茅台", "大强", "二妞"]
+            },
+  
+            series: [
+                {
+                    type: "bar",
+                    name: "语文成绩",
+                    data: [88, 92, 63, 77, 96, 80, 72, 86],
+                    itemStyle: {
+                        normal:{
+                            color:"yellow"
+                        },
+                        emphasis:{
+                            color:'pink'
+                        }
+                    },
+
+                    markPoint: {//图表标注。
+                        data: [
+                            {
+                                type: "max",
+                                name: "最大值"
+                            },
+                            {
+                                type: "min",
+                                name: "最小值"
+                            }
+                        ],
+                        symbol: "circle",//图表标注的图形
+                        symbolSize: 30,//图表标注的尺寸
+                        symbolOffset: [0, -20]////图表标注的位置偏移
+                    },
+                    barWidth:"30%",//柱状图宽度
+                    label: {//图形上的文本标签，可用于说明图形的一些数据信息，比如值，名称等。
+                        show: true,
+                        fontSize:12,
+                        position:"top"
+                    },
+                    
+                },
+                {
+                    type: "bar",
+                    name: "数学成绩",
+                    barWidth:"30%",
+                    data: [80, 62, 73, 97, 66, 90, 62, 66],
+                    markLine: {//图表标线
+                        data: [
+                            {
+                                type: "average",
+                                name: "平均值"
+                            },
+                            {
+                                type: "min",
+                                name: "最小值"
+                            }
+                        ],
+                        lineStyle: {//线条样式
+                            color: "red",
+                            type: "solid"
+                        },
+
+                    }
+                }
+            ]
+        }
+        myEcharts.setOption(option)
+    </script>
+</body>
+
+</html>

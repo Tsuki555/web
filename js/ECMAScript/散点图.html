@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 800px;
+            height: 500px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <!-- 散点图 -->
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var dataArr = [
+            [180, 70],
+            [160, 50],
+            [189, 78],
+            [154, 49],
+            [167, 66],
+            [159, 47],
+            [160, 64],
+            [166, 59],
+            [178, 64],
+            [194, 83],
+            [155, 63],
+            [181, 64],
+            [163, 51],
+            [169, 55],
+            [172, 60],
+            [161, 48],
+            [164, 44],
+            [157, 46],
+            [168, 63],
+            [182, 82],
+            [188, 79],
+            [165, 76],
+            [170, 50],
+        ];
+        var myEcharts = echarts.init(document.getElementById("box"));
+        var option = {
+            grid: {
+                width: 600,
+                height: 300,
+                top: 80,
+                left: 100,
+                borderColor: 'red',
+                borderWidth: 5,
+                show:true
+            },
+            title: {
+                text: "这是一个很好的散点图",
+                textStyle: {
+                    fontSize: 20
+                },
+                left: 20,
+                top: 20
+            },
+            xAxis: {
+                type: "value",
+                scale: true,
+                axisLine: {
+                    lineStyle: {
+                        width: 2,
+                        color: "black"
+                    }
+                }
+            },
+            yAxis: {
+                type: "value",
+                scale: true,
+                axisLine: {
+                    lineStyle: {
+                        width: 2,
+                        color: "black"
+                    }
+                }
+            },
+            series: [
+                {
+                    name: "散点图",
+                    // type: "scatter",
+                    type: "effectScatter",
+                    rippleEffect: {
+                        scale: 2
+                    },
+                    showEffectOn: 'emphasis',
+                    data: dataArr,
+                    // symbol:"emptyCircle",
+                    symbolSize: function (arg) {
+                        var data = arg[1] / ((arg[0] / 100) * (arg[0] / 100))
+                        if (data < 20) {
+                            return 10
+                        }
+                        else {
+                            return 20
+                        }
+                    },
+                    itemStyle: {
+                        // color:"pink",
+                        color: function (arg) {
+
+                            var data = arg.data[1] / ((arg.data[0] / 100) * (arg.data[0] / 100))
+                            if (data < 20) {
+                                return "red"
+                            }
+                            else {
+                                return "green"
+                            }
+                        }
+                    }
+
+                }],
+        };
+        myEcharts.setOption(option)
+    </script>
+</body>
+
+</html>

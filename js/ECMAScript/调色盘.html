@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pie {
+            width: 800px;
+            height: 600px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pie"></div>
+    <script src="./echarts.min1.js"></script>
+    <script src="./customed.js"></script>
+    <script>
+        var data1 = [
+            {
+                name: "淘宝",
+                value: 37580
+            },
+            {
+                name: "京东",
+                value: 24384
+            },
+            {
+                name: "识货",
+                value: 147832
+            },
+            {
+                name: "美团",
+                value: 5541
+            },
+            {
+                name: "饿了么",
+                value: 6587
+            },
+        ]
+        var piecolor_1 = ["red", "blue", "skyblue", "red", "green"];
+        var myecharts = echarts.init(document.getElementById("pie"), "customed")
+        var option = {
+            color: ["black", "red", "blue", "white", "green"],//全局调色盘
+            series: [
+                {
+                    type: "pie",
+                    radius: "75%",
+                    center: ["50%", "50%"],
+                    data: data1,
+                    itemStyle: {
+                        color: function (reg) {
+                            return piecolor_1[reg.dataIndex]
+                        }
+                    }
+                },
+              
+            ]
+        }
+        myecharts.setOption(option)
+        myecharts.on("click",function(arg){
+            console.log(arg);
+            switch (arg.name) {
+                case "淘宝":
+                window.location.href="http://www.baidu.com";
+                    break;
+                case "京东":
+                window.location.href="http://www.jingdong.com";
+                    break;
+                case "识货":
+                    
+                    break;
+                case "饿了么":
+                    
+                    break;
+                case "美团":
+                    
+                    break;
+            
+                default:
+                    break;
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bar {
+            width: 800px;
+            height: 600px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bar">
+
+    </div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var bar_echarts = echarts.init(document.getElementById("bar"))
+        var option = {
+            
+            xAxis: {
+                type: "category",
+                data: ["1月", "2月", "3月", "4月", "5月"]
+            },
+            yAxis: {
+                type: "value"
+            },
+            series: [
+                {
+                    type: "bar",
+                    data: [1506, 1472, 352, 888, 645],
+                    
+                    itemStyle: {
+                      color:{
+                        type: "liner",
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [
+                            {
+                                offset: 0,
+                                color: "red"
+                            },
+                            {
+                                offset: 1,
+                                color: "green"
+                            }
+                        ]
+                      }
+                    },
+                    emphasis:{
+                        itemStyle:{
+                            color:"brown"
+                        }
+                    }
+                },
+                {
+                    type: "bar",
+                    data: [156, 1772, 1352, 1888, 145]
+                },
+                {
+                    type: "bar",
+                    data: [356, 1472, 1552, 168, 1945]
+                }
+            ]
+        }
+        bar_echarts.setOption(option)
+    </script>
+</body>
+
+</html> -->

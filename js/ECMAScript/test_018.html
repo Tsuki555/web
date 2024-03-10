@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 构造函数就是普通函数，只不过首字母大写 -->
+    <!-- 通过new实例化一个真实存在的量 -->
+    <script>
+        // var a=1;//字面量创建一个数值
+        // var b=new Number(22);//构造函数创建一个数值
+        // console.log(a);
+        // console.log(b);
+        // console.log(a+b);//22
+        // console.log(typeof a);//number
+        // console.log(typeof b);//object
+        // console.log(typeof (a+b));//number
+        // // 1、Number(1)是指将1转化为number类型，跟1是全等关系。
+        // // Number(1)是把1转换为数字类型，new Number(1)是把 1 包装成了一个对象。
+
+        // // 2、一个原始类型值并没有任何可用的方法，其使用的方法是包装对象原型上的，
+        // // 例如：(12).toFixed()，toFixed()实际上是在Number对象原型(prototype)中声明的方法。
+
+
+        // console.log(true.toString());//字符串true
+        // var number = 521
+        // var b = number.toString()
+        // console.log(b);
+
+        // var a=120.524
+        // console.log(a);
+        // console.log(String(a));
+        // console.log(a.toString());
+
+
+        // var a = 127,
+        //     b = 3.1415926,
+        //     c = -55,
+        //     d = -0.124;
+        // var a1 = String(a),
+        //     b1 = String(b),
+        //     c1 = String(c),
+        //     d1 = String(d);
+        // var a2 = a.toString(),
+        //     b2 = b.toString(),//转为二进制字符串保存
+        //     c2 = c.toString(),
+        //     d2 = d.toString();
+        // console.log(a, b, c, d);
+        // console.log(a1, b1, c1, d1);
+        // console.log(a2, b2, c2, d2);
+
+
+        // var a=3.7415926
+        // console.log(a.toFixed());//字符串4
+        // console.log(Number(a.toFixed()));//数值4
+
+
+        // var a = "GGG",
+        //     b = [1, 2, "3"],
+        //     c = { name: "wxn", value: "423" },
+        //     d = 55,
+        //     e = undefined,
+        //     f = null,
+        //     g = true;
+        // var a1 = String(a),
+        //     b1 = String(b),
+        //     c1 = String(c),//[object Object]
+        //     d1 = String(d),
+        //     e1 = String(e),
+        //     f1 = String(f),
+        //     g1 = String(g);
+        // var a2 = a.toString(),
+        //     b2 = b.toString(),
+        //     c2 = c.toString(),
+        //     d2 = d.toString(),
+        //     g2 = g.toString();
+        // console.log(a, b, c, d, e, f, g);
+        // console.log(a1, b1, c1, d1, e1, f1, g1);
+        // console.log(a2, b2, c2, d2, g2);
+
+        // Object.prototype不是构造函数，而是一个对象，用于表示Object的原型对象。
+        // 几乎所有的JavaScript对象都是Object的实例，
+        // 其原型链上最后一个就是指向Object.prototype。
+        // 一个典型的对象继承了Object.prototype的属性和方法。
+
+        // 顶层原型对象是JavaScript中最顶层的原型对象，它的名称是Object.prototype。
+        // 它是所有JavaScript对象的祖先，包括数组、函数和日期等内置对象。
+        // Object.prototype对象包含了一些通用的属性和方法，例如toString()和valueOf()方法。
+        // 此外，Object.prototype对象的__proto__属性指向null，表示它没有原型对象，是原型链的顶端。
+
+
+
+        // var a=9
+        // console.log(typeof String(a));
+
+        // var a = "123";
+        // console.log(a.length);//3
+
+
+        // var a=123
+        // var b=new String(a)
+        // console.log(b);//"123"
+        // console.log(typeof b);//object
+
+
+
+        // console.log(123.toFixed());
+
+        // var a=123
+        // console.log(a.toFixed());
+
+
+        // // 转化为数值
+        // var a="abc",
+        //     b="12nb",
+        //     c="5482",
+        //     d=true,
+        //     e=null,
+        //     f=undefined,
+        //     g=[],
+        //     h=['12',true,'8df'],
+        //     i={name:"wxn"},
+        //     j={};
+        // var a1=Number("abc"),
+        //     b1=Number("12nb"),
+        //     c1=Number("5482"),
+        //     d1=Number(true),
+        //     e1=Number(null),
+        //     f1=Number(undefined),
+        //     g1=Number([]),
+        //     h1=Number(['12',true,'8df']),
+        //     i1=Number({name:"wxn"}),
+        //     j1=Number({});
+        // console.log(a,b,c,d,e,f,g,h,i,j);//abc 12nb 5482 true null undefined [] (3) ['12', true, '8df'] {name: 'wxn'} {}
+        // console.log(a1,b1,c1,d1,e1,f1,g1,h1,i1,j1);//NaN NaN 5482 1 0 NaN 0 NaN NaN NaN
+
+        // var a="675hbf"
+        // console.log(parseInt(a));//675
+        // var b="df675hbf"
+        // console.log(parseInt(b));//NaN
+
+        // var a=3.1415926
+        // console.log(a.toFixed(3));//3.142
+
+
+        // var a= "3.1415926"
+        // console.log(parseFloat(a));
+
+
+
+        // console.log(parseInt("1254jjj"));
+
+
+
+        // console.log((+0)===(-0));//true
+        // console.log(Object.is(+0,-0));//false
+        // var a="125jj"
+        // var b="h765"
+        // console.log(Object.is(Number(a),parseInt(b)));//true
+        // console.log(Number(a)===parseInt(b));//false
+        // console.log(Number(a)==parseInt(b));//false
+
+
+
+        // console.log(isNaN("123"));//false
+        // console.log(isNaN("123ff"));//true
+        // console.log(Number.isNaN("123ff"));//false
+        // console.log(Number.isNaN("NaN"));//false
+        // console.log(Number.isNaN(NaN));//true
+
+        // console.log(Number([9,8,4]))
+
+
+        // console.log(Number(true));//1
+        // console.log(Number(false));//0
+        // console.log(Number(null));//0
+        // console.log(Number(undefined));//NaN
+        // console.log(Number([]));//0
+        // console.log(Number([4,94,0]));//NaN
+        // console.log(Number(""));//0
+        // console.log(Number("0"));//0
+        // console.log(Number("56gg"));//NaN
+        // console.log(Number({}));//NaN
+
+        // console.log(Boolean("false"))
+
+        // console.log(Object(5));
+
+        // var a=897
+        // var b=Object(a)
+        // console.log(b);
+
+
+        // console.log(1+8);//数值9
+        // console.log(1+"9");//字符串19
+
+        // console.log("9"-"7");//数值2
+        // console.log("9"*"7");//数值63
+        // console.log("9"*"v");//NaN
+
+
+        // console.log(9+NaN);//NaN
+
+        // console.log([]+9);//字符9
+
+        // var a= 100+true+21.2+null+undefined+"hello"+[]+null+9+false
+        // console.log(a);//NaNhellonull9false (字符串)
+
+        // var a = "6"
+        // var b = (a += 2)
+        // console.log(b);//62（字符串）
+
+        // var a = "6"
+        // a *= 3
+        // console.log(a);//18
+
+
+        // console.log(3++);//报错
+
+        // var a = []
+        // console.log(a++ + a++ + a);//3
+
+        // console.log([]++);
+        // console.log(null=="");
+        // console.log(Number(null));
+        // console.log(Object.is(null,undefined));//false
+        // console.log(null==undefined);//true
+        // console.log(null===undefined);//true
+
+
+        // var a=[]
+        // var b=a
+        // console.log(a==b);//true
+
+        // // 定义一个对象（数组[1,2,3]），此时这个对象在内存中建立。
+        // // 当给把这个对象赋值给一个变量时，变量a仅仅是对这个对象的引用，
+        // // 而不是将该对象复制到了该变量中。即变量a中存储的是指向对象的地址。
+        // // 将a的值赋给b，也即将a中的地址赋给了变量b。
+        // // 此时变量a和b都指向同一个对象。所以b值得改变就会直接引起对象本身的改变，
+        // // 因为变量a也指向这个数组，所以a的值肯定也会发生变化。
+
+        // // 对象的比较与基本类型值不同。即使两个对象完全相同，比如两个完全相同的数组，
+        // // 它们也是不相等的。只有两个变量指向同一个对象时，它们才是相等的。
+
+        // var a=[1,2,3];//变量a中存储的是指向对象的地址
+        // var b=a;//变量a和b都指向同一个对象
+
+
+        // console.log([] == []);//false
+
+        // console.log([] == "");//true
+        // console.log([] == 0);//true
+        // console.log([] == false);//true
+
+
+        // 056(8进制)——>  101 110(二进制)
+        // 0xF85(16进制)——> 1111 1000 0101(二进制)
+
+        // // 77(10进制)——>(二进制)1001101
+        // var a=77
+        // console.log(a.toString(2));//1001101
+
+        // for (let i = 0; i < 100; i++) {
+        //     if(1&i){
+        //         console.log(i+"为奇数");
+        //     }
+        //     else{
+        //         console.log(i+"为偶数");
+        //     }
+        // }
+
+
+        // console.log(~8);//-9
+        // console.log(~(-5));//4
+
+        // var num=prompt("请输入");//从屏幕输入的是字符串
+        // var a=num>6?"大于":"小于";//关系运算符会转换num为数值
+        // console.log(a);
+
+
+        // console.log(Boolean(0,1,"",false));//false
+        // console.log(Boolean(1,"",false));//true
+
+        // if (1,0,a='') {
+        //     console.log("wxn");
+        // }//不执行
+        // if (1,0,a='',b='fuck') {
+        //     console.log("super baby");
+        // }//执行
+
+        // console.log(Boolean(" "));
+
+        //    var a=prompt("请输入：")
+        //    switch (a) {
+        //     case "苹果":
+        //         console.log("苹果一斤15");
+        //         break;
+        //     case "香蕉":
+        //         console.log("香蕉一斤5元");
+        //         // break;
+        //     case "草莓":
+        //         console.log("草莓一斤10元");
+        //         // break;
+        //     case "火龙果":
+        //         console.log("火龙果一斤7元");
+        //         break;
+
+        //     default:
+        //         console.log("买完了");
+        //         break;
+        //    }
+
+
+        // var a = 1
+        // switch (a) {
+        //     case "1":
+        //         console.log("action1");
+
+        //     case "2":
+        //         console.log("action2");
+        //         break;
+        //     case "3":
+        //         console.log("action3");
+        //         break;
+
+        //     default:
+        //         console.log("stop");
+        //         break;
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c1" style="width: 500px; height: 500px;" width="500" height="500"> </canvas>
+    <script>
+        var c1 = document.getElementById("c1")
+        var ctx = c1.getContext("2d")
+        ctx.beginPath()
+        ctx.arc(100,100,50,0,Math.PI*2)
+        var radialGradient=ctx.createRadialGradient(100,100,20,100,100,50)//参数是(圆心x1,圆心y1，半径1，圆心x2,圆心y2，半径2)
+        radialGradient.addColorStop(0,"pink")
+        radialGradient.addColorStop(.4,"green")
+        radialGradient.addColorStop(1,"yellow")
+        ctx.fillStyle=radialGradient
+        ctx.fill()
+        ctx.closePath()
+    </script>
+</body>
+</html>

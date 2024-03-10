@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function get_ajax(url) {
+          
+
+            return new Promise((resolve, reject) => {
+                var xhr = new XMLHttpRequest()
+                xhr.open("get", url)
+                xhr.send()
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            resolve(JSON.parse(xhr.responseText))
+
+                        } else {
+                            reject(xhr.responseText)
+
+                        }
+                    }
+                }
+            })
+        }
+        // var list=[3,4]
+        // list.forEach(item=>{
+        //     get_ajax(` http://localhost:3000/comments?id=${item}`).then(res=>{
+        //         console.log(res);
+        //     })
+        // })
+        
+        Promise.all([get_ajax(` http://localhost:3000/comments?id=3`),get_ajax(` http://localhost:3000/comments?id=5`)])
+        .then(res=>{
+            console.log(res);
+        })
+
+        /* .then()与.catch()返回的是promise对象,其内部回调函数返回的是真正的数据 */
+
+        //需要连续请求不同数据不能用缓存
+  
+    </script>
+</body>
+
+</html>

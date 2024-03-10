@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c1" width="1000" height="1000" style="width: 1000px;height: 1000px;"></canvas>
+    <script>
+        var c1=document.getElementById("c1")
+        var ctx=c1.getContext("2d")
+        ctx.beginPath()
+        ctx.font="100px 宋体"
+        ctx.fillStyle="orange"//字体颜色
+        ctx.fillText("王晓娜",100,100)//文本内容以及文字起始位置
+        ctx.closePath()
+
+        ctx.beginPath()
+        ctx.font="100px 微软雅黑"
+        ctx.strokeStyle="pink"//字体颜色
+        ctx.strokeText("于静楠",300,300)//文本内容以及文字起始位置
+        ctx.closePath()
+
+    </script>
+</body>
+</html>

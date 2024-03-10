@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 三角形
+        // for (var i = 0; i < 5; i++) {
+        //     for (var j = 0; j <5-i; j++) {
+        //         document.write("&ensp;")
+                
+        //     }
+        //     for (var k = 0; k <=i; k++) {
+        //         document.write("* &ensp;")
+                
+        //     }
+        //     document.write("<br>")
+            
+        // }
+
+        // var i=0
+        // do{
+        //    i++
+        //    console.log(i); 
+        // }while(i<0)//打印1
+
+        // var i=0
+        // for (;;) {
+        //     i++
+        //     console.log(i);
+        //     if (i>=10) {
+        //         break
+        //     }
+            
+        // }//1~10
+
+        // var i=0;
+        // var j
+        // while (i<10) {
+        //    j=0;
+        //     while (j<10) {
+        //         j++
+        //         console.log(i,j);//i 0~9;j 1~10
+        //     }
+        //     i++
+        // }
+
+
+        // for (var i = 0,j; i <10; i++) {
+        //     for ( j = 0; j < 10; j++) {
+        //        console.log(i,j);//i 0~9;j 0~9
+        //     }
+            
+        // }
+
+        // tiaochu:for (var i = 0; i <10; i++) {
+        //     for (var j = 0; j < 10; j++) {
+        //         if (j==6) {
+        //             break tiaochu;
+        //         }
+        //         console.log(i,j);
+        //         // 0 0; 0 1; 0 2; 0 3; 0 4; 0 5
+                
+        //     }
+            
+        // }
+
+        // tiaochu:for (var i = 0; i <10; i++) {
+        //     for (var j = 0; j < 10; j++) {
+        //         if (j==6) {
+        //             continue tiaochu;
+        //         }
+        //         console.log(i,j);//i 0~9; j 0~5
+                
+                
+        //     }
+            
+        // }
+            var count=0;
+        tiaochu: for (var i = 2; i < 100; i++) {
+            for (var j = 2; j < i; j++) {
+                if (i%j===0) {
+                    continue tiaochu;
+                }
+            }
+            console.log(i+"是质数");
+            count++
+            
+        }
+        console.log(count);
+    </script>
+</body>
+</html>

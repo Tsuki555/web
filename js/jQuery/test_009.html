@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 5px;
+            line-height: 30px;
+        }
+        span{
+            display: inline-block;
+            width:80px;
+            text-align-last: justify;
+        }
+        input{
+            width: 200px;
+            height: 30px;
+        }
+        input[type="checkbox"]{
+            width: 16px;
+            height: 16px;
+            appearance: none;
+            border: 1px solid black;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        input[type="radio"]{
+            width: 16px;
+            height: 16px;
+            appearance: none;
+            border: 1px solid black;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        input[type="radio"]:checked, input[type="checkbox"]:checked{
+            background-color: chocolate;
+        }
+        select{
+            width: 100px;
+            height: 30px;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div><span>用户名：</span><input type="text"></div>
+        <div><span>密码：</span><input type="password" name="" id=""  disabled></div>
+        <div>
+            <span>爱好：</span>
+            <input type="checkbox" name="" id="" checked>拳击
+            <input type="checkbox" name="" id="">泰拳
+            <input type="checkbox" name="" id="">自由搏击
+        </div>
+        <div>
+            <span>姓名：</span>
+            <input type="radio" name="sex" id="" checked>女
+            <input type="radio" name="sex" id="">男
+        </div>
+        <div>
+            <span>地址：</span>
+            <select name="" id="">
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="广州">广州</option>
+            </select>
+        </div>
+    </form>
+    <script src="jQuery.js"></script>
+    <script>
+        $(":input:disabled").css("background","red")
+        $(":input:checkbox:checked").css({"width":20,"height":20})
+        //:input选择全部的input标签
+        //:input:checkbox选择全部的input标签并且type为checkbox
+    </script>
+</body>
+
+</html>

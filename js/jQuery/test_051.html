@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="get_data">获取</button>
+    <script>
+        var btn=document.getElementById("get_data")
+        btn.onclick=function(){
+            var xhr=new XMLHttpRequest()//ie7+才可以使用 XMLHttpRequest()
+            // console.log(xhr.readyState);//0
+            xhr.open("get","./data.js")
+            //xhr.open("请求方式get/post"，"url地址",Boolean)boolean默认为true,表示异步请求
+            xhr.send()//get请求的话send参数为空
+            // console.log(xhr.readyState);//1
+            // onreadystatechange状态码监听函数，监听当前的ajax请求到那一步
+            //监听的时候只有响应数据才能渲染数据
+            xhr.onreadystatechange=function(){
+                // console.log(xhr.readyState);//4
+                if (xhr.readyState===4) {//响应数据
+                    if (xhr.status===200) {//http协议状态码 200表示成功，400表示资源不存在
+                        console.log(xhr.response);//xhr.response响应数据
+                    }
+                }
+            }
+           /*  
+                ajax请求过程中会出现一个状态码被记录：readyState
+                创建了xhr:状态码为0
+                准备发送(发送服务器请求):状态码为1
+                服务器接收请求：状态码为2
+                服务器处理请求：状态码为3
+                服务器响应数据：状态码为4
+
+        
+        readyState与status息息相关
+        
+           在AJAX执行过程中，readyState的值从0开始变化，当AJAX运行到send方法调用时，
+           发送HTTP请求，HTTP请求安装步骤执行，此时status的值开始发生变化，
+           AJAX运行机制等待HTTP请求返回结果。最后，当HTTP请求返回结果后，
+           无论HTTP请求成功还是失败、也不管是否请求到正确信息，AJAX的运行机制都会继续执行，
+           直到完成运行或者出错为止。
+
+           readyState，是指运行AJAX所经历过的几种状态，无论访问是否成功都将响应的步骤，
+           可以理解成为AJAX运行步骤；使用“ajax.readyState”获得的status表示是指无论AJAX访问
+           是否成功，HTTP协议根据所提交的信息，服务器所返回的HTTP头信息代码，
+           是使用“ajax.status”获得。
+
+           */
+        }
+    </script>
+</body>
+</html>

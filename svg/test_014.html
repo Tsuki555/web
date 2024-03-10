@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        object{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <object data="./test_014.svg" type="image/svg+xml"></object>
+    <script src="../js/jQuery/jQuery.js"></script>
+    <script>
+        console.log($("object")[0].contentDocument);
+        /* 对于通过object引用获得的svg，在获取到object标签后通过.contentDocument可以获得svg的DOM */
+        var svgDom=$("object")[0].contentDocument
+        console.log(svgDom.querySelector("path[node-id='274']"));
+        $(svgDom.querySelector("path[node-id='274']")).css("fill","red")
+
+        /*
+         通过object引用的svg的DOM的引用 
+         在父容器中获取页面中iframe标签中的div元素并改变样式也是这样
+
+         对于标签内部存在#document的标签获取#document对应的dom的方式就是.contentDocument
+         */
+    </script>
+</body>
+
+</html>

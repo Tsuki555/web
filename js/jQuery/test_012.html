@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img>
+    <div class="box box1" title="提示">1</div>
+    <div>2GGG</div>
+    <input type="text" value="6666666">
+    <input type="checkbox" name="sport" id="">拳击
+    <input type="checkbox" name="sport" id="">泰拳
+    <input type="checkbox" name="sport" id="">mmma
+    <button>全选</button>
+    <button>全不选</button>
+    <script src="./jQuery.js"></script>
+    <script>
+        $("img").attr("src","./tp1.jpg")//.attr为标签添加属性和属性值
+        $("div").removeAttr("title")//.removeAttr移除标签的一个属性
+        //如果用.attr设置class会覆盖原本的class的值
+        // $("div").attr("class","GGG")
+        //.addClass会追加新的class值
+        $("div").addClass("checked")//.addClass给标签添加一个class属性
+        $("div").removeClass("box")//.removeClass移除标签上的class属性值
+        console.log($("div:last").html());//.html()得到jQuery对象里的内容（可以包含标签）
+        console.log($("div:first").html("天王盖地虎"));//.html()设置jQuery对象里的内容（可以包含标签）
+        console.log($(":text").val());//.val()得到输入框value值
+        // 方法1
+        //实现全选
+        // $("button:first").click(function(){
+        //     $(":checkbox").attr("checked",true)
+        // })
+        // //实现全不选
+        // $("button:last").click(function(){
+        //     $(":checkbox").attr("checked",false)
+        // })
+        // 方法2
+        //实现全选
+        $("button:first").click(function(){
+            $(":checkbox").prop("checked",true)
+        })
+        //实现全不选
+        $("button:last").click(function(){
+            $(":checkbox").prop("checked",false)
+        })
+
+
+
+    </script>
+</body>
+</html>

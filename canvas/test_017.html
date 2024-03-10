@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c1"></canvas>
+    <script>
+        var c1=document.getElementById("c1")
+        var ctx=c1.getContext("2d")
+        var path=new Path2D()
+        path.moveTo(10,10)
+        path.lineTo(50,100)
+        path.lineTo(100,10)
+        ctx.lineWidth=10//线条宽度
+        ctx.lineCap="round"//线条端点样式
+        ctx.lineJoin="round"//线条连接处样式
+        ctx.setLineDash([10,10])//设置为虚线，传入一个数组，分别是虚线线段长度以及虚线间隔长度
+
+        ctx.stroke(path)
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+    <ul>
+        <li>AAAAAAA</li>
+        <li title="hello" class="box2">BBBBBBB</li>
+        <li class="box">
+            CCCCCCC
+        </li>
+        <span>1111111111</span>
+        <li title="hello">DDDDDDDDD</li>
+        <li title="two" class="bigbox">
+            <span>BBBBBBBBB</span>
+            <i>00000000000</i>
+        </li>
+        <span>2222222222</span>
+    </ul>
+   </div>
+    <script src="./jQuery.js"></script>
+    <script>
+        // $("ul>span:eq(1)").css("fontSize",30)
+        $("ul").children("span:eq(1)").css("fontSize",30)//子代元素方法.children()
+
+        $("ul").find("span:eq(2)").css("backgroundColor","pink")//后代元素方法.find()
+
+        $("ul").parent().css("backgroundColor","skyblue")//找父元素的方法
+
+        $(".bigbox").prevAll("li").css("fontWeight","bold")//查找.bigbox标签前所有的li元素
+    
+    </script>
+</body>
+</html>

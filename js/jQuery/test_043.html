@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layDate-v5.3.1/layDate-v5.3.1/laydate/theme/default/laydate.css">
+    <style>
+        .data_box {
+            width: 600px;
+            height: 600px;
+            background-color: chocolate;
+        }
+
+        /* 实现自适应 */
+        #test1 {
+            width: 100%;
+        }
+
+        #layui-laydate1 {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-main {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-header {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-content {
+            width: 100%;
+        }
+
+        #layui-laydate1 .layui-laydate-content table {
+            width: 100%;
+
+        }
+
+        #layui-laydate1 .layui-laydate-hint {
+            display: inline !important;
+            padding: 5px 10px;
+            width: auto;
+            background-color: aqua;
+            margin: 0;
+            line-height: 1;
+            border: none;
+            box-shadow: none;
+        }
+
+        #layui-laydate1 td {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="data_box">
+        <span id="testView">2018</span>年<span id="testView1">6</span>月<span id="testView2">7</span>日
+        <div id="test1"></div>
+
+    </div>
+
+
+    <script src="./layDate-v5.3.1/layDate-v5.3.1/laydate/laydate.js"></script>
+    <script src="./jQuery.js"></script>
+
+    <script>
+
+
+        (function () {
+            //执行一个laydate实例
+            var calender = laydate.render({
+                elem: '#test1', //指定元素
+                format: "yyyy年MM月dd日",
+                position: 'static',
+                showBottom: false,
+                theme: '#393D49',//主题
+
+                change: function (value, date) { //监听日期被切换
+                    lay('#testView').html(date.year);
+                    lay('#testView1').html(date.month);
+                    lay('#testView2').html(date.date);
+                    // console.log(value);//日期
+                    // console.log(date);//日期对象
+
+                },
+                calendar: true,//显示公里节日
+                mark: { '2024-1-17': '重要' }, //标注重要的日子 calendar 参数所代表的公历节日更多情况下是一个摆设。因此，我们还需要自定义标注重要日子
+                done: function (value, date) {//done表示只读
+                    if (date.year === 2024 && date.month === 1 && date.date === 17) { //点击2017年8月15日，弹出提示语
+                        calender.hint(
+                            '<span style=``>中华人民共和国</span>'
+                        );
+
+                    }
+                },
+            });
+            $(" #layui-laydate1 td").click(function (e) {
+                console.log(e.clientX, e.clientY);
+                $(" #layui-laydate1 .layui-laydate-hint")[0].style.top = e.clientY
+                $(" #layui-laydate1 .layui-laydate-hint")[0].style.left = e.clientX
+            })
+
+
+        }
+        )()
+    </script>
+</body>
+
+</html>

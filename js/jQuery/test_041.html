@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            color: brown;
+
+          
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" class="table_1">
+        <div>
+            用户名（必须存在，最小2位）：
+            <input type="text" name="username" required minlength="2">
+        </div>
+        <div>
+            密码（6-8位）：
+            <input type="password" name="password" required minlength="6" maxlength="8" id="mima">
+        </div>
+        <div>
+            确认密码（与密码相同）：
+            <input type="password" name="password_return" equalTo="#mima">
+            <!-- equalTo="#mima"表示输入值与id为mima的文本框值一致 -->
+        </div>
+        <input type="submit" value="提交">
+
+    </form>
+
+    <!--
+        jQuery-validation.js中源码规则
+        messages: {
+		required: "This field is required.",//表示必填
+		remote: "Please fix this field.",
+		email: "Please enter a valid email address.",
+		url: "Please enter a valid URL.",
+		date: "Please enter a valid date.",
+		dateISO: "Please enter a valid date (ISO).",
+		number: "Please enter a valid number.",
+		digits: "Please enter only digits.",
+		equalTo: "Please enter the same value again.",
+		maxlength: $.validator.format( "Please enter no more than {0} characters." ),
+		minlength: $.validator.format( "Please enter at least {0} characters." ),
+		rangelength: $.validator.format( "Please enter a value between {0} and {1} characters long." ),
+		range: $.validator.format( "Please enter a value between {0} and {1}." ),
+		max: $.validator.format( "Please enter a value less than or equal to {0}." ),
+		min: $.validator.format( "Please enter a value greater than or equal to {0}." ),
+		step: $.validator.format( "Please enter a multiple of {0}." )
+	}, -->
+    <script src="./jQuery.js"></script>
+    <script src="./jquery-validation-1.20.0/jquery-validation-1.20.0/dist/jquery.validate.min.js"></script>
+    <script>
+       /*  $(".table_1").validate()
+        //对此表单开始验证,.table表示的是最外层的from标签的class名 
+        //一个表单只能使用一次$(".table_1").validate()
+        */
+        $(".table_1").validate({
+            messages: {//错误提示信息
+                username: {//username表示输入框name值
+                    required: "用户名必须",
+                    minlength: "用户名最少2位"
+                },
+                password: {
+                    required: "用户名必须",//根据规则输入提示信息
+                    minlength: "用户名最少6位",
+                    maxlength:"用户名最多8位",
+                },
+                password_return: {
+                    equalTo: "请输入相同密码"
+                },
+        
+            }
+        })
+    </script>
+
+
+    <!-- 
+    使用jQuery-validation.js
+        1.引用jQuery.js和jQuery-validation.js
+        2.根据信息在html结构中进行验证相关设置或者通过$(".table_1").validate()设置规则并且修改提示内容
+        3.添加$(".table_1").validate()使得对此表单开始验证
+        4.修改提示内容与提示内容的样式（提示内容在$(".table_1").validate()里修改）
+
+        声明式验证：程序员只需要声明各种验证规则，并开启验证
+ -->
+
+    <!-- 
+    不在html结构里输入规则，在对象里写规则
+    $("#signupForm").validate({
+    rules: {
+        firstname: "required",
+        lastname: "required",
+        username: {
+            required: true,
+            minlength: 2
+        },
+        password: {
+            required: true,
+            minlength: 5
+        },
+        confirm_password: {
+            required: true,
+            minlength: 5,
+            equalTo: "#password"
+        },
+        email: {
+            required: true,
+            email: true
+        },
+        topic: {
+            required: "#newsletter:checked",
+            minlength: 2
+        },
+        agree: "required"
+    },
+    messages: {
+        firstname: "Please enter your firstname",
+        lastname: "Please enter your lastname",
+        username: {
+            required: "Please enter a username",
+            minlength: "Your username must consist of at least 2 characters"
+        },
+        password: {
+            required: "Please provide a password",
+            minlength: "Your password must be at least 5 characters long"
+        },
+        confirm_password: {
+            required: "Please provide a password",
+            minlength: "Your password must be at least 5 characters long",
+            equalTo: "Please enter the same password as above"
+        },
+        email: "Please enter a valid email address",
+        agree: "Please accept our policy",
+        topic: "Please select at least 2 topics"
+    }
+}); -->
+
+</body>
+
+</html>

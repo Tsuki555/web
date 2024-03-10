@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            font-size: 20px;
+        }
+        .div1{
+            width: 500px;
+            height: 500px;
+            background-color: aquamarine;
+            box-sizing: border-box;
+            padding:100px;
+            float: left;
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+        }
+        .div3{
+            width: 500px;
+            height: 500px;
+            background-color: yellow;
+            box-sizing: border-box;
+            padding:100px;
+            float: left;
+            margin-left: 50px;
+        }
+        .div4{
+            width: 200px;
+            height: 200px;
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        div1
+        <div class="div2">div2</div>
+    </div>
+    <div class="div3">div3
+        <div class="div4">div4</div>
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(".div1").mouseover(function(){
+            console.log("进入div1");
+        })
+        $(".div1").mouseout(function(){
+            console.log("出来div1");
+        })
+        $(".div3").mouseenter(function(){
+            console.log("进入div3");
+        })
+        $(".div3").mouseleave(function(){
+            console.log("出来div3");
+        })
+    </script>
+</body>
+</html>

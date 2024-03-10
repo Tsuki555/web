@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="heart" width="800" height="800" style="width: 800px;height:800px;"></canvas>
+    <script>
+        var heart=document.getElementById("heart")
+        var heart_pen=heart.getContext("2d")
+        heart_pen.beginPath()
+        heart_pen.moveTo(400,300)//设置起点
+        heart_pen.bezierCurveTo(400, 100, 800,100, 400, 500)
+        heart_pen.bezierCurveTo(0,100, 400,100, 400, 300)
+
+        // heart_pen.stroke()
+        heart_pen.fill()
+        heart_pen.closePath()
+    </script>
+</body>
+</html>

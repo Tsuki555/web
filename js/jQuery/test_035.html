@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+
+        }
+
+        .box {
+            text-align: center;
+            background-color: rgb(210, 30, 30);
+        }
+
+        .nav {
+            display: inline-block;
+            vertical-align: top;
+            background-color: coral;
+        }
+
+        .nav>li {
+            float: left;
+            padding: 10px 15px;
+            background-color: chartreuse;
+            position: relative;
+
+        }
+
+        .nav li ul {
+            display: none;
+            position: absolute;
+            top:100%;
+            left: 0;
+            text-align: center;
+            background-color: aquamarine;
+
+            
+        }
+        .nav li ul li{
+            padding: 10px 15px;
+            font-size: 12px;
+        }
+        .nav li:hover ul {
+            display: block;
+        }
+        .nav li:hover ul>li:hover{
+           background-color: indianred;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="nav">
+            <li>首页</li>
+            <li>
+                手机
+                <ul>
+                    <li>苹果</li>
+                    <li>华为</li>
+                    <li>小米</li>
+                </ul>
+            </li>
+            <li>
+                电脑
+                <ul>
+                    <li>联想</li>
+                    <li>惠普</li>
+                    <li>苹果</li>
+                </ul>
+            </li>
+            <li>
+                衣服
+                <ul>
+                    <li>羽绒服</li>
+                </ul>
+            </li>
+            <li>联系我们</li>
+            <li>首页</li>
+            <li>
+                手机
+                <ul>
+                    <li>苹果</li>
+                    <li>华为</li>
+                    <li>小米</li>
+                </ul>
+            </li>
+            <li>
+                电脑
+                <ul>
+                    <li>联想</li>
+                    <li>惠普</li>
+                    <li>苹果</li>
+                </ul>
+            </li>
+            <li>
+                衣服
+                <ul>
+                    <li>羽绒服</li>
+                </ul>
+            </li>
+            <li>联系我们</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

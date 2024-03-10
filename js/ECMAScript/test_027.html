@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1~100的菲波那切数列相加
+        var a = 1, b = 1, sum = a + b, str = a + "+" + b, s;
+        for (a, b; (a + b) < 100;) {
+            s = a + b;
+            a = b;
+            b = s;
+            str += "+" + s
+            sum += s;
+        }
+
+        console.log(str, sum);//1+1+2+3+5+8+13+21+34+55+89 232
+
+        var a = 1, b = 1, str = a + "+" + b, sum = a + b;
+        for (a, b; (a + b) < 100;) {
+            var s = a + b;
+            a = b;
+            b = s;
+            str += "+" + s;
+            sum += s;
+        }
+        console.log(str, sum);
+    </script>
+</body>
+
+</html>

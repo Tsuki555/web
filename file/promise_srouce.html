@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./ldpromise.js"></script>
+    <script>
+    // 手写封装promise(封装一个promise对象)
+    var p = new ldpromise((resolve,reject)=>{
+        resolve("111")
+    })
+    p.then(res=>{
+        console.log("success1",res);
+    })
+    </script>
+</body>
+</html>

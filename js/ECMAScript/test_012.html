@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById("box");
+        console.log(box);
+        const LEFT = "left",
+            RIGHT = "right",
+            TOP = "top",
+            BOTTOM = "bottom";
+        var x = 0, y = 0, state = RIGHT;
+        setInterval(() => {
+            switch(state){
+                case RIGHT:
+                    x++;
+                    box.style.left=x+"px"
+                    if(x>=300){
+                        state=BOTTOM;
+                        
+                    }
+                    break;
+                case BOTTOM:
+                    y++;
+                    box.style.top=y+"px"
+                    if(y>=300){
+                        state=LEFT;
+                    }
+                    break;
+                case LEFT:
+                    x--;
+                    box.style.left=x+"px"
+                    if(x<=0){
+                        state=TOP;
+                    }
+                    break;
+                case TOP:
+                    y--;
+                    box.style.top=y+"px"
+                    if(y==0){
+                        state=RIGHT
+                    }
+                    break;
+            }
+        }, 16);
+
+    </script>
+</body>
+
+</html>

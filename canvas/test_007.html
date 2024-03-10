@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="smile" width="1000" height="1000" style="width: 1000px; height: 1000px;"></canvas>
+    <script>
+        var smile=document.getElementById("smile")
+        var smile_pen=smile.getContext("2d")
+        // 绘制一个圆
+        smile_pen.beginPath()
+        smile_pen.arc(300,300,150,0,Math.PI*2)
+        smile_pen.stroke()
+        smile_pen.closePath()
+        //绘制嘴巴
+        smile_pen.beginPath()
+        smile_pen.arc(300,350,60,Math.PI/6,(Math.PI/6)*5)
+        smile_pen.stroke()
+        smile_pen.closePath()
+        // 绘制眼睛
+        smile_pen.beginPath()
+        smile_pen.arc(240,260,30,0,Math.PI*2)
+        smile_pen.fill()
+        smile_pen.closePath()
+        smile_pen.beginPath()
+        smile_pen.arc(360,260,30,0,Math.PI*2)
+        smile_pen.fill()
+        smile_pen.closePath()
+    </script>
+</body>
+</html>

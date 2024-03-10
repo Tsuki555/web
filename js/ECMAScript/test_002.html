@@ -1,0 +1,54 @@
+<!-- /*
+ * @Author: lidong 
+ * @Date: 2023-11-27 15:38:30 
+ * @Last Modified by:   lidong 
+ * @Last Modified time: 2023-11-27 15:38:30 
+ */ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: coral;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var box = document.getElementById("box")
+        var x = 0,
+            y = 0;
+      setInterval(function(){
+        if(x<300){
+            x++;
+            box.style.left=x+"px" 
+        }
+        if (y<300) {
+                y++;
+                box.style.top=y+"px"
+            }
+      },16)
+      //倾斜滑动
+
+
+    //   因为我没有钱，我没有丰富的思想，没有深刻的智慧，
+    //   无法在和他人交流时体现出一种让人很舒服的态度，我给不了她生活上的安全感，也给不了一种陪伴感，所以她走了。
+    //   对着呢，她做的合适着呢。
+
+    </script>
+</body>
+
+</html>

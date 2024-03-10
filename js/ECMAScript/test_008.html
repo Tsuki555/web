@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        <!-- 赋值运算符 -->
+        // var a = 1;
+        // var b=a+1;
+        // console.log(b);
+
+        // var a=5;
+        // a+=1;
+        // console.log(a);//6
+
+        // var a=9;
+        // var b= (a*=3)
+        // console.log(b);//27
+
+        // var a="6"
+        // var b=(a+=2)
+        // console.log(b);//62
+
+        // var a=1;
+        // console.log(a++);//1
+        // console.log(++a);//3
+        // console.log(a--);//3
+        // console.log(--a);//1
+
+        // var a=[]
+        // console.log(a++ +a++ +2);//3
+        //             // 0    1    2
+
+        // console.log(5>4);
+        // console.log("5">4);
+        // console.log("5">"4");
+        // console.log("a">4);
+        // console.log("a">"b");
+
+        // console.log(undefined==0);//false
+
+        // console.log(Boolean([]));
+
+
+
+        // var num = (7 > 1) && 8 && true && false && 0;
+        // console.log(num);//false
+
+        // var num = 88 || true || 0 || 1 || false;
+        // console.log(num);//88
+
+        // 75 00111101
+
+        // console.log(5&6);//4
+        // 101
+        // 110
+        // 100
+
+        // for (var i=0; i<100; i++) {
+        //     if (i&1) {
+        //         console.log("奇数"+i);
+        //     }
+            
+        // }
+
+
+        // console.log(5|6);//7
+        // // 101
+        // // 110
+        // // 111
+
+        // console.log(5^6);//3
+        // // 101
+        // // 110
+        // // 011
+
+
+    //    console.log(1<<3);//8
+    // // 0001
+    // // 1000
+
+
+    // var a=1;
+    // var b= a>3?6:12;
+    // console.log(b);//12
+
+    // var a=1,b;
+
+    // if (a>3) {
+    //     b=6
+    // }else{
+    //     b=12
+    // }
+    // console.log(b);//12
+
+    // console.log(Boolean(a=0,b=2));//false
+    // if(a=0,c=7,b=2,d=10){
+    //     console.log("abcdef");
+    // }
+    
+
+
+        // var obj={a:1,b:2,o:{c:3,d:4}}
+        // var obj1=obj;
+
+    // //定义函数的三种方式
+    // function fn() {
+    //     // 命名函数
+    // }
+    // 命名函数的预解析不但将函数名做了预解析,还将函数体直接赋值给了函数名
+    // var fn=function(){
+    //     // 匿名函数
+    // }
+
+    // var fn=new Function();/* 构造函数 */
+
+
+    // fn()
+    // function fn() {
+    //     console.log(555);
+    // }
+
+
+    // var a=9;
+    // function a() {
+    //     console.log(521);
+    // }
+    // a()//报错
+    // //先预解析在赋值 a=9赋值后覆盖了函数的预解析
+    
+
+    // var a;
+    // console.log(a);//ƒ a() {}
+    // function a() {
+        
+    // }
+    // //未定义和undefined是有区别的
+    // //预解析时函数慢于变量
+
+
+    // var obj={
+    //     a:521,
+    //     b:function(){
+    //         //匿名函数
+    //     }
+    // }
+
+    // (function () {
+    //     //匿名函数
+    // })()
+
+
+    // +function() {
+    //     console.log('hello world');
+    // }();//自执行函数
+
+
+    // document.onclick=function(){}
+
+ 
+    // console.log(this);//window
+    // fn()//window
+    // function fn() {
+    //     console.log(this);
+    // }
+
+
+    var a=521;
+    var obj={
+        a:1,
+        
+        b:function(){
+            console.log(this);
+            //执行方法中的this是对象定义完成后调用时才会执行的
+            /*  在对象方法中this指的是当前对象（堆中对象），
+            也指的是谁调用当前这个方法（栈中变量名）*/
+        },
+        c:this.a
+        /* 当前对象外上下文环境中的this，
+        在属性上的this是对象没有定义完成就执行，
+        所以对象属性上的this是window */
+       
+    }
+    obj.b()//{a: 1, b: ƒ}
+
+
+
+    </script>
+
+</body>
+
+</html>

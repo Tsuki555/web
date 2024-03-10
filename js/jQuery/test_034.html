@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: fuchsia;
+            margin-top: 30px;
+            font-size: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">逐渐缩小</button>
+    <button id="btn2">移动到指定位置</button>
+    <button id="btn3">移动指定距离</button>
+    <button id="btn4">停止动画</button>
+    <div>
+        天下
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+      /*   $("#btn1").click(function(){
+            $("div").animate({//动画变化属性写在{}里，属性一般并行实现
+                width:200,
+                height:200,
+            },2000)//2000表示动画时间
+        }) */
+
+        $("#btn1").click(function(){
+            $("div").animate({
+                width:100
+            },1000).animate({
+                height:200
+            },3000)//每一个jQuery对象执行jQuery方法后返回的是jQuery对象
+        })
+
+        $("#btn2").click(function(){
+            $("div").animate({//移动到指定位置
+                top:300
+            },1000).animate({
+                left:500
+            },3000)//每一个jQuery对象执行jQuery方法后返回的是jQuery对象
+        })
+
+
+        $("#btn3").click(function(){
+            $("div").animate({//移动指定的距离
+                top:"+=100",
+                left:"+=100"
+            },1000)//每一个jQuery对象执行jQuery方法后返回的是jQuery对象
+        })
+
+
+        $("#btn4").click(function(){
+            $("div").stop()//停止动画
+        })
+
+    </script>
+</body>
+</html>

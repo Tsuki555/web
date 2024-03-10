@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 800px;
+            height: 500px;
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var data1 = [
+            {
+                name: "淘宝",
+                value: 37580
+            },
+            {
+                name: "京东",
+                value: 24384
+            },
+            {
+                name: "识货",
+                value: 147832
+            },
+            {
+                name: "美团",
+                value: 5541
+            },
+            {
+                name: "饿了么",
+                value: 6587
+            },
+        ],
+            data2 = [
+                {
+                    name: "本科",
+                    value: 37580,
+                    color: "red"
+                },
+                {
+                    name: "211/958",
+                    value: 4384,
+                    color: "green"
+                },
+                {
+                    name: "大专",
+                    value: 47832,
+                    color: "pink"
+                },
+                {
+                    name: "研究生",
+                    value: 10041,
+                    color: "skyblue"
+                }
+
+            ];
+        var myEcharts = echarts.init(document.getElementById("box"));
+        var option = {
+            // color:["red","orange","yellow",'green',"skyblue"],
+            series: [
+                {
+                    type: "pie",
+                    name: "饼图1",
+                    data: data1,
+                    color: ["red", "orange", "black", 'green', "skyblue"],
+                    radius: ["10%", "25%"],//圆环
+                    center: ["25%", "25%"],
+
+                },
+                {
+                    type: "pie",
+                    name: "饼图2",
+                    data: data2,
+                    radius: "25%",//圆的尺寸
+                    center: ["75%", "25%"],
+                    roseType: "radius",//南丁格尔图  
+
+                },
+                {
+                    type: "pie",
+                    name: "饼图3",
+                    data: [
+                        {
+                            name: "淘宝",
+                            value:137580
+                        },
+                        {
+                            name: "京东",
+                            value: 124384
+                        },
+                        {
+                            name: "识货",
+                            value: 147832
+                        },
+                        {
+                            name: "美团",
+                            value: 115541
+                        },
+                        {
+                            name: "滴滴",
+                            value: 115247
+                        },
+                    ],
+                radius: "25%",
+                center: ["25%", "75%"],
+                // color: ["pink", "blue", "green", 'brown', "skyblue"],
+                label: {//显示文字
+                    formatter: function (arg) {
+                        // console.log(arg);
+                        return arg.seriesName + "的" + arg.name + "模块占比" + arg.percent + "%"
+
+                    }
+                }
+                },
+            {
+                type: "pie",
+                name: "饼图4",
+                data: data2,
+                radius: "25%",
+                center: ["75%", "75%"],
+                label: {//文字显示设置
+                    color: "black",
+                    shadowColor: 'transparent',
+                },
+                itemStyle: {//饼图颜色设置
+                    color: function (arg) {
+
+                        return arg.data.color
+                    }
+                    },
+        labelLine: {
+            smooth: true,
+
+                    },
+
+        emphasis: { //文字高亮显示
+            scale: true,//是否开启高亮后扇区的放大效果。
+                scaleSize: 25,//高亮后扇区的放大尺寸，在开启 emphasis.scale 后有效。
+                    label: {
+                color: "brown",
+                    fontSize: 20
+            },
+            itemStyle: {
+                color: "brown"
+            },
+            labelLine: {//视觉引导线
+                show: true,
+                    lineStyle: {
+                    color: "brown",
+                        width: 1
+                }
+            },
+
+
+        }
+                },
+            ]
+        }
+        myEcharts.setOption(option)
+    </script>
+</body>
+
+</html>

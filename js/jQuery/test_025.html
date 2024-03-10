@@ -1,0 +1,125 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .out {
+            width: 500px;
+            height: 500px;
+            background-color: aquamarine;
+        }
+
+        .inner {
+            width: 300px;
+            height: 300px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="inner">
+
+        </div>
+    </div>
+    <button>取消所有绑定事件</button>
+    <button>取消所有mouseover事件</button>
+    <button>测试事件坐标</button>
+    <a href="https://www.baidu.com">百度一下</a>
+
+    <script src="./jQuery.js"></script>
+    <script>
+        /* 监听.out盒子 */
+        // 方式1
+        // $(".out").click(function(){//此处click为绑定事件方法
+        //     console.log("out");
+        // })
+        // 方式2
+        $(".out").on("click",function(){
+            console.log(6666);
+        })
+        /* 部分事件不像click一样存在绑定事件的方法，他们没有绑定事件的方法，所以用on这种方式普适性更好 */
+
+        /* 给inner绑定鼠标移入移出事件监听 */
+        // 方式1
+        // $(".inner").mouseenter(function(){
+        //     console.log("进入");
+        // })
+        // $(".inner").mouseleave(function(){
+        //     console.log("出去");
+        // })
+        //方式2
+        // $(".inner").on("mouseenter",function(){
+        //     console.log("进入on");
+        // }).on("mouseleave",function(){
+        //     console.log("出去on");
+        // })
+        // 方式3
+        // 事件切换
+        // .hover(over(鼠标移到元素上触发的函数),out(鼠标移除元素上触发的函数))
+        $(".inner").hover(function () {
+            console.log("进入hover");
+        }, function () {
+            console.log("出去hover");
+        })
+
+        /* 点击按钮1解除inner所有的事件监听 */
+        $("button").first().click(function(){
+            $(".inner").off()
+        })
+        /* 点击按钮2解除inner的mouseenter事件监听 */
+        $("button").eq(1).click(function () {
+            $(".inner").off("mouseenter")
+        })
+
+        /* 点击第三个按钮得到事件坐标 */
+        $("button").eq(2).click(function (event) {//event事件对象
+            console.log(event.offsetX);
+            console.log(event.offsetY);
+        })
+        // 阻止事件冒泡
+        $(".inner").click(function(event){
+            console.log("小盒子");
+            event.stopPropagation() // 阻止事件冒泡
+        })
+        // 阻止跳转
+        $("a").click(function(event){
+            event.preventDefault()
+        })
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <script src="./jQuery.js"></script>
+    <script>
+        console.log($("div"));
+        $("div").click(function(){
+            console.log(66666666666666666666666666);
+        })
+    </script>
+</body>
+</html>

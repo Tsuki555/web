@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 求质数 -->
+    <script>
+        var i=2,state=true,count=0;
+        for ( i ; i <=100; i++) {
+            // console.log(i);
+            var j=2;
+            for ( j; j < i; j++) {
+                state=((i%j===0)?false:true);   
+                if (state==false) {
+                    count++
+                    break
+                   
+                } 
+            }
+            state?console.log(i+"是质数"):/* console.log(i+"不是质数") */"";
+            
+        }
+        console.log(count);
+    </script>
+</body>
+</html>

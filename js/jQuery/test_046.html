@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cate_gory_items {
+            position: relative;
+        }
+
+        .cate_item {
+            display: flex;
+
+        }
+
+        .cate_item h3 {
+            background-color: aqua;
+            width: 300px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .sub_cate_box {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 300px;
+            background-color: chocolate;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cate_gory_items">
+        <div class="cate_item">
+            <h3>我的标题1</h3>
+            <div class="sub_cate_box">人工智能</div>
+        </div>
+        <div class="cate_item">
+            <h3>我的标题2</h3>
+            <div class="sub_cate_box">C语言虽然很牛逼，但是很难</div>
+        </div>
+        <div class="cate_item">
+            <h3>我的标题3</h3>
+            <div class="sub_cate_box">我会不断努力的</div>
+        </div>
+
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(".cate_item").hover(function () {
+            $(this).children(".sub_cate_box").css("display", "block")
+        }, function () {
+            $(".sub_cate_box").css("display", "none")
+        })
+    </script>
+</body>
+
+</html>

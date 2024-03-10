@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            /* max-width: 1920px;
+            min-width: 800px; */
+            min-width: 1024px;
+            margin: auto;
+
+        }
+
+        body {
+            background-image: url(./eckarts_open_class-master/eckarts_open_class-master/echart/images/bg.jpg);
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+        }
+
+        body::-webkit-scrollbar {
+            background-color: transparent;
+            width: 0px;
+
+        }
+
+        header {
+            height: 1.25rem;
+            line-height: 1.25rem;
+            position: relative;
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url(./eckarts_open_class-master/eckarts_open_class-master/echart/images/head_bg.png);
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 0.475rem;
+            color: aliceblue;
+        }
+
+        .time {
+            position: absolute;
+            right: 0.375rem;
+            top: 0;
+            height: 1.25rem;
+            color: aliceblue;
+            font-size: 0.225rem;
+        }
+
+        .mainbox {
+            box-sizing: border-box;
+            padding: 0.125rem 0.125rem 0;
+            display: flex;
+        }
+
+        .column {
+            flex: 3;
+        }
+
+        .column5 {
+            flex: 5;
+        }
+
+        .panel {
+            /* 公共区域 */
+            height: 3.875rem;
+            padding: 0 0.188rem 0.5rem;
+            margin-bottom: 0.188rem;
+            box-sizing: border-box;
+            position: relative;
+
+            background-color: rgba(255, 255, 255, 0.04);
+            background-image: url(./eckarts_open_class-master/eckarts_open_class-master/myEcharts/images/line\(1\).png);
+        }
+
+        .panel::before {
+            content: "";
+            display: inline-block;
+            width: 0.125rem;
+            height: 0.125rem;
+            /* background-color: aqua; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .panel::after {
+            content: "";
+            display: inline-block;
+            width: 0.125rem;
+            height: 0.125rem;
+            /* background-color: aqua; */
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+
+        .panel .bottom {
+            width: 100%;
+            height: 10px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            /* background-color: brown; */
+        }
+
+        .panel .bottom::before {
+            content: "";
+            display: inline-block;
+            width: 0.125rem;
+            height: 0.125rem;
+            /* background-color: aqua; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .panel .bottom::after {
+            content: "";
+            display: inline-block;
+            width: 0.125rem;
+            height: 0.125rem;
+            /* background-color: aqua; */
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        .panel h2 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 0.25rem;
+            line-height: 0.6rem;
+        }
+
+        .panel .chat {
+            height: 3rem;
+
+        }
+
+        .column5 {
+            padding: 0.188rem;
+            box-sizing: border-box;
+        }
+
+        .column5 .num {
+            background-color: rgba(101, 132, 226, 0.1);
+            padding: 0.188rem;
+        }
+
+        .column5 .num .hd {
+            border: 1px solid rgba(25, 186, 139, 0.17);
+            position: relative;
+        }
+
+        .column5 .num .hd::before {
+            content: "";
+            display: inline-block;
+            width: 0.225rem;
+            height: 0.225rem;
+            /* background-color: aqua; */
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            border-left: 3px solid black;
+            border-top: 3px solid black;
+        }
+
+        .column5 .num .hd::after {
+            content: "";
+            display: inline-block;
+            width: 0.225rem;
+            height: 0.225rem;
+            /* background-color: aqua; */
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+        }
+
+        .column5 .num .hd ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .column5 .num .hd ul li {
+            flex: 1;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #fff;
+
+        }
+
+        .column5 .num .hd ul li:nth-child(1) {
+            border-right: 1px solid rgba(25, 186, 139, 0.17);
+        }
+
+        .column5 .num .bd ul {
+            display: flex;
+        }
+
+        .column5 .num .bd ul li {
+            flex: 1;
+            text-align: center;
+            line-height: 0.5rem;
+            font-size: 0.23rem;
+            list-style: none;
+            color: #fff;
+        }
+
+        .map {
+            height: 10.125rem;
+            position: relative;
+            /* background-color: aquamarine; */
+
+        }
+
+        .map .map1 {
+            background-size: 100% 100%;
+            width: 6.475rem;
+            height: 6.475rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: .3;
+            background-image: url(./eckarts_open_class-master/eckarts_open_class-master/myEcharts/images/map.png);
+        }
+
+        .map .map2 {
+            width: 8.025rem;
+            height: 8.025rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            animation: move_1 15s linear infinite;
+            z-index: 1;
+            opacity: .5;
+            background-size: 100% 100%;
+            background-image: url(./eckarts_open_class-master/eckarts_open_class-master/myEcharts/images/lbx.png);
+        }
+
+        .map .map3 {
+            width: 7.075rem;
+            height: 7.075rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-size: 100% 100%;
+            opacity: .5;
+            z-index: 2;
+            animation: move_2 15s linear infinite;
+            background-image: url(./eckarts_open_class-master/eckarts_open_class-master/myEcharts/images/jt.png);
+        }
+
+        @keyframes move_1 {
+
+            /* 动画 */
+            form {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes move_2 {
+
+            /* 动画 */
+            form {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .map .chat {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 6;
+        }
+
+        /* 柱形图 */
+        .bar .chat {
+            /* background-color: aqua; */
+
+        }
+
+        .line a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 0.125rem;
+        }
+
+        /* 流体布局 */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>数据可视化Echarts</h1>
+        <div class="time">当前时间：xxxx年xx月xx日</div>
+    </header>
+    <div class="mainbox">
+        <div class="column">
+            <div class="panel bar">
+                <h2>柱状图</h2>
+                <div class="chat"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="panel line">
+                <h2>折线图</h2>
+                <div id="tab">
+                    <a href="javascript:;">2022</a>
+                    <a href="javascript:;">2023</a>
+                </div>
+                <div class="chat"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="panel pie">
+                <h2>饼形图</h2>
+                <div class="chat"></div>
+                <div class="bottom"></div>
+            </div>
+        </div>
+        <div class="column5">
+            <div class="num">
+                <div class="hd">
+                    <ul>
+                        <li>451582</li>
+                        <li>25471</li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li>需求</li>
+                        <li>供应</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chat"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="panel bar">
+                <h2>柱状图</h2>
+                <div class="chat"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="panel line">
+                <h2>折线图</h2>
+                <div class="chat"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="panel pie">
+                <h2>饼形图</h2>
+                <div class="chat"></div>
+                <div class="bottom"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./lib-flexible-2.0/lib-flexible-2.0/index.js"></script>
+    <!-- 
+        flexible.js是手淘开发出的一个用来适配移动端的js框架。
+        手淘框架的核心原理就是根据制不同的width给网页中htm根节点设置不同的font-size，
+        然后所有的px都用rem来代替，这样就实现了不同大小的屏幕都适应相同的样式了。
+        其实它就是一个终端设备适配的解决方案，也就是说它可以让你在不同的终端设备中实现页面适配。
+
+        
+
+        flexible.js的使用：
+           1. 引入flexible.js文件
+                flexible.js默认屏幕尺寸划分10等份，建议设置为24等份，以1920px为屏幕尺寸每一份80px
+           2. px to rem 设置1rem=80px
+     -->
+    <script src="./echarts.min1.js"></script>
+    <script src="./jQuery.js"></script>
+    <script>
+        (function () {
+            var echartBar_1 = echarts.init($(".bar .chat")[0])
+            var option = {
+
+                xAxis: {
+                    type: "category",
+                    data: ["旅游行业", "教育培训", "游戏行业", "医疗行业", "电商行业", "社交行业", "金融行业"],
+                    axisLabel: {
+                        fontSize: '0.175rem',
+                        color: "white",
+                        interval: 0,
+                        // interval还可以设置具体的值，若是设置为1，表示隔一个标签显示一个
+                        // 标签；若是设置为2，表示隔两个标签显示一个标签。这里，为了将x轴
+                        // 标签全显示出来，给xAxis添加axisLabel元素，并将interval属性设置
+                        // 为0。
+                        // rotate:15
+                        // axisLabel还有一个属性rotate，它用来控制刻度标签旋转的角度，
+                        // 在类目标签显示占不下的时候可以通过旋转防止标签之间的重叠。
+                        // 旋转角度从-90度到90度。
+                    },
+                    axisTick: {//刻度不显示
+                        show: false
+                    },
+                    axisLine: {
+
+                        lineStyle: {
+                            color: 'rgba(255,255,255,.1)'
+                        }
+                    },
+
+                },
+                yAxis: {
+                    type: "value",
+                    splitLine: {//去除网格线
+
+                        //是否显示分隔线。默认数值轴显示，类目轴不显示。
+                        lineStyle: {
+                            color: 'rgba(255,255,255,.1)'
+                        },
+
+                    },
+
+                    axisLabel: {
+                        fontSize: "0.125rem",
+                        color: "white"
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: 'rgba(255,255,255,.1)'
+                        },
+
+
+                    },
+
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {//坐标轴指示器配置项。
+                        type: 'shadow'//提示框出现同时出现柱状图的背景阴影
+                    },
+                    backgroundColor: "rgba(255,255,255,.1)",
+                    borderColor: "transparent",
+                    textStyle: {
+
+                        color: "white",
+                        fontSize: '0.225rem'
+                    },
+                    formatter: function (arg) {
+                        // console.log(arg);
+                        return `<div >` + arg[0].name + "的" + arg[0].seriesName + "是" + arg[0].data + `</div>`
+                    },
+                },
+                grid: {
+                    left: 0,
+                    top: "5%",
+                    right: 0,
+                    bottom: "10%",
+                    containLabel: "true"
+                    //containLabel: "true"常用于『防止标签溢出』的场景，标签溢出指的是，标签长度动态变化时，可能会溢出容器或者覆盖其他组件。
+
+                },
+
+
+                series: [
+                    {
+                        type: "bar",
+                        name: "从业人员数量",
+                        data: [200, 400, 500, 700, 900, 1400, 470],
+                        barWidth: "50%",
+
+                        itemStyle: {
+                            color: "#2f89cf",
+                            barBorderRadius: 6//柱子的圆角
+                        },
+
+                    }
+                ]
+            }
+            echartBar_1.setOption(option)
+            /* 图表随着浏览器自适应 */
+            window.addEventListener("resize", function () {
+                echartBar_1.resize()
+            });
+        })();
+
+        (function () {
+            var color_arr = ["red", "orange", "yellow", "green", "pink"]
+            var echartBar_2 = echarts.init($(".bar .chat")[1])
+            var option = {
+                xAxis: {
+                    // 方式1
+                    // type: "value",
+                    // splitLine: {//去除网格线
+                    //     //是否显示分隔线。默认数值轴显示，类目轴不显示。
+                    //     lineStyle: {
+                    //         color: 'none'
+                    //     },
+
+                    // },
+                    // axisLabel: {
+                    //     color: "none",
+                    //     interval: 0,
+                    // },
+
+                    //方式2
+                    show: false,
+                    type: "value",
+
+
+                },
+                yAxis: [//设置两个y轴，便于y轴柱状图表重合实现包含
+                    {
+                        type: "category",
+                        data: ["html", 'javaScript', 'css', 'vue', 'node'],
+                        axisLabel: {
+                            color: "white",
+                            interval: 0,
+                            fontSize: '0.175rem'
+                        },
+                        axisTick: {//刻度不显示
+                            show: false
+                        },
+                        axisLine: {//刻度线不显示
+                            show: false,
+
+                        },
+                        offset: 0,//刻度文字距离图表距离
+                        inverse: true//实现数据翻转,使用横向图表默认会数据反向展示
+                    },
+                    {
+                        type: "category",
+                        // show:false,
+                        data: [702, 350, 610, 793, 664],
+                        axisLabel: {
+                            color: "white",
+                            interval: 0,
+                            fontSize: '0.175rem'
+                        },
+                        axisTick: {//刻度不显示
+                            show: false
+                        },
+                        axisLine: {//刻度线不显示
+                            show: false,
+
+                        },
+                        inverse: true//实现数据翻转
+                    },
+
+
+                ],
+
+                grid: {
+                    left: 0,
+                    right: '5%',
+                    top: "5%",
+                    bottom: 0,
+                    containLabel: true
+                    //containLabel决定刻度标签显示的起始位置，该属性为true，left为0即可
+                    //containLabel属性为true表示以文字（刻度标签）边缘为起点
+                    //containLabel属性为false表示以图表边缘为起点
+                },//直角坐标系图表通过grid修改大小
+                series: [
+                    {
+                        name: "2022",
+                        type: "bar",
+                        data: [70, 34, 60, 78, 69],
+                        barWidth: "45%",
+
+                        itemStyle: {
+                            barBorderRadius: 15,
+                            color: function (arg) {//柱子设置不同颜色（配合数组实现）
+                                // console.log(arg);
+                                return color_arr[arg.dataIndex]
+                            }
+                        },
+                        label: {
+                            position: "inside",
+                            show: true,
+                            formatter: "{c}%",
+                            fontSize: '0.125rem'
+                        },
+                        yAxisIndex: 0,//yAxisIndex配合多个y轴即可实现柱状图包含。使用的 y 轴的 index，在单个图表实例中存在多个 y轴的时候有用。
+
+                    },
+                    {
+                        name: "2023",
+                        type: "bar",
+                        data: [100, 100, 100, 100, 100],
+                        barWidth: "60%",
+
+                        itemStyle: {
+
+                            barBorderRadius: 15,
+                            borderColor: 'skyblue',
+                            borderWidth: 3,
+                            color: "none"
+                        },
+                        yAxisIndex: 1,
+
+
+
+                    },
+                    /* 
+                    柱状图包含效果需要两个轴配合yAxisIndex实现，在series里两个柱状图在外层的写在下面，
+                    在内层的写在上面；yAxis数组里的两个对象也有次序，决定类目数值显示位置
+                     */
+                ]
+            }
+            echartBar_2.setOption(option);
+            window.addEventListener("resize", function () {
+                echartBar_2.resize()
+            });
+        })();
+
+        (function () {
+            var yearData = [
+                {
+                    year: '2022',
+                    data: [
+                        [20, 60, 154, 231, 100, 55],
+                        [79, 65, 134, 147, 190, 68],
+                    ]
+                },
+                {
+                    year: '2023',
+                    data: [
+                        [32, 45, 114, 331, 111, 155],
+                        [29, 15, 14, 127, 103, 68],
+                    ]
+                },
+
+            ]
+            var echartLine_3 = echarts.init($(".line .chat")[0])
+            var option = {
+                xAxis: {
+                    type: "category",
+                    data: ["1月", "3月", "5月", "7月", "9月", "11月"],
+                    axisLabel: {
+                        color: "white",
+                        fontSize: '0.125rem'
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: "white"
+                        }
+                    },
+                    axisTick: {
+                        show: false,
+                    }
+                },
+                yAxis: {
+                    type: "value",
+                    axisLabel: {
+                        color: "white",
+                        fontSize: '0.125rem'
+                    },
+                    axisLine: {
+                        show: true,
+                        lineStyle: {
+                            color: "white"
+                        }
+                    },
+                    splitLine: {//去除网格线
+                        //是否显示分隔线。默认数值轴显示，类目轴不显示。
+                        lineStyle: {
+                            color: "#012f4a"
+                        }
+                    },
+                },
+                grid: {
+                    left: '10%',
+                    right: "5%",
+                    bottom: "15%",
+                    top: "20%",
+                    // containLabel不存在的话，直接用left,right,bottom,top设置替换
+                    show: true,
+                    // borderColor:"white"
+                },
+                tooltip: {
+                    trigger: "axis",
+                    axisPointer: {
+                        type: "line",
+
+                    }
+                },
+                legend: {
+                    data: ["新增粉丝", "新增游客"],
+                    textStyle: {
+                        color: "skyblue",
+                        fontSize: '0.125rem'
+                    },
+
+
+                },
+                series: [
+                    {
+                        name: "新增粉丝",
+                        type: "line",
+                        data: yearData[0].data[0],
+                        stack: "all",
+                        smooth: true,
+
+                        lineStyle: {
+                            color: "orange"
+                        },
+                        label: {
+                            show: true
+                        }
+
+
+
+                    },
+                    {
+                        name: "新增游客",
+                        type: "line",
+                        data: yearData[0].data[1],
+                        stack: "all",
+                        smooth: true,
+
+                        lineStyle: {
+                            color: "yellow"
+                        }
+
+                    }
+                ]
+            };
+            echartLine_3.setOption(option);
+            window.addEventListener("resize", function () {
+                echartLine_3.resize()
+            });
+
+            console.log($(".line a")[0]);
+            console.log($(".line a")[1]);
+            $("#tab a").click(function () {//点击切换
+                // 根据索引获取数据
+
+                option.series[0].data = yearData[$(this).index()].data[0];
+                option.series[1].data = yearData[$(this).index()].data[1];
+                echartLine_3.setOption(option);//数据改变需要重新渲染
+
+            })
+
+        })();
+
+        (function () {
+
+            var echartLine_4 = echarts.init($(".line .chat")[1])
+            var option = {
+                xAxis: {
+                    type: "category",
+                    data: ["01", "03", "05", "07", "09", "12", "14", "16", '18', '20', '22', '24', '26', '28', '30'],
+                    axisLabel: {
+                        color: "white",
+                        fontSize: '0.125rem'
+                    },
+                    // axisLine: {
+                    //     show: true,
+                    //     lineStyle: {
+                    //         color: "white"
+                    //     }
+                    // },
+                    axisTick: {
+                        show: false,
+                    }
+                },
+                yAxis: {
+                    type: "value",
+                    axisLabel: {
+                        color: "white",
+                        fontSize: '0.125rem'
+                    },
+                    // axisLine: {
+                    //     show: true,
+                    //     lineStyle: {
+                    //         color: "white"
+                    //     }
+                    // },
+                    splitLine: {//去除网格线
+                        //是否显示分隔线。默认数值轴显示，类目轴不显示。
+                        lineStyle: {
+                            color: "#012f4a"
+                        }
+                    },
+                },
+                grid: {
+                    left: '10%',
+                    right: "5%",
+                    bottom: "15%",
+                    top: "20%",
+                    // containLabel不存在的话，直接用left,right,bottom,top设置替换
+
+                },
+                tooltip: {
+                    trigger: "axis",
+                    axisPointer: {
+                        type: "line",
+
+                    }
+                },
+                legend: {
+                    data: ["新增粉丝", "新增游客"],
+                    textStyle: {
+                        color: "skyblue",
+                        fontSize: '0.125rem'
+                    },
+
+
+                },
+                series: [
+                    {
+                        name: "新增粉丝",
+                        type: "line",
+                        data: [20, 60, 54, 21, 10, 55, 21, 35, 34, 24, 57, 26, 66, 71, 27],
+
+                        smooth: true,
+
+                        lineStyle: {
+                            color: "skyblue",
+                            width: "3"
+                        },
+
+
+                        areaStyle: {//填充颜色
+                            color: "rgba(255,255,255,.5)"
+                        },
+                        showSymbol: false,
+                        symbol: "circle",
+                        symbolSize: 15,
+                        // showSymbol: false,默认不显示拐点，鼠标移上去显示拐点
+                        itemStyle: {
+                            color: "skyblue"
+                        }
+
+                    },
+                    {
+                        name: "新增游客",
+                        type: "line",
+                        data: [30, 45, 23, 67, 33, 22, 76, 44, 21, 68, 35, 46, 26, 17, 57],
+
+                        smooth: true,
+
+                        lineStyle: {
+                            color: "green",
+                            width: "3"
+                        },
+                        itemStyle: {
+                            color: "green"
+                        },
+                        symbol: "circle",
+                        showSymbol: false,
+                        symbolSize: 15,
+
+                        areaStyle: {
+                            color: new echarts.graphic.LinearGradient(//渐变格式
+                                0, 0, 0, 1,
+                                [
+                                    {
+                                        offset: 0.6,
+                                        color: "green"//渐变起始颜色(上方)
+                                    },
+                                    {
+                                        offset: 0.8,
+                                        color: "pink"//渐变结束颜色（下方）
+                                    },
+                                ],
+                                false
+                            ),
+                        }
+
+                    }
+                ]
+            };
+            echartLine_4.setOption(option);
+            window.addEventListener("resize", function () {
+                echartLine_4.resize()
+            });
+        })();
+
+        (function () {
+            var pieData = [
+                { name: "10岁以下", value: 500 },
+                { name: "10岁-20岁", value: 3642 },
+                { name: "20岁-35岁", value: 65481 },
+                { name: "35岁-50岁", value: 32541 },
+                { name: "50岁以上", value: 2145 },
+            ]
+            var pieColor = ["red", "yellow", "bule", 'green', 'pink']
+            var echartpie_5 = echarts.init($(".pie .chat")[0])
+            var option = {
+                legend: {
+                    bottom: "3%",
+                    textStyle: {
+                        color: "white",
+                        fontSize: '0.125rem'
+                    },
+                    itemWidth: 10,
+                    itemHeight: 10,//图例尺寸
+                    itemGap: 10
+                },
+                series: [
+                    {
+                        type: "pie",
+                        data: pieData,
+                        radius: ["30%", "60%"],//外圆半径决定图形大小
+                        // labelLine: {
+                        //     show: false//数据和图表连接线是否显示
+                        // },
+                        label: {
+                            color: "white",
+                            fontSize: '0.21rem'
+                            // show:false
+
+                        },
+                        itemStyle: {
+                            color: function (arg) {
+                                // console.log(arg);
+                                return pieColor[arg.dataIndex]
+                            }
+                        },
+
+                        center: ["50%", "50%"]//饼图位置，水平垂直居中
+                    }
+                ]
+            }
+            echartpie_5.setOption(option);
+            window.addEventListener("resize", function () {
+                echartpie_5.resize()
+            });
+
+        })();
+
+        (function () {
+            var data = [
+                { name: "北京", value: 500 },
+                { name: "上海", value: 3642 },
+                { name: "广东", value: 65481 },
+                { name: "南京", value: 32541 },
+                { name: "河南", value: 2145 },
+            ]
+
+            var echartpie_6 = echarts.init($(".pie .chat")[1])
+            var option = {
+                legend: {
+                    bottom: "0%",
+                    textStyle: {
+                        color: "white",
+                        fontSize: '0.125rem'
+                    },
+                    itemWidth: 10,
+                    itemHeight: 10,
+                    itemGap: 10, // 设置图例间距
+
+                },
+
+                series: [
+                    {
+                        type: "pie",
+                        data: data,
+                        radius: "60%",
+                        label: {
+                            show: true,
+                            color: "white",
+                            fontSize: '0.21rem'
+                        },
+                        // itemStyle:{
+                        //     color:function(){
+
+                        //     }
+                        // }
+                        labelLine: {
+                            length: '9rem',//length是连接图形一端线条长度
+                            length2: ' 9rem',//length2是连接文字一端线条长度
+                        },
+                        center: ["50%", "50%"]
+                    }
+                ]
+            }
+            echartpie_6.setOption(option);
+            window.addEventListener("resize", function () {
+                echartpie_6.resize()
+            });
+        })();
+
+
+        (function () {
+            // 1. 实例化对象
+            var myChart = echarts.init($(".map .chat")[0]);
+            // 2. 指定配置和数据
+
+            $.get("./china.json", function (geoCoordMap) {
+                echarts.registerMap("china", geoCoordMap)
+                var option = {
+                    geo: {
+                        type: 'map',
+                        map: "china",
+                        label: {
+                            show: true,
+                            fontSize: '0.188rem',
+                            color: "yellow"
+                        },
+                        itemStyle: {
+                            color: "skyblue"
+                        },
+                        emphasis: {
+                            itemStyle: {
+                                color: "red"
+                            },
+                        }
+
+
+                    },
+
+                }
+
+
+                myChart.setOption(option);
+            })
+
+
+            window.addEventListener("resize", function () {
+                myChart.resize();
+            });
+        })();
+
+
+        window.addEventListener("resize", watchWindowSize)
+        function watchWindowSize() {
+            location.reload()
+        }
+    </script>
+</body>
+
+</html>

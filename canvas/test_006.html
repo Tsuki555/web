@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+    <canvas id="c1" width="500" height="500" style="width: 500px;height: 500px;"></canvas>
+    <script>
+        var c1=document.getElementById("c1")
+        var c1_pen=c1.getContext("2d")
+        // c1_pen.arc(圆心x,圆心y,半径r,开始的角度(弧度制)，结束的角度(弧度制),顺时针还是逆时针)
+        // arc是绘制圆弧方法
+        //  Math.PI就是弧度制的180度
+        //  默认是顺时针，flase
+        //  true为逆时针
+        c1_pen.beginPath()
+        c1_pen.arc(50,50,50,0,Math.PI*2)
+        c1_pen.fill()
+        c1_pen.closePath()
+
+        c1_pen.beginPath()
+        c1_pen.arc(200,200,50,0,Math.PI)
+        c1_pen.fill()
+        c1_pen.closePath()
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fetch的post请求
+        // fetch("url",{})
+        var obj={
+            bookname:"王晓娜与我的爱情记录123456",
+            author:"LD&WXN",
+            publisher:"6666666"
+        }
+        fetch("http://ajax-base-api-t.itheima.net/api/addbook",{
+            method:"post",//请求方式
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(obj)//参数,字符串格式
+
+        }).then(res=>{
+            return res.json()
+        }).then(json=>{
+            console.log(json);
+        })
+    </script>
+</body>
+</html>

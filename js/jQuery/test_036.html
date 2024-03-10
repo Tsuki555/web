@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img[alt="1"]{
+            width: 200px;
+        }
+        img[alt="2"]{
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>555552522251455</div>
+    <img src="./1.jpg" alt="1">
+    <img src="./2.jpg" alt="2">
+    <script src="./jQuery.js"></script>
+    <script>
+        // $(document).ready(function(){})与$(function(){})等价存在
+        // window.onload=function(){}//包括页面的图片加载完成后才回调函数，相对执行晚
+        // $(function(){})//页面加载完成就回调，相对执行早
+        //一般情况基本一样
+
+        window.onload = function () {
+            console.log('window.onload___',$($("img")[0]).width());
+        }
+        $(function () {
+            console.log('$f___' , $($("img")[1]).width());
+        })
+    </script>
+</body>
+
+</html>

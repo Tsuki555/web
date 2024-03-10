@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        ul li {
+            padding: 10px;
+        }
+        .list div{
+            display: none;
+        }
+        .on{
+            background-color: coral;
+        }
+        .list .show{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li class="on">商品参数</li>
+            <li>规格参数</li>
+            <li>商品评价</li>
+            <li>售后保障</li>
+        </ul>
+        <div class="list">
+            <div class="show">
+                商品参数
+            </div>
+            <div>
+                规格参数
+            </div>
+            <div>
+                商品评价
+            </div>
+            <div>
+                售后保障
+            </div>
+        </div>
+        <p>商品评价123456789</p>
+    </div>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(".box ul li").each(function(){
+            $(this).click(function() {
+                $("[class='on']").removeClass("on")
+                $(this).addClass("on")
+                $("[class='show']").removeClass("show")
+                console.log($(this).index());
+                
+               $( $(".list>div")[$(this).index()]).addClass("show")         
+            });
+          
+        })
+    </script>
+</body>
+
+</html>

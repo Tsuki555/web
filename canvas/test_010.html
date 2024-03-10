@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="qp" width="800" height="800" style="width: 800px;height: 800px;"></canvas>
+    <script>
+        var c1=document.getElementById("qp")
+        var ctx=c1.getContext("2d")
+        ctx.beginPath()
+        /* 
+        二次贝塞尔曲线使用 
+            控制点的x和y来自起点或者终点的坐标
+             ctx.quadraticCurveTo(控制点x, 控制点y, 终点x, 终点y)
+        */
+        ctx.moveTo(200,300)//设置起点
+        ctx.quadraticCurveTo(150, 300, 150, 200)//设置控制点以及终点,该终点是下一个贝塞尔曲线在起点
+        ctx.quadraticCurveTo(150, 100, 300, 100)
+        ctx.quadraticCurveTo(450, 100, 450, 200)
+        ctx.quadraticCurveTo(450, 300, 300, 300)
+        ctx.quadraticCurveTo(300, 390, 150, 390)
+        ctx.quadraticCurveTo(200, 390, 200,300)
+
+        ctx.stroke()
+        ctx.closePath()
+    </script>
+</body>
+</html>

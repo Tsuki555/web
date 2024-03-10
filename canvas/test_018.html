@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="c1"></canvas>
+    <script>
+        var c1 = document.getElementById("c1")
+        var ctx = c1.getContext("2d")
+        var path=new Path2D()
+        path.rect(10,10,100,100)
+        ctx.fillStyle="pink"
+        // 阴影
+        ctx.shadowOffsetX=0/* 阴影水平偏移量 */
+        ctx.shadowOffsetY=0/* 阴影垂直偏移量 */
+        ctx.shadowBlur=10/* 阴影模糊度 */
+        ctx.shadowColor="black"
+        ctx.fill(path)
+    </script>
+</body>
+
+</html>

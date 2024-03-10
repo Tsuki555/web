@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="c1" width="360" height="635" style="width: 360px;height:635px;"></canvas>
+    <video src="./1.mp4" controls hidden></video>
+    <button id="btn">点击播放</button>
+    <script>
+        var c1 = document.getElementById("c1")
+        var ctx = c1.getContext("2d")
+        ctx.beginPath()
+        var img = new Image()
+        img.src = "./1.jpg"
+        var img1 = new Image()
+        img1.src = "./2.jpg"
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, 360, 635)//加视频第一帧图片
+        }
+
+        var video = document.querySelector("video")
+        document.getElementById("btn").onclick = function () {
+            video.play()
+            rander()
+        }
+
+
+        function rander() {
+            ctx.drawImage(video, 0, 0, 360, 635)//绘制视频
+            ctx.drawImage(img1, 10, 10, 100, 100)//加水印，在视频后，不用onload
+            
+            requestAnimationFrame(rander)//动画加载
+        }
+        ctx.closePath()
+    </script>
+</body>
+
+</html>

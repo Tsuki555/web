@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" class="box1">111111111111111</div>
+    <div id="div2" class="box">222222222222222</div>
+    <span class="box">8888888888888</span>
+    <div id="div3">div3</div>
+    <span class="box">33333333333333333</span>
+    <ul>
+        <li>AAAAAAAAAAA</li>
+        <li title="hello">BBBBBBBBB</li>
+        <li class="box">CCCCCCCCCCCCCCC</li>
+        <li title="hello">DDDDDDDDDD</li>
+        <li title="two">BBBBBBBBB</li>
+    </ul>
+    <script src="./jQuery.js"></script>
+    <script>
+        /* 基本过滤选择器 */
+        $("div:first").css("background","red")
+        $(".box:last").css("background","yellow")//.box的最后一个背景色变
+        $("div:not(.box)").css("fontSize",30)//div里class不为.box的div字体变大
+        $("ul>li:gt(0):lt(2)").css("color","pink")//第二个和第三个li
+        //多个过滤选择器不是同时执行而是依次执行
+        //:gt(0)表示大于0，从下标为1开始（根据下标找元素）
+        //:gt(0):lt(2)中的:lt(2)表示从新截取的元素里从下标为2为终点
+        $("ul>li:eq(0)").css("fontWeight","bold")//根据下标找到一个元素
+        /* 内容过滤选择器 */
+        $("ul>li:contains('B')").css("fontSize","60px")//:contains('B')表示内容包含B即可
+        /* 属性过滤选择器 */
+        $("li[title]").css("background","skyblue")
+        $("li[title=two]").css("background","gray")
+    </script>
+</body>
+</html>

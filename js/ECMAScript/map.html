@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // var i=0
+        // while (i<10) {
+        //     if (i===5) {
+        //         break
+        //     }
+        //     console.log(i);//0~4
+        //     i++;
+        // }
+
+        // var i=0;
+        // while(true){
+        //     // 死循环
+        // }
+
+        // var i=0
+        // while (i<10) {
+
+        //     if (i==5) {
+        //         continue
+        //     }
+        //     console.log(i);
+        //     i++//死循环
+
+        // }
+
+
+        // var i = 0;
+        // tiaochu: while (i < 10) {
+        //     i++
+        //     var j=0
+        //     while (j < 10) {
+                
+        //         j++
+        //         if (j == 5) {
+        //             continue tiaochu;
+        //         }
+        //         console.log(i, j);//
+                
+        //     }
+            
+        // }
+
+
+        // 九九乘法表
+        var i=0,j=0,str=""
+        var dom=document.getElementById("jj")
+        while (i<9) {
+            i++
+            document.write("<div>")
+            while (j<i) {
+                j++
+                console.log(j+"*"+i+"="+i*j);
+                document.write(`<span style="padding:15px;">`)
+                document.write(i+"*"+j+"="+i*j)
+                document.write(`<span>`)
+            }
+            document.write("</div>")
+            j=0
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

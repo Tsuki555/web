@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a=[1,2,3,4,5]
+        // //计算机内存中随机存储位置（每一次执行代码首字符存储的位置都不同）
+        // // 0xa1 0xa2 0xa3 0xa4 0xa5
+        // // 数组方法存储（数组方法与数组创建所消耗时间关系不大，数组项规模与
+        // //数组创建所消耗时间正相关）(对象与数组创建基本一致，对象项规模与
+        // //对象创建所消耗时间正相关)
+        // // a.length占用空间是新开辟空间 0xc2
+        // // a.sort占用空间是新开辟空间 0xd6
+        
+        // //简化a[1],a[2]消耗1个单位时间(一个数组赋值消耗1个单位时间)
+        // //字符串赋值与数组赋值一样
+
+        // var b=3//一个整型数值赋值消耗1个单位时间
+
+
+        var arr=[1,2,3,4,5,6,7]
+        // console.log(arr[0]);//1
+        arr.push("ggg")
+        console.log(arr.push("ggg"));//9
+        console.log(arr);//[1, 2, 3, 4, 5, 6, 7, 'ggg', 'ggg']
+        console.log(arr.shift());//1
+        console.log(arr);//[2, 3, 4, 5, 6, 7, 'ggg', 'ggg']
+        arr.unshift(0)
+        console.log(arr);//[0,2, 3, 4, 5, 6, 7, 'ggg', 'ggg']
+        // 数组方法：
+        // push从后面插入一个新元素   pop从后面删除一个新元素 
+        // shift从前面删除一个新元素   unshift从前面插入一个新元素
+        var a=[1,2]
+        var b=[3,4,5]
+        console.log(a.concat(b));//[1, 2, 3, 4, 5]
+    </script>
+</body>
+</html>

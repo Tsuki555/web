@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="heart" width="800" height="800" style="width: 800px;height:800px;"></canvas>
+    <script>
+        var heart=document.getElementById("heart")
+        var heart_pen=heart.getContext("2d")
+
+        var heartPath=new Path2D()//声明路径对象
+
+        // 根据路径对象设置路径
+        heartPath.moveTo(400,300)//设置起点
+        heartPath.bezierCurveTo(400, 100, 800,100, 400, 500)
+        heartPath.bezierCurveTo(0,100, 400,100, 400, 300)
+
+        // 把路径设置给画笔工具
+        heart_pen.fill( heartPath)
+
+    </script>
+</body>
+</html>

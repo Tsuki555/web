@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="600"></canvas>
+    <!-- 
+        canvas相当于画板
+        id:标识元素（画板）唯一性
+        width:画板宽度
+        width：画板高度
+     -->
+     <script src="../js/jQuery/jQuery.js"></script>
+     <script>
+        var palette=$("canvas")[0]
+        /* 找到画布 */
+        console.log(palette);
+        
+        if(!palette.getContext){
+            alert("当前浏览器不支持canvas,请升级浏览器")
+        }
+        //判断是否支持canvas
+        var pencil=palette.getContext("2d")//以canvas的2d效果为主
+        console.log(pencil);
+        /* 画布.getContext("2d")  获取画笔(二维),画笔就是上下文对象 */
+        pencil.fillRect(0,0,100,100)
+        /* 画笔.fillRect(位置x,位置y,宽度,高度) */
+     </script>
+</body>
+</html>

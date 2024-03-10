@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">慢慢淡出</button>
+    <button id="btn2">慢慢淡入</button>
+    <button id="btn3">淡出、淡入切换</button>
+    <div>大盒子</div>
+    <span>123456789</span>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: brown;
+            margin-top: 50px;
+            font-size: 50px;
+            
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+    <script>
+        // 通过不透明度(opacity: ;)来改变淡入淡效果,最后display: none;
+        $("#btn1").click(function(){
+            // $("div").fadeOut()//慢慢淡出
+            $("div").fadeOut(2000,function(){
+                console.log(666666);
+            })//设置淡出时间
+        })
+        $("#btn2").click(function(){
+           $("div").fadeIn(2000)//设置淡入时间
+        })
+        $("#btn3").click(function(){
+           $("div").fadeToggle(5000)//切换淡入淡出效果
+        })
+    </script>
+</body>
+</html>

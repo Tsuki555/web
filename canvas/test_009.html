@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="yh"></canvas>
+    <script>
+        var yh=document.getElementById("yh")
+        var yh_pen=yh.getContext("2d")
+        yh_pen.beginPath()
+        yh_pen.moveTo(0,0)//设置第一个点
+        yh_pen.arcTo(20,30,50,30,30)
+        // yh_pen.arcTo(x1,y1,x2,y2,r)
+
+        yh_pen.stroke()
+        yh_pen.closePath()
+    </script>
+</body>
+</html>

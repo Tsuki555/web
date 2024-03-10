@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        use{
+            fill: brown;
+        }
+        use:hover{
+            fill:chartreuse
+        }
+    </style>
+<body>
+    <svg width="1000" height="1000">
+        <defs>
+            <g id="overall">
+                <rect x="0" y="0" width="100" height="100"></rect>
+                <circle cx="100" cy="100" r="30" fill="green"></circle>
+            </g>
+        </defs>
+        <!-- xml里标签上的属性权重比css高，在html里标签上属性权重远远低于css属性权重 -->
+
+        <use href="#overall" x="300" y="300" ></use>
+    </svg>
+</body>
+
+</html>

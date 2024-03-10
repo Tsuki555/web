@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: inline-block;
+            position: relative;
+            width: 280px;
+            background-color: fuchsia;
+        }
+
+        .container {
+            width: 252px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        ul {
+            list-style: none;
+            width: 840px;
+            background-color: darkgray;
+            display: inline-block;
+            vertical-align: top;
+
+        }
+
+        li {
+            width: 80px;
+            height: 80px;
+            margin: 2px;
+            float: left;
+        }
+
+        .box .prev {
+            position: absolute;
+            left: 0;
+            top: calc(50% - 10px);
+        }
+
+        .box .next {
+            position: absolute;
+            right: 0;
+            top: calc(50% - 10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <ul>
+                <li style="background-color: aqua;"></li>
+                <li style="background-color: brown;"> </li>
+                <li style="background-color: chartreuse;"></li>
+                <li style="background-color: crimson;"> </li>
+                <li style="background-color: gold;"></li>
+             
+            </ul>
+        </div>
+        <a href="javascript:;" class="prev">
+            < </a>
+                <a href="javascript:;" class="next">></a>
+    </div>
+
+    <script src="./jQuery.js"></script>
+    <script>
+        var distance_prev = 0
+
+        $(".prev").click(function () {
+
+
+            if (distance_prev < 168) {
+                distance_prev += 84
+
+                $("ul").css("marginLeft", -distance_prev)
+
+                if (distance_prev == 168) {
+                    distance_prev = 168
+                }
+
+            }
+            console.log(distance_prev);
+
+        })
+
+        $(".next").click(function () {
+            distance_prev -= 84
+            if (distance_prev <= 0) {
+                distance_prev = 0
+            }
+
+
+            console.log(distance_prev);
+            if (distance_prev <= 168) {
+
+                $("ul").css("marginLeft", -distance_prev)
+
+            }
+
+
+        })
+    </script>
+
+</body>
+
+</html>

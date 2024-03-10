@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj={
+            name:"wxn",
+            fun:function(){
+                console.log(this.name);
+            }
+        }
+        obj.name="王晓娜"
+        obj.fun()//王晓娜
+        // 数据可被修改，安全性不够
+    </script>
+</body>
+</html>

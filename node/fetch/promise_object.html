@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Promise.resolve()
+        //将数据转换为promise对象,状态为fulfilled，是成功状态的Promsie的一种简写方式。
+        var data =Promise.resolve("wxn")
+        console.log(data);
+        //Promise.reject()
+        //将数据转换为promise对象，状态为rejected，是失败状态的Promsie的一种简写方式
+        var data1 =Promise.reject("www.hhtp.com")
+        console.log(data1);
+
+        /* 
+        new Promise(reject => reject('reason'));
+        简写：Promise.reject('reason');
+
+        new Promise(resolve => resolve('reason'));
+        简写：Promise.reject('reason');
+         */
+    </script>
+</body>
+</html>

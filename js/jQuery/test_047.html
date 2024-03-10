@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            border: 1px solid red;
+            width: 300px;
+            display: flex;
+            line-height: 40px;
+        }
+
+        input{
+            border: none;
+            outline: none;
+            flex: 1;
+        }
+        span{
+            display: inline-block;
+            padding: 0 8px;
+            background-color: red;
+            color: aliceblue;
+        }
+        #search_helper{
+            display: none;
+            border: 1px solid red;
+            width: 300px;
+            line-height: 30px;
+        }
+        .on{
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="text"><span>搜索</span>
+   
+    </div>
+    <div id="search_helper">
+        <p>电脑</p>
+        <p>手机</p>
+        <p>平板</p>
+        <p>ipad</p>
+    </div>
+ 
+    <script src="./jQuery.js"></script>
+    <script>
+        $("#box input[ type='text']").on(
+            "keyup focus",function(){
+                //如果输入框有文本显示列表
+                var txt=this.value
+                if (txt) {
+                    $("#search_helper").show()                   
+                }
+            }
+        ).blur(function(){
+            //失去焦点隐藏列表
+            $("#search_helper").hide()
+        })
+        $("#search_helper>p").mouseenter(function(){
+            console.log(this);//隐式遍历            
+            $(this).addClass("on")
+   
+        })
+        $("#search_helper>p").mouseout(function(){
+            console.log(this);            
+            $(this).removeClass("on")
+   
+        })
+    </script>
+</body>
+</html>

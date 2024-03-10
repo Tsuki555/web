@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c1"></canvas>
+    <script>
+        var c1=document.getElementById("c1")
+        var ctx=c1.getContext("2d")
+        ctx.globalAlpha=0.5
+        ctx.beginPath()
+        ctx.arc(100,100,30,0,Math.PI*2)
+        // ctx.strokeStyle="pink"//设置路径画笔颜色
+        // ctx.stroke()
+
+        ctx.fillStyle="green"//设置填充画笔颜色
+        ctx.fill()
+        ctx.closePath()
+    </script>
+</body>
+</html>

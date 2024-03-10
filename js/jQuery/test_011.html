@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+            background-color: brown;
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+        }
+        li{
+            float: left;
+            width: 100px;
+            text-align: center;
+        }
+        #container div{
+            width: 300px;
+            height: 300px;
+            background-color: brown;
+        }
+        #content2,#content3{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="table1">table1</li>
+        <li id="table2">table2</li>
+        <li id="table3">table3</li>
+    </ul>
+    <div id="container">
+        <div id="content1">content1</div>
+        <div id="content2">content2</div>
+        <div id="content3">content3</div>
+    </div>
+    <!-- 下标一一对应 -->
+    <script src="./jQuery.js"></script>
+    <script>
+        $("ul li").click(function(){//隐式遍历
+            $("#container div").css("display","none")//隐藏所有的div
+            //根据下标设置li与div关联
+            var index=$(this).index()//.index获取伪数组元素下标
+            // $("#container div")[index]获取到DOM元素
+            $("#container div")[index].style.display="block"//根据下标显示table对应的div
+           
+        })
+       
+    </script>
+</body>
+</html>

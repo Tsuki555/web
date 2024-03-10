@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <canvas id="c1" width="500px" height="500px"></canvas>
+    <script>
+        var c1=document.getElementById("c1")
+        var c1_pen=c1.getContext("2d")
+        /* 整体写法 */
+        c1_pen.fillRect(10,10,100,100)
+        /* 画笔.strokeRect(x,y,宽度,长度) 根据路径绘制矩形*/
+        /* 拆分写法 */
+        c1_pen.rect(110,110,100,100)
+        c1_pen.fill()
+    </script>
+</body>
+</html>

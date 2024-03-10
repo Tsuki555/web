@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 300px;
+
+            box-sizing: border-box;
+            overflow-x: scroll;
+            overflow-y: hidden;
+
+        }
+
+        .box::-webkit-scrollbar {
+            display: none;
+        }
+
+        .box:hover.box:hover::-webkit-scrollbar {
+            display: block;
+
+            height: 10px;
+            background-color: rgba(1, 1, 1,.4);
+            border-radius: 5px;
+        
+
+        }
+
+        .box:hover::-webkit-scrollbar-thumb {
+            height: 10px;
+            border-radius: 5px;
+            background-color: rgba(240, 132, 9,1)
+          
+        }
+
+        .ec {
+            width:200%;
+            background-color: brown;
+            height: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 水平方向滚动条 -->
+    <div class="box">
+        <div class="ec" id="main">
+
+        </div>
+    </div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+
+
+        var chartDom = document.getElementById('main');
+        var myChart = echarts.init(chartDom);
+        var option;
+
+        option = {
+            xAxis: {
+                type: 'category',
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    data: [150, 230, 224, 218, 135, 147, 260, 150, 230, 224, 218, 135, 147, 260],
+                    type: 'line'
+                }
+            ]
+        };
+
+        option && myChart.setOption(option);
+    </script>
+</body>
+
+</html>

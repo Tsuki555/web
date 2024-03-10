@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="broad" width="500" height="500" style="width: 500px; height: 500px;"></canvas>
+    <script>
+        var broad = document.getElementById("broad")
+        var ctx = broad.getContext("2d")
+        var path=new Path2D()
+        path.arc(300,300,100,0,Math.PI*2)
+        // 创建图案样式pattern
+        var img = new Image();
+        img.src = "./1.jpg"
+        console.log(img);
+        img.onload = function () {//把图片加载进来
+            // 创建.createPattern(图片对象，重复方式)
+            var pattern = ctx.createPattern(img, "repeat")
+            ctx.fillStyle = pattern
+            ctx.fill(path)
+
+        }
+    </script>
+</body>
+
+</html>

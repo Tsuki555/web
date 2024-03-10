@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .big {
+            display: flex;
+            position: relative;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        ul>li {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+        }
+
+        ul>li>img {
+            width: 100%;
+        }
+
+        .hoverThumb {
+            border: 2px solid red;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 600px;
+            height: 600px;
+            background-color: brown;
+        }
+
+        .box>img {
+            width: 600px;
+
+        }
+
+        #mark {
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* background-color: rgba(0, 0, 0, .8); */
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            display: none;
+
+        }
+
+
+
+        .side_box {
+            width: 600px;
+            height: 600px;
+            background-color: aqua;
+
+            position: absolute;
+            left: 600px;
+            overflow: hidden;
+            display: none;
+        }
+        .side_box img{
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="box" id="box">
+            <img src="./1.jpg" alt="">
+            <span id="mark"></span>
+        </div>
+        <div class="side_box">
+            <img src="./1.jpg" alt="" style="width: 3600px;">
+        </div>
+    </div>
+    <ul>
+        <li>
+            <img src="./1.jpg" alt="">
+        </li>
+        <li>
+            <img src="./2.jpg" alt="">
+        </li>
+        <li>
+            <img src="./3.jpg" alt="">
+        </li>
+        <li>
+            <img src="./4.jpg" alt="">
+        </li>
+        <li>
+            <img src="./5.jpg" alt="">
+        </li>
+    </ul>
+    <script src="./jQuery.js"></script>
+    <script>
+
+        $("ul>li").hover(function () {
+            $(this).children("img").addClass('hoverThumb')
+            // div显示对应的图片
+            var big_src = $(this).children("img").attr("src")
+            $(".box>img").attr("src", big_src)
+        }, function () {
+            $(this).children("img").removeClass('hoverThumb')
+        })
+
+        /* 图片尺寸 */
+        var img_width = $(".box>img").width()
+        var img_height = $(".box>img").height()
+        // left在[0,img_width - width_distance]
+        // top在[0,img_height - height_distance]
+        //设置遮罩层存在范围
+
+        /* 遮罩层尺寸 */
+        var width_distance = 100
+        var height_distance = 100//遮罩层的尺寸的一半，用于鼠标能在遮罩层居中位置
+
+        var left = 0
+        var top_d = 0
+
+
+        $("#box>img").mouseenter(function () {
+            $("#box>img").mouseenter(function (e) {
+            /* 移动小黄块 */
+                left = e.offsetX - (50)
+                top_d = e.offsetY - (50)
+
+
+                if (left < 0) {
+                    left = 0
+                }
+                else if (left > (img_width - width_distance)) {
+                    left = (img_width - width_distance)
+                }
+                else if (top_d < 0) {
+                    top_d = 0
+                }
+                else if (top_d > (img_height - height_distance)) {
+                    top_d = (img_height - height_distance)
+                }
+
+                $("#mark").css({
+                    top: top_d,
+                    left: left,
+
+                })
+                /* 加载对应大图 */
+                $("#box>img").hover(function () {
+                    // div显示对应的图片
+                    var big_src = $(this).attr("src")
+                    $(".side_box img").attr("src", big_src)
+                    $(".side_box").show()
+                    /* 设置大图的移动 */
+                    var large_width=$(".side_box img").width()
+                    var large_height=$(".side_box img").height()
+                    $(".side_box img").css(
+                        {
+                            top:-top_d*(large_height/img_height),
+                            left:-left*(large_width/img_width),//必然为负值，向反方向移动
+                        }
+                    )
+                }, function () {
+                    $(".side_box").hide()
+                })
+
+            })
+            $("#mark").css("display","block")
+
+        })
+        $("#box>img").mouseleave(function () {
+            $("#mark").css("display","none")
+        })
+
+
+    </script>
+</body>
+
+</html>

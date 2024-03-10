@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jQuery.js"></script>
+    <script>
+        // $.each()遍历数组和对象
+        var arr=["a","j","ggg",1,5,9]
+        $.each(arr,function(index,item){
+            console.log(index,item);
+        })
+        // $.trim()去除字符串两端的空格
+        var str="   avfc ggg       "
+        console.log(str); 
+        console.log($.trim(str));
+        //$.type()得到数据类型
+        console.log($.type("ggggg"));//string
+        //$.isArray()判断是否为数组
+        console.log($.isArray([]));//true
+        console.log($.isArray({name:"wxn"}));//false
+        //$.parseJSON()解析json字符串为js对象或者js数组
+        // json是特定语法格式的字符串，用于存储数据
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script src="./jQuery.js"></script>
+    <script>
+        var len = $("button").length
+        //.length计算jQuery对象中DOM元素的个数
+        console.log(len);
+        //[index]根据下标得到对应的DOM元素,下标从0开始
+        console.log($("button")[1]);
+        //输出根据下标得到对应的DOM元素的文本
+        console.log($("button")[1].innerHTML);
+        //遍历所有button标签
+        $("button").each(function(index,domEle){//each遍历出来的是DOM元素
+            console.log(index,domEle);
+        })
+        
+       
+    </script>
+</body>
+
+</html>

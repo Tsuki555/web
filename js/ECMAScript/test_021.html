@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 面向状态编程 -->
+    <div id="box">
+
+    </div>
+    <script>
+        var divbox = document.getElementById("box");
+        var x = 0, y = 0;
+        const LEFT = "left",
+            RIGHT = "right",
+            TOP = "top",
+            BOTTOM = "bottom";
+        var state = LEFT;
+        setInterval(() => {
+            switch (state) {
+                case LEFT:
+                    x++;
+                    if (x > 500) {
+                        state = TOP
+                    }
+                    break;
+                case RIGHT:
+                    x--;
+                    if (x == 0) {
+                        state = BOTTOM
+                    }
+                    break;
+                case TOP:
+                    y++;
+                    if (y > 500) {
+                        state = RIGHT
+                    }
+                    break;
+                case BOTTOM:
+                    y--;
+                    if (y == 0) {
+                        state = LEFT
+                    }
+
+                    break;
+
+                default:
+                    break;
+            }
+            divbox.style.left = x + "px"
+            divbox.style.top = y + "px"
+        }, 5);
+    </script>
+</body>
+
+</html>

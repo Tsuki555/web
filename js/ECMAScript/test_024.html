@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 800px;
+            height: 800px;
+            border: 1px solid black;
+            border-top: none;
+            border-right: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table id="bg" rules="all">
+
+    </table>
+    <script>
+        var table=document.getElementById("bg");
+        var i=1,j=1,str="";
+        while (i<10) {
+            
+            str+="<tr>"
+                while (j<=i) {
+                    str+="<td>"+i+"*"+j+"="+i*j+"</td>"
+                    j++
+                }
+                j=1
+            str+="</tr>"
+            i++;
+        }
+        table.innerHTML=str
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="./echarts.min1.js"></script>
+    <script>
+        var Echarts=echarts.init(document.getElementById("box"))
+        var option={
+            series:[
+                {
+                    type:"gauge",
+                    data:[
+                        {
+                            value:66//指针数值
+                        },
+                        {
+                            value:88,
+                            itemStyle:{//指针样式
+                                color:"pink"
+                            }
+                        },
+                        //data下的多个对象表示多个指针
+                    ],
+                    min:50,
+                    max:100,
+                    //数值范围默认0-100
+                }
+            ]
+        }
+        Echarts.setOption(option)
+    </script>
+</body>
+</html>
+
+

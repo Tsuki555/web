@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(){
+            var name="YYY"
+            function state() {
+                console.log("单相思");
+            }
+            window.global_fun={
+                fun:state,
+                name:name
+            }//暴露一个对象
+        })(window)//函数内定义的不能在函数外使用，如果非要使用必须暴露出来
+        console.log(global_fun.name);//YYY
+        global_fun.fun()//单相思
+    </script>
+</body>
+</html>

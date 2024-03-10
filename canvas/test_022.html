@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px salmon solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c1"></canvas>
+    <script>
+        var c1=document.getElementById("c1")
+        var ctx=c1.getContext("2d")
+        var path=new Path2D()
+        path.rect(0,0,50,50)
+        ctx.fillStyle="yellow"  
+        ctx.fill(path)
+        ctx.translate(50,50)//在之前的基础上改变坐标
+        ctx.fill(path)
+        ctx.translate(50,50)//在之前的基础上改变坐标
+        ctx.fill(path)
+    </script>
+</body>
+</html>
